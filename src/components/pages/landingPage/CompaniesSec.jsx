@@ -144,6 +144,7 @@ const CompaniesSec = () => {
                   <div
                     key={index}
                     className="flex-shrink-0 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 min-w-[200px] h-32 flex flex-col items-center justify-center border border-gray-100 hover:scale-105 hover:border-emerald-200"
+                    loading="lazy"
                   >
                     <div className="text-4xl mb-2">{company.logo}</div>
                     <span className="text-sm font-semibold text-gray-700 text-center">
@@ -163,6 +164,7 @@ const CompaniesSec = () => {
                   <div
                     key={index}
                     className="flex-shrink-0 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 min-w-[200px] h-32 flex flex-col items-center justify-center border border-gray-100 hover:scale-105 hover:border-emerald-200"
+                    loading="lazy"
                   >
                     <div className="text-4xl mb-2">{company.logo}</div>
                     <span className="text-sm font-semibold text-gray-700 text-center">
@@ -182,6 +184,7 @@ const CompaniesSec = () => {
                   <div
                     key={index}
                     className="flex-shrink-0 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 min-w-[200px] h-32 flex flex-col items-center justify-center border border-gray-100 hover:scale-105 hover:border-emerald-200"
+                    loading="lazy"
                   >
                     <div className="text-4xl mb-2">{company.logo}</div>
                     <span className="text-sm font-semibold text-gray-700 text-center">

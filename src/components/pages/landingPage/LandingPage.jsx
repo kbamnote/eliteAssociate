@@ -1,24 +1,24 @@
 import React from 'react'
 import HeroSec from './HeroSec'
-import LearningSec from './LearningSec'
-import CompaniesSec from './CompaniesSec'
-import PlacementProgramSec from './PlacementProgramSec'
-import TestimonalSec from './TestimonalSec'
-import UnwaveringCommitmentSec from './UnwaveringCommitmentSec'
-import OurAwardsSec from './OurAwardsSec'
-import OurMediaSec from './OurMediaSec'
+import FeaturesSec from './FeaturesSec'
+import CoursesSec from './CoursesSec'
+import TrainersSec from './TrainersSec'
+import TestimonialsSec from './TestimonialsSec'
+import PlacementStatsSec from './PlacementStatsSec'
+import FAQSec from './FAQSec'
+import HeroVideo from './HeroVideo'
 
 const LandingPage = () => {
   return (
     <div>
+      <HeroVideo/>
         <HeroSec/>
-        <LearningSec/>
-        <CompaniesSec/>
-        <PlacementProgramSec/>
-        <TestimonalSec/>
-        <UnwaveringCommitmentSec/>
-        <OurAwardsSec/>
-        <OurMediaSec/>
+        <FeaturesSec/>
+        <CoursesSec/>
+        <TrainersSec/>
+        <TestimonialsSec/>
+        <PlacementStatsSec/>
+        <FAQSec/>
     </div>
   )
 }

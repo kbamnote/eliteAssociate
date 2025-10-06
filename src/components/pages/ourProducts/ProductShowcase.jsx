@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { ArrowRight, Globe, Users, Building, Zap, Code, TrendingUp, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowRight, Globe, Users, Building, Zap, Code, TrendingUp, ChevronLeft, ChevronRight, Star, ExternalLink } from 'lucide-react';
 
 const ProductShowcase = () => {
   const [ref, inView] = useInView({
@@ -116,21 +116,24 @@ const ProductShowcase = () => {
       role: "Finance Director",
       company: "Global Investments Ltd",
       content: "JIFSA transformed our team's capabilities. The practical approach to financial education has directly contributed to a 35% improvement in our portfolio performance.",
-      avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face"
+      avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face",
+      rating: 5
     },
     {
       name: "Rahul Mehta",
       role: "Construction Manager",
       company: "UrbanBuild Corp",
       content: "Elite BIM reduced our project errors by 60% and accelerated delivery timelines. The collaborative platform has revolutionized how we work with stakeholders.",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+      rating: 5
     },
     {
       name: "Anjali Verma",
       role: "Data Scientist",
       company: "TechInsights",
       content: "Elite BISF's predictive models have improved our forecasting accuracy by 42%. The platform's intuitive interface makes complex analytics accessible to our entire team.",
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
+      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
+      rating: 5
     }
   ];
 
@@ -219,8 +222,15 @@ const ProductShowcase = () => {
                   <div className="flex justify-between items-center mb-4">
                     <span className="text-gray-500 text-sm">{product.stats.users} Users</span>
                     <div className="flex items-center">
-                      <span className="text-yellow-500 mr-1">★</span>
-                      <span className="text-gray-700 font-medium">{product.stats.rating}</span>
+                      <div className="flex">
+                        {[...Array(5)].map((_, i) => (
+                          <Star 
+                            key={i} 
+                            className={`w-4 h-4 ${i < Math.floor(parseFloat(product.stats.rating)) ? 'text-yellow-500 fill-current' : 'text-gray-300'}`} 
+                          />
+                        ))}
+                      </div>
+                      <span className="text-gray-700 font-medium ml-1">{product.stats.rating}</span>
                     </div>
                   </div>
                   
@@ -233,7 +243,7 @@ const ProductShowcase = () => {
                       onClick={(e) => e.stopPropagation()}
                     >
                       Visit Website
-                      <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      <ExternalLink className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </a>
                     <button 
                       className="text-gray-400 hover:text-gray-700"
@@ -272,14 +282,25 @@ const ProductShowcase = () => {
                   transition={{ duration: 0.5 }}
                   className="flex flex-col md:flex-row items-center gap-8"
                 >
-                  <div className="flex-shrink-0">
+                  <motion.div 
+                    className="flex-shrink-0"
+                    whileHover={{ scale: 1.05 }}
+                  >
                     <img 
                       src={testimonials[currentTestimonial].avatar} 
                       alt={testimonials[currentTestimonial].name}
                       className="w-24 h-24 rounded-full object-cover border-4 border-teal-400"
                     />
-                  </div>
+                  </motion.div>
                   <div className="text-center md:text-left">
+                    <div className="flex justify-center md:justify-start mb-4">
+                      {[...Array(5)].map((_, i) => (
+                        <Star 
+                          key={i} 
+                          className={`w-5 h-5 ${i < testimonials[currentTestimonial].rating ? 'text-yellow-400 fill-current' : 'text-gray-600'}`} 
+                        />
+                      ))}
+                    </div>
                     <p className="text-xl italic mb-6">"{testimonials[currentTestimonial].content}"</p>
                     <div>
                       <p className="font-bold text-lg">{testimonials[currentTestimonial].name}</p>
@@ -291,29 +312,34 @@ const ProductShowcase = () => {
               </AnimatePresence>
               
               <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 flex gap-4">
-                <button 
+                <motion.button 
                   onClick={prevTestimonial}
                   className="bg-white/20 hover:bg-white/30 p-2 rounded-full transition-all"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
                 >
                   <ChevronLeft className="w-6 h-6" />
-                </button>
-                <button 
+                </motion.button>
+                <motion.button 
                   onClick={nextTestimonial}
                   className="bg-white/20 hover:bg-white/30 p-2 rounded-full transition-all"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
                 >
                   <ChevronRight className="w-6 h-6" />
-                </button>
+                </motion.button>
               </div>
             </div>
             
             <div className="flex justify-center mt-16 gap-2">
               {testimonials.map((_, index) => (
-                <button
+                <motion.button
                   key={index}
                   onClick={() => setCurrentTestimonial(index)}
                   className={`w-3 h-3 rounded-full transition-all ${
                     index === currentTestimonial ? 'bg-teal-400 w-8' : 'bg-white/30'
                   }`}
+                  whileHover={{ scale: 1.2 }}
                 />
               ))}
             </div>
@@ -329,18 +355,48 @@ const ProductShowcase = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <div className="max-w-4xl mx-auto text-center">
-            <h3 className="text-2xl md:text-4xl font-bold mb-4">Ready to Transform Your Business?</h3>
-            <p className="text-xl mb-8 text-blue-100 max-w-2xl mx-auto">
+            <motion.h3 
+              className="text-2xl md:text-4xl font-bold mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              Ready to Transform Your Business?
+            </motion.h3>
+            <motion.p 
+              className="text-xl mb-8 text-blue-100 max-w-2xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
               Join thousands of satisfied customers using our innovative solutions to drive growth and efficiency
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <button className="bg-white text-teal-700 hover:bg-gray-100 font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+            </motion.p>
+            <motion.div
+              className="flex flex-col sm:flex-row justify-center gap-4"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <motion.button 
+                className="bg-white text-teal-700 hover:bg-gray-100 font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-2"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 Get Started Today
-              </button>
-              <button className="bg-transparent border-2 border-white hover:bg-white/10 font-bold py-4 px-8 rounded-full text-lg transition-all duration-300">
+                <ArrowRight className="w-5 h-5" />
+              </motion.button>
+              <motion.button 
+                className="bg-transparent border-2 border-white hover:bg-white/10 font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 flex items-center justify-center gap-2"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 Schedule a Demo
-              </button>
-            </div>
+                <ExternalLink className="w-5 h-5" />
+              </motion.button>
+            </motion.div>
           </div>
         </motion.div>
       </div>
@@ -369,58 +425,74 @@ const ProductShowcase = () => {
                       <h3 className="text-3xl font-bold text-gray-900">{selectedProduct.name}</h3>
                       <p className="text-teal-600 font-medium">{selectedProduct.tagline}</p>
                     </div>
-                    <button 
+                    <motion.button 
                       onClick={() => setSelectedProduct(null)}
                       className="text-gray-500 hover:text-gray-700 text-2xl"
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
                     >
                       ×
-                    </button>
+                    </motion.button>
                   </div>
                   
-                  <div className={`w-20 h-20 rounded-2xl ${selectedProduct.bgColor} ${selectedProduct.textColor} flex items-center justify-center mb-6`}>
+                  <motion.div 
+                    className={`w-20 h-20 rounded-2xl ${selectedProduct.bgColor} ${selectedProduct.textColor} flex items-center justify-center mb-6`}
+                    whileHover={{ scale: 1.1 }}
+                  >
                     {selectedProduct.icon}
-                  </div>
+                  </motion.div>
                   
                   <p className="text-gray-700 text-lg mb-6">{selectedProduct.fullDescription}</p>
                   
                   <h4 className="text-xl font-bold text-gray-900 mb-4">Key Features</h4>
                   <ul className="mb-8 space-y-3">
                     {selectedProduct.features.map((feature, index) => (
-                      <li key={index} className="flex items-start">
+                      <motion.li 
+                        key={index} 
+                        className="flex items-start"
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: index * 0.1 }}
+                      >
                         <span className={`flex-shrink-0 w-6 h-6 rounded-full ${selectedProduct.bgColor} ${selectedProduct.textColor} flex items-center justify-center mr-3 mt-1`}>
                           ✓
                         </span>
                         <span className="text-gray-700">{feature}</span>
-                      </li>
+                      </motion.li>
                     ))}
                   </ul>
                   
-                  <div className="flex flex-wrap gap-4 mb-8">
-                    <div className="bg-gray-100 rounded-lg p-4 flex-1 min-w-[120px] text-center">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                    <div className="bg-gray-100 rounded-lg p-4 text-center">
                       <div className="text-2xl font-bold text-gray-900">{selectedProduct.stats.users}</div>
                       <div className="text-gray-600">Active Users</div>
                     </div>
-                    <div className="bg-gray-100 rounded-lg p-4 flex-1 min-w-[120px] text-center">
+                    <div className="bg-gray-100 rounded-lg p-4 text-center">
                       <div className="text-2xl font-bold text-gray-900">{selectedProduct.stats.rating}</div>
                       <div className="text-gray-600">User Rating</div>
                     </div>
                   </div>
                   
                   <div className="flex flex-col sm:flex-row gap-4">
-                    <a 
+                    <motion.a 
                       href={selectedProduct.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`flex-1 bg-gradient-to-r ${selectedProduct.color} text-white font-bold py-4 px-6 rounded-full text-center transition-all duration-300 hover:opacity-90`}
+                      className={`flex-1 bg-gradient-to-r ${selectedProduct.color} text-white font-bold py-4 px-6 rounded-full text-center transition-all duration-300 hover:opacity-90 flex items-center justify-center gap-2`}
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
                     >
                       Visit Website
-                    </a>
-                    <button 
+                      <ExternalLink className="w-5 h-5" />
+                    </motion.a>
+                    <motion.button 
                       onClick={() => setSelectedProduct(null)}
                       className="flex-1 border-2 border-gray-300 text-gray-700 font-bold py-4 px-6 rounded-full transition-all duration-300 hover:bg-gray-50"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
                     >
                       Close
-                    </button>
+                    </motion.button>
                   </div>
                 </div>
               </div>

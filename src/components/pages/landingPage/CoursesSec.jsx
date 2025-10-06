@@ -1,0 +1,195 @@
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { ArrowRight, Clock, User, Calendar, Shield } from 'lucide-react';
+
+const CoursesSec = () => {
+  const [activeCategory, setActiveCategory] = useState('all');
+
+  const categories = [
+    { id: 'all', name: 'All Courses' },
+    { id: 'fire', name: 'Fire Safety' },
+    { id: 'industrial', name: 'Industrial Safety' },
+    { id: 'health', name: 'Health & First Aid' },
+    { id: 'management', name: 'Safety Management' }
+  ];
+
+  const courses = [
+    {
+      id: 1,
+      title: "Advanced Fire Fighting & Prevention",
+      category: "fire",
+      duration: "6 weeks",
+      students: "1200+",
+      level: "Advanced",
+      description: "Comprehensive training in fire prevention, detection, and suppression techniques.",
+      image: "fire-fighting"
+    },
+    {
+      id: 2,
+      title: "Industrial Safety Management",
+      category: "industrial",
+      duration: "8 weeks",
+      students: "950+",
+      level: "Intermediate",
+      description: "Learn to manage safety protocols in industrial environments effectively.",
+      image: "industrial-safety"
+    },
+    {
+      id: 3,
+      title: "First Aid & Emergency Response",
+      category: "health",
+      duration: "4 weeks",
+      students: "1500+",
+      level: "Beginner",
+      description: "Essential first aid skills and emergency response procedures.",
+      image: "first-aid"
+    },
+    {
+      id: 4,
+      title: "Occupational Health & Safety",
+      category: "health",
+      duration: "6 weeks",
+      students: "1100+",
+      level: "Intermediate",
+      description: "Comprehensive understanding of workplace health and safety regulations.",
+      image: "occupational-health"
+    },
+    {
+      id: 5,
+      title: "Risk Assessment & Management",
+      category: "management",
+      duration: "5 weeks",
+      students: "800+",
+      level: "Advanced",
+      description: "Master the art of identifying and mitigating workplace risks.",
+      image: "risk-assessment"
+    },
+    {
+      id: 6,
+      title: "Hazardous Materials Handling",
+      category: "industrial",
+      duration: "7 weeks",
+      students: "750+",
+      level: "Advanced",
+      description: "Safe handling and disposal of hazardous materials in industrial settings.",
+      image: "hazardous-materials"
+    }
+  ];
+
+  const filteredCourses = activeCategory === 'all' 
+    ? courses 
+    : courses.filter(course => course.category === activeCategory);
+
+  return (
+    <section className="py-20 bg-gray-50">
+      <div className="container mx-auto px-4">
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Our <span className="text-purple-600">Training Programs</span>
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            Professional courses designed to equip you with industry-recognized skills
+          </p>
+          
+          {/* Category Filters */}
+          <div className="flex flex-wrap justify-center gap-3 mb-12">
+            {categories.map((category) => (
+              <motion.button
+                key={category.id}
+                className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
+                  activeCategory === category.id
+                    ? 'bg-purple-600 text-white shadow-md'
+                    : 'bg-white text-gray-700 hover:bg-gray-100'
+                }`}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setActiveCategory(category.id)}
+              >
+                {category.name}
+              </motion.button>
+            ))}
+          </div>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredCourses.map((course, index) => (
+            <motion.div
+              key={course.id}
+              className="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ y: -10 }}
+            >
+              <div className="h-48 bg-gradient-to-r from-purple-500 to-indigo-600 flex items-center justify-center">
+                <div className="text-white text-center p-4">
+                  <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4 inline-block mb-3">
+                    <Shield className="w-12 h-12 mx-auto" />
+                  </div>
+                  <h3 className="text-xl font-bold">{course.image.replace('-', ' ')}</h3>
+                </div>
+              </div>
+              
+              <div className="p-6">
+                <div className="flex justify-between items-start mb-4">
+                  <h3 className="text-xl font-bold text-gray-900">{course.title}</h3>
+                  <span className="bg-purple-100 text-purple-800 text-xs font-semibold px-2 py-1 rounded">
+                    {course.level}
+                  </span>
+                </div>
+                
+                <p className="text-gray-600 mb-6">{course.description}</p>
+                
+                <div className="flex justify-between text-sm text-gray-500 mb-6">
+                  <div className="flex items-center gap-1">
+                    <Clock className="w-4 h-4" />
+                    <span>{course.duration}</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <User className="w-4 h-4" />
+                    <span>{course.students}</span>
+                  </div>
+                </div>
+                
+                <motion.button
+                  className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-semibold py-3 rounded-lg flex items-center justify-center gap-2 transition-all"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  View Details
+                  <ArrowRight className="w-4 h-4" />
+                </motion.button>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.div
+          className="text-center mt-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
+          <motion.button
+            className="bg-white border border-purple-600 text-purple-600 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-purple-50 transition-all flex items-center gap-2 mx-auto"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            View All Courses
+            <ArrowRight className="w-4 h-4" />
+          </motion.button>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default CoursesSec;
