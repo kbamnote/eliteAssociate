@@ -68,10 +68,10 @@ const Header = () => {
 
           {/* Career Services */}
           <a
-            href="#"
+            href="/our-products"
             className="text-gray-800 font-medium hover:text-green-800 transition"
           >
-            Career Services
+            Our Products
           </a>
 
           {/* Discover Dropdown */}
