@@ -7,10 +7,11 @@ import FloatingButton from './components/common/FloatingButton';
 import LandingPage from './components/pages/landingPage/LandingPage';
 import OurProducts from './components/pages/ourProducts/OurProducts';
 import ProductsPage from './components/pages/products/ProductsPage';
-import AboutPage from './components/pages/about/AboutPage';
 import ContactPage from './components/pages/contact/ContactPage';
-import BlogPage from './components/pages/blog/BlogPage';
-import PlacementPage from './components/pages/placement/PlacementPage';
+import AboutUsPage from './components/pages/about/AboutUsPage';
+import PlacementComp from './components/pages/placement/PlacementComp';
+import GalleryComp from './components/pages/gallery/GalleryComp';
+import BlogComp from './components/pages/blog/BlogComp';
 
 const App = () => {
   const location = useLocation();
@@ -41,10 +42,12 @@ const App = () => {
               <Route path='/' element={<LandingPage />} />
               <Route path='/our-products' element={<OurProducts />} />
               <Route path='/products' element={<ProductsPage />} />
-              <Route path='/about' element={<AboutPage />} />
-              <Route path='/placement' element={<PlacementPage />} />
-              <Route path='/blog' element={<BlogPage />} />
+              <Route path='/about' element={<AboutUsPage/>} />
+              
+              <Route path='/placement' element={<PlacementComp/>} />
+              <Route path='/blog' element={<BlogComp/>} />
               <Route path='/contact' element={<ContactPage />} />
+              <Route path='/gallery' element={<GalleryComp/>} />
             </Routes>
           </motion.div>
         </AnimatePresence>

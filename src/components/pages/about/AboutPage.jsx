@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Shield, Users, Award, TrendingUp, Target, Lightbulb } from 'lucide-react';
+import { Shield, Users, Award, TrendingUp, Target, Lightbulb, Clock, Briefcase, Mail } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const AboutPage = () => {
   const stats = [
@@ -57,6 +58,27 @@ const AboutPage = () => {
       role: "Placement Director",
       bio: "Specializes in career development and industry partnerships.",
       image: "team-4"
+    }
+  ];
+
+  const subPages = [
+    {
+      icon: <Clock className="w-8 h-8" />,
+      title: "Our History",
+      description: "Explore our journey and milestones over the years.",
+      link: "/about/history"
+    },
+    {
+      icon: <Users className="w-8 h-8" />,
+      title: "Leadership",
+      description: "Meet our executive team and advisory board members.",
+      link: "/about/leadership"
+    },
+    {
+      icon: <Briefcase className="w-8 h-8" />,
+      title: "Careers",
+      description: "Join our mission to make the world safer through education.",
+      link: "/about/careers"
     }
   ];
 
@@ -164,6 +186,51 @@ const AboutPage = () => {
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{value.title}</h3>
                 <p className="text-gray-600">{value.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Subpages Section */}
+        <div className="mb-20">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Explore More About Us</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Discover different aspects of our organization
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {subPages.map((page, index) => (
+              <motion.div
+                key={index}
+                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ y: -10 }}
+              >
+                <div className="bg-purple-100 w-16 h-16 rounded-xl flex items-center justify-center text-purple-600 mb-6">
+                  {page.icon}
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{page.title}</h3>
+                <p className="text-gray-600 mb-4">{page.description}</p>
+                <Link 
+                  to={page.link}
+                  className="text-purple-700 font-semibold flex items-center gap-2 hover:text-purple-800 transition-colors"
+                >
+                  Learn more
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
               </motion.div>
             ))}
           </div>
