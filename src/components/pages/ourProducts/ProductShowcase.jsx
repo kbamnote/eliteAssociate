@@ -29,7 +29,7 @@ const ProductShowcase = () => {
       color: "from-blue-500 to-teal-500",
       bgColor: "bg-blue-100",
       textColor: "text-blue-800",
-      link: "https://www.jifsa.in",
+      link: "https://www.jifsacareers.com",
       stats: { users: "50K+", rating: "4.9/5" }
     },
     {
@@ -48,7 +48,7 @@ const ProductShowcase = () => {
       color: "from-purple-500 to-pink-500",
       bgColor: "bg-purple-100",
       textColor: "text-purple-800",
-      link: "https://www.elitejobs.com",
+      link: "https://www.eliteindiajobs.com",
       stats: { users: "2M+", rating: "4.8/5" }
     },
     {
@@ -67,7 +67,7 @@ const ProductShowcase = () => {
       color: "from-green-500 to-emerald-500",
       bgColor: "bg-green-100",
       textColor: "text-green-800",
-      link: "https://www.elitebim.com",
+      link: "https://www.elitebim.in",
       stats: { users: "15K+", rating: "4.7/5" }
     },
     {
@@ -86,7 +86,7 @@ const ProductShowcase = () => {
       color: "from-orange-500 to-red-500",
       bgColor: "bg-orange-100",
       textColor: "text-orange-800",
-      link: "https://www.elitebisf.com",
+      link: "https://www.elitebifs.in",
       stats: { users: "8K+", rating: "4.9/5" }
     },
     {
@@ -105,7 +105,7 @@ const ProductShowcase = () => {
       color: "from-indigo-500 to-purple-500",
       bgColor: "bg-indigo-100",
       textColor: "text-indigo-800",
-      link: "https://www.eeetechnologies.com",
+      link: "https://www.eeetechnologies.in",
       stats: { users: "12K+", rating: "4.8/5" }
     }
   ];
