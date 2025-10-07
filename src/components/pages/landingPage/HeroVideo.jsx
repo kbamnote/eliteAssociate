@@ -1,5 +1,5 @@
 import React from "react";
-import heroVideo from "../../../assets/Untitled video - Made with Clipchamp (8).mp4"; // 👈 update the path if needed
+import heroVideo from "../../../assets/AZm5_8IEeXnFAANsg8S6nA-AZm5_8IE2VF8dXOiFxIcow.mp4"; // 👈 update the path if needed
 
 const HeroVideo = () => {
   return (
