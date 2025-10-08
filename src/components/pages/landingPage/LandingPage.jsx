@@ -20,11 +20,13 @@ import UnwaveringCommitmentSec from "./UnwaveringCommitmentSec";
 // New modern components
 import StatsSection from "../../common/StatsSection";
 import TestimonialsSection from "../../common/TestimonialsSection";
+import AwardsSection from "./AwardsSection";
 
 const LandingPage = () => {
   return (
     <div>
       <HeroVideo />
+      <AwardsSection/>
       <HeroSec />
       <FeaturesSec />
       <StatsSection />

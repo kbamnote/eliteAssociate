@@ -48,7 +48,7 @@ const HeroSec = () => {
         ></motion.div>
       </div>
 
-      <div className="container mx-auto px-4 py-20 lg:py-32 relative z-10">
+      <div className="container mx-auto px-4 py-20 lg:py-2 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <motion.div 
