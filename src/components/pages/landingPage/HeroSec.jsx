@@ -1,9 +1,22 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Play, Users, Award, Shield } from 'lucide-react';
+import { Play, Shield, ArrowRight, CheckCircle, Star } from 'lucide-react';
+import CTAButton from '../../common/CTAButton';
+import AnimatedCounter from '../../common/AnimatedCounter';
+import ResponsiveImage from '../../common/ResponsiveImage';
+import { trackButtonClick } from '../../../utils/analytics';
 
 const HeroSec = () => {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+
+  const handleEnrollNow = () => {
+    trackButtonClick('Enroll Now', 'Hero Section');
+  };
+
+  const handleBookDemo = () => {
+    trackButtonClick('Book Free Demo', 'Hero Section');
+    setIsVideoModalOpen(true);
+  };
 
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-purple-50 via-white to-indigo-50 overflow-hidden">
@@ -49,9 +62,20 @@ const HeroSec = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
+                className="mb-4"
+              >
+                <span className="inline-flex items-center px-4 py-2 rounded-full bg-purple-100 text-purple-700 text-sm font-semibold mb-4">
+                  <Star className="w-4 h-4 mr-2" />
+                  #1 Training & Placement Institute
+                </span>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
               >
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-                  Empowering Careers in <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-indigo-700">Fire & Safety</span>
+                  Best Training & <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-indigo-700">Placement Institute</span>
                 </h1>
               </motion.div>
               <motion.p 
@@ -60,9 +84,35 @@ const HeroSec = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
               >
-                Professional training programs designed by industry experts to equip you with the skills and certifications needed for a successful career in fire and industrial safety.
+                Transform your career with our job-ready courses and 100% placement assistance. 
+                Join Elite Associate - India's top IT training institute with guaranteed career success.
               </motion.p>
             </div>
+
+            {/* Key Features */}
+            <motion.div
+              className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.35 }}
+            >
+              <div className="flex items-center gap-3">
+                <CheckCircle className="w-5 h-5 text-green-500" />
+                <span className="text-gray-700 font-medium">100% Placement Assistance</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <CheckCircle className="w-5 h-5 text-green-500" />
+                <span className="text-gray-700 font-medium">Industry Expert Trainers</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <CheckCircle className="w-5 h-5 text-green-500" />
+                <span className="text-gray-700 font-medium">Job-Ready Courses</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <CheckCircle className="w-5 h-5 text-green-500" />
+                <span className="text-gray-700 font-medium">Live Project Training</span>
+              </div>
+            </motion.div>
 
             <motion.div
               className="flex flex-col sm:flex-row gap-4"
@@ -70,26 +120,23 @@ const HeroSec = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              <motion.button 
-                className="bg-gradient-to-r from-purple-700 to-purple-800 hover:from-purple-800 hover:to-purple-900 text-white px-8 py-4 rounded-full text-lg font-semibold flex items-center gap-2 transition-all transform hover:scale-105 shadow-lg"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+              <CTAButton 
+                variant="primary" 
+                size="large"
+                icon={<ArrowRight className="w-5 h-5" />}
+                onClick={handleEnrollNow}
               >
-                Explore Courses
-                <span className="text-2xl">→</span>
-              </motion.button>
+                Enroll Now
+              </CTAButton>
               
-              <motion.button 
-                className="flex items-center gap-3 bg-white hover:bg-gray-100 px-8 py-4 rounded-full text-lg font-semibold text-gray-900 transition-all shadow-lg border border-gray-200"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setIsVideoModalOpen(true)}
+              <CTAButton 
+                variant="secondary" 
+                size="large"
+                icon={<Play className="w-5 h-5" />}
+                onClick={handleBookDemo}
               >
-                <div className="bg-purple-100 p-2 rounded-full">
-                  <Play className="w-5 h-5 text-purple-700 ml-1" />
-                </div>
-                Watch Demo
-              </motion.button>
+                Book Free Demo
+              </CTAButton>
             </motion.div>
 
             {/* Stats Grid */}
@@ -99,50 +146,22 @@ const HeroSec = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.5 }}
             >
-              <motion.div
-                className="text-center"
-                whileHover={{ y: -10 }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className="flex justify-center mb-3">
-                  <Users className="w-8 h-8 text-purple-600" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900">5000+</h3>
-                <p className="text-gray-600 text-sm">Students Trained</p>
-              </motion.div>
-              <motion.div
-                className="text-center"
-                whileHover={{ y: -10 }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className="flex justify-center mb-3">
-                  <Award className="w-8 h-8 text-purple-600" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900">95%</h3>
-                <p className="text-gray-600 text-sm">Placement Rate</p>
-              </motion.div>
-              <motion.div
-                className="text-center"
-                whileHover={{ y: -10 }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className="flex justify-center mb-3">
-                  <Shield className="w-8 h-8 text-purple-600" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900">50+</h3>
-                <p className="text-gray-600 text-sm">Partner Companies</p>
-              </motion.div>
-              <motion.div
-                className="text-center"
-                whileHover={{ y: -10 }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className="flex justify-center mb-3">
-                  <Award className="w-8 h-8 text-purple-600" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900">15+</h3>
-                <p className="text-gray-600 text-sm">Years Experience</p>
-              </motion.div>
+              <div className="text-center">
+                <AnimatedCounter end={5000} suffix="+" className="mb-2" />
+                <p className="text-sm text-gray-600 font-medium">Students Placed</p>
+              </div>
+              <div className="text-center">
+                <AnimatedCounter end={500} suffix="+" className="mb-2" delay={200} />
+                <p className="text-sm text-gray-600 font-medium">Partner Companies</p>
+              </div>
+              <div className="text-center">
+                <AnimatedCounter end={98} suffix="%" className="mb-2" delay={400} />
+                <p className="text-sm text-gray-600 font-medium">Success Rate</p>
+              </div>
+              <div className="text-center">
+                <AnimatedCounter end={15} suffix="+" className="mb-2" delay={600} />
+                <p className="text-sm text-gray-600 font-medium">Years Experience</p>
+              </div>
             </motion.div>
           </motion.div>
 
@@ -154,15 +173,23 @@ const HeroSec = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-              <div className="bg-gradient-to-br from-purple-500 to-indigo-600 aspect-video rounded-3xl flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 inline-block">
-                    <Shield className="w-24 h-24 text-white mx-auto" />
+              <ResponsiveImage
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
+                alt="Training and Placement - Students learning technology skills"
+                className="w-full h-auto aspect-video rounded-3xl object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                placeholder={
+                  <div className="bg-gradient-to-br from-purple-500 to-indigo-600 aspect-video rounded-3xl flex items-center justify-center">
+                    <div className="text-center p-8">
+                      <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 inline-block">
+                        <Shield className="w-24 h-24 text-white mx-auto" />
+                      </div>
+                      <h3 className="text-2xl font-bold text-white mt-6">Training & Placement</h3>
+                      <p className="text-purple-100 mt-2">Professional IT Courses</p>
+                    </div>
                   </div>
-                  <h3 className="text-2xl font-bold text-white mt-6">Fire & Safety Training</h3>
-                  <p className="text-purple-100 mt-2">Professional Certification Programs</p>
-                </div>
-              </div>
+                }
+              />
             </div>
           </motion.div>
         </div>

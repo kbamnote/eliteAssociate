@@ -17,20 +17,26 @@ import PricingSec from "./PricingSec";
 import TestimonalSec from "./TestimonalSec";
 import UnwaveringCommitmentSec from "./UnwaveringCommitmentSec";
 
+// New modern components
+import StatsSection from "../../common/StatsSection";
+import TestimonialsSection from "../../common/TestimonialsSection";
+import ChatBot from "../../common/ChatBot";
+
 const LandingPage = () => {
   return (
     <div>
       <HeroVideo />
       <HeroSec />
       <FeaturesSec />
+      <StatsSection />
       <CoursesSec />
       <TrainersSec />
-
+      <TestimonialsSection />
       <TestimonialsSec />
-
       <PlacementStatsSec />
-
+      <CompaniesSec />
       <FAQSec />
+      <ChatBot />
     </div>
   );
 };

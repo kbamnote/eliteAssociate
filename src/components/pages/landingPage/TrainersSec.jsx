@@ -10,7 +10,7 @@ const TrainersSec = () => {
       role: "Chief Fire Safety Instructor",
       experience: "20+ years",
       bio: "Former fire chief with extensive experience in industrial fire safety protocols.",
-      image: "trainer-1"
+      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80"
     },
     {
       id: 2,
@@ -18,7 +18,7 @@ const TrainersSec = () => {
       role: "Industrial Safety Specialist",
       experience: "15+ years",
       bio: "Certified safety professional with expertise in hazard assessment and risk management.",
-      image: "trainer-2"
+      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80"
     },
     {
       id: 3,
@@ -26,7 +26,7 @@ const TrainersSec = () => {
       role: "Emergency Response Expert",
       experience: "18+ years",
       bio: "Specializes in emergency preparedness and crisis management for industrial facilities.",
-      image: "trainer-3"
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80"
     },
     {
       id: 4,
@@ -34,7 +34,7 @@ const TrainersSec = () => {
       role: "Occupational Health Specialist",
       experience: "12+ years",
       bio: "Expert in workplace health regulations and employee wellness programs.",
-      image: "trainer-4"
+      image: "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?auto=format&fit=crop&w=800&q=80"
     }
   ];
 
@@ -67,13 +67,13 @@ const TrainersSec = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -10 }}
             >
-              <div className="h-64 bg-gradient-to-r from-purple-500 to-indigo-600 flex items-center justify-center">
-                <div className="text-white text-center">
-                  <div className="bg-white/20 backdrop-blur-sm rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-4">
-                    <Users className="w-12 h-12" />
-                  </div>
-                  <h3 className="text-xl font-bold">{trainer.image.replace('-', ' ')}</h3>
-                </div>
+              <div className="h-64 relative overflow-hidden">
+                <img 
+                  src={trainer.image}
+                  alt={trainer.name}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               </div>
               
               <div className="p-6">

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, BookOpen, FileText, TrendingUp, CheckCircle, Star, Zap, Users, Calendar, Eye } from 'lucide-react';
+import ResponsiveImage from '../../common/ResponsiveImage';
 
 export default function BlogHero() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -129,10 +130,14 @@ export default function BlogHero() {
                         currentSlide === index ? 'opacity-100' : 'opacity-0'
                       }`}
                     >
-                      <img
+                      <ResponsiveImage
                         src={img}
                         alt={`Blog content ${index + 1}`}
+                        width={600}
+                        height={400}
                         className="w-full h-full object-cover"
+                        quality={90}
+                        loading="eager"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-purple-900/60 via-transparent to-transparent"></div>
                     </div>

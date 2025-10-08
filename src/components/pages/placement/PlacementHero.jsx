@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Target, Building2, TrendingUp, CheckCircle, Star, Rocket, Users, Award, Briefcase } from 'lucide-react';
+import ResponsiveImage from '../../common/ResponsiveImage';
 
 export default function PlacementHero() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -129,10 +130,14 @@ export default function PlacementHero() {
                         currentSlide === index ? 'opacity-100' : 'opacity-0'
                       }`}
                     >
-                      <img
+                      <ResponsiveImage
                         src={img}
                         alt={`Placement success ${index + 1}`}
+                        width={600}
+                        height={400}
                         className="w-full h-full object-cover"
+                        quality={90}
+                        loading="eager"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-blue-900/60 via-transparent to-transparent"></div>
                     </div>

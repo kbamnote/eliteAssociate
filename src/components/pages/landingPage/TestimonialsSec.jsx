@@ -1,9 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Star, Users } from 'lucide-react';
+import { Star } from 'lucide-react';
 
 const TestimonialsSec = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => 
+        prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 5000); // Change testimonial every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
 
   const testimonials = [
     {
@@ -13,7 +23,7 @@ const TestimonialsSec = () => {
       company: "Global Manufacturing Inc.",
       content: "The Fire Safety Management course completely transformed my career. I went from an entry-level position to leading safety protocols for a Fortune 500 company within just 18 months.",
       rating: 5,
-      image: "student-1"
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop"
     },
     {
       id: 2,
@@ -22,7 +32,7 @@ const TestimonialsSec = () => {
       company: "TechSafety Solutions",
       content: "The hands-on training and real-world simulations were invaluable. I felt completely prepared for my role in industrial safety management. The instructors' expertise is unmatched.",
       rating: 5,
-      image: "student-2"
+      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&fit=crop"
     },
     {
       id: 3,
@@ -31,7 +41,7 @@ const TestimonialsSec = () => {
       company: "City Emergency Services",
       content: "Elite Associates provided me with the credentials and confidence to advance in emergency response. The placement support team helped me secure my dream job within weeks of graduation.",
       rating: 5,
-      image: "student-3"
+      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&h=200&fit=crop"
     },
     {
       id: 4,
@@ -40,21 +50,9 @@ const TestimonialsSec = () => {
       company: "HealthFirst Corporation",
       content: "The comprehensive curriculum and expert instruction gave me a deep understanding of workplace safety. I've been promoted twice since completing the program!",
       rating: 5,
-      image: "student-4"
+      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&h=200&fit=crop"
     }
   ];
-
-  const goToPrevious = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
-    );
-  };
-
-  const goToNext = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
-    );
-  };
 
   return (
     <section className="py-20 bg-gradient-to-br from-purple-50 to-indigo-50">
@@ -74,7 +72,7 @@ const TestimonialsSec = () => {
           </p>
         </motion.div>
 
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto relative">
           <div className="relative bg-white rounded-3xl shadow-xl p-8 md:p-12">
             <motion.div
               key={currentIndex}
@@ -98,8 +96,15 @@ const TestimonialsSec = () => {
               </p>
               
               <div className="flex flex-col md:flex-row items-center justify-center gap-6">
-                <div className="bg-gradient-to-r from-purple-500 to-indigo-600 w-20 h-20 rounded-full flex items-center justify-center text-white">
-                  <Users className="w-10 h-10" />
+                <div className="relative">
+                  <img 
+                    src={testimonials[currentIndex].image}
+                    alt={testimonials[currentIndex].name}
+                    className="w-20 h-20 rounded-full object-cover border-4 border-purple-100"
+                  />
+                  <div className="absolute -bottom-1 -right-1 bg-green-500 rounded-full p-1">
+                    <Star className="w-4 h-4 text-white fill-current" />
+                  </div>
                 </div>
                 
                 <div>
@@ -115,34 +120,16 @@ const TestimonialsSec = () => {
                 </div>
               </div>
             </motion.div>
-            
-            <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 flex gap-4">
-              <motion.button
-                onClick={goToPrevious}
-                className="bg-white p-3 rounded-full shadow-lg hover:bg-purple-50 transition-all"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <ChevronLeft className="w-6 h-6 text-gray-700" />
-              </motion.button>
-              <motion.button
-                onClick={goToNext}
-                className="bg-white p-3 rounded-full shadow-lg hover:bg-purple-50 transition-all"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <ChevronRight className="w-6 h-6 text-gray-700" />
-              </motion.button>
-            </div>
           </div>
-          
-          <div className="flex justify-center mt-16 gap-2">
+
+          {/* Dots Indicator */}
+          <div className="flex justify-center mt-12 gap-2">
             {testimonials.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
                 className={`w-3 h-3 rounded-full transition-all ${
-                  index === currentIndex ? 'bg-purple-600 w-8' : 'bg-gray-300'
+                  index === currentIndex ? 'bg-purple-600 w-8' : 'bg-gray-300 hover:bg-gray-400'
                 }`}
               />
             ))}

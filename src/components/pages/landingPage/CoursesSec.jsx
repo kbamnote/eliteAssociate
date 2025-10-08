@@ -14,16 +14,18 @@ const CoursesSec = () => {
   ];
 
   const courses = [
-    {
-      id: 1,
-      title: "Advanced Fire Fighting & Prevention",
-      category: "fire",
-      duration: "6 weeks",
-      students: "1200+",
-      level: "Advanced",
-      description: "Comprehensive training in fire prevention, detection, and suppression techniques.",
-      image: "fire-fighting"
-    },
+ {
+  "id": 1,
+  "title": "Advanced Fire Fighting & Prevention",
+  "category": "fire",
+  "duration": "6 weeks",
+  "students": "1200+",
+  "level": "Advanced",
+  "description": "Comprehensive training in fire prevention, detection, and suppression techniques.",
+  "image": "https://images.unsplash.com/photo-1743422854977-e6948800765e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+}
+,
+
     {
       id: 2,
       title: "Industrial Safety Management",
@@ -32,7 +34,7 @@ const CoursesSec = () => {
       students: "950+",
       level: "Intermediate",
       description: "Learn to manage safety protocols in industrial environments effectively.",
-      image: "industrial-safety"
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80"
     },
     {
       id: 3,
@@ -42,7 +44,7 @@ const CoursesSec = () => {
       students: "1500+",
       level: "Beginner",
       description: "Essential first aid skills and emergency response procedures.",
-      image: "first-aid"
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80"
     },
     {
       id: 4,
@@ -52,7 +54,7 @@ const CoursesSec = () => {
       students: "1100+",
       level: "Intermediate",
       description: "Comprehensive understanding of workplace health and safety regulations.",
-      image: "occupational-health"
+      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80"
     },
     {
       id: 5,
@@ -62,7 +64,7 @@ const CoursesSec = () => {
       students: "800+",
       level: "Advanced",
       description: "Master the art of identifying and mitigating workplace risks.",
-      image: "risk-assessment"
+      image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80"
     },
     {
       id: 6,
@@ -72,7 +74,7 @@ const CoursesSec = () => {
       students: "750+",
       level: "Advanced",
       description: "Safe handling and disposal of hazardous materials in industrial settings.",
-      image: "hazardous-materials"
+      image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=800&q=80"
     }
   ];
 
@@ -128,13 +130,13 @@ const CoursesSec = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -10 }}
             >
-              <div className="h-48 bg-gradient-to-r from-purple-500 to-indigo-600 flex items-center justify-center">
-                <div className="text-white text-center p-4">
-                  <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4 inline-block mb-3">
-                    <Shield className="w-12 h-12 mx-auto" />
-                  </div>
-                  <h3 className="text-xl font-bold">{course.image.replace('-', ' ')}</h3>
-                </div>
+              <div className="h-48 relative overflow-hidden">
+                <img 
+                  src={course.image}
+                  alt={course.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
               </div>
               
               <div className="p-6">

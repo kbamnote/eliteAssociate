@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight, X, ExternalLink } from 'lucide-react';
+import ResponsiveImage from '../../common/ResponsiveImage';
 
 const GalleryPage = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -145,10 +146,13 @@ const GalleryPage = () => {
               onClick={() => openLightbox(item, index)}
             >
               <div className="relative overflow-hidden">
-                <img
+                <ResponsiveImage
                   src={item.image}
                   alt={item.title}
                   className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
+                  width={400}
+                  height={224}
+                  quality={85}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                   <div className="p-4 text-white">
@@ -193,10 +197,14 @@ const GalleryPage = () => {
             </button>
             
             <div className="max-w-4xl w-full max-h-[90vh]">
-              <img
+              <ResponsiveImage
                 src={selectedImage.image}
                 alt={selectedImage.title}
                 className="w-full h-auto max-h-[70vh] object-contain"
+                width={800}
+                height={600}
+                quality={95}
+                loading="eager"
               />
               <div className="text-center mt-4 text-white">
                 <h3 className="text-2xl font-bold mb-2">{selectedImage.title}</h3>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X, Phone, Mail } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import ResponsiveImage from "./ResponsiveImage";
 import logo from "../../assets/Untitled design (2).png";
 
 const Header = () => {
@@ -46,13 +47,16 @@ const Header = () => {
       {/* Main Header */}
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
         {/* Logo */}
-        <Link to="/" className="flex items-center">
-          <img
-            src={logo}
-            alt="Elite Associates"
-            className="h-12 w-auto object-contain"
-          />
-        </Link>
+     <Link to="/" className="flex items-center">
+  <img
+    src={logo}
+    alt="Elite Associates"
+    className="max-h-16 md:max-h-20 w-auto object-contain"
+    style={{ display: "block" }}
+  />
+</Link>
+
+
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center space-x-6">

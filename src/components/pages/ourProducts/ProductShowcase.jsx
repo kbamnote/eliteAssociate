@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { ArrowRight, Globe, Users, Building, Zap, Code, TrendingUp, ChevronLeft, ChevronRight, Star, ExternalLink } from 'lucide-react';
+import ResponsiveImage from '../../common/ResponsiveImage';
 
 const ProductShowcase = () => {
   const [ref, inView] = useInView({
@@ -286,10 +287,13 @@ const ProductShowcase = () => {
                     className="flex-shrink-0"
                     whileHover={{ scale: 1.05 }}
                   >
-                    <img 
+                    <ResponsiveImage 
                       src={testimonials[currentTestimonial].avatar} 
                       alt={testimonials[currentTestimonial].name}
+                      width={96}
+                      height={96}
                       className="w-24 h-24 rounded-full object-cover border-4 border-teal-400"
+                      quality={85}
                     />
                   </motion.div>
                   <div className="text-center md:text-left">

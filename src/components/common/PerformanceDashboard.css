@@ -1,0 +1,382 @@
+.performance-dashboard {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.dashboard-content {
+  background: #ffffff;
+  border-radius: 12px;
+  width: 90vw;
+  max-width: 1200px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f9fafb;
+  border-radius: 12px 12px 0 0;
+}
+
+.dashboard-header h2 {
+  margin: 0;
+  color: #111827;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.dashboard-content {
+  padding: 24px;
+}
+
+.metrics-section {
+  margin-bottom: 32px;
+}
+
+.metrics-section h3 {
+  margin: 0 0 16px 0;
+  color: #111827;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Web Vitals Metrics */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.metric-card {
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  border: 2px solid;
+  transition: transform 0.2s ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-2px);
+}
+
+.metric-card.good {
+  background: #f0fdf4;
+  border-color: #22c55e;
+}
+
+.metric-card.needs-improvement {
+  background: #fffbeb;
+  border-color: #f59e0b;
+}
+
+.metric-card.poor {
+  background: #fef2f2;
+  border-color: #ef4444;
+}
+
+.metric-card.unknown {
+  background: #f8fafc;
+  border-color: #94a3b8;
+}
+
+.metric-name {
+  font-size: 14px;
+  color: #6b7280;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.metric-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.metric-grade {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.metric-card.good .metric-grade {
+  color: #16a34a;
+}
+
+.metric-card.needs-improvement .metric-grade {
+  color: #d97706;
+}
+
+.metric-card.poor .metric-grade {
+  color: #dc2626;
+}
+
+.metric-card.unknown .metric-grade {
+  color: #64748b;
+}
+
+/* Resource Metrics */
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 12px;
+}
+
+.resource-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #f8fafc;
+  border-radius: 6px;
+  border-left: 4px solid #3b82f6;
+}
+
+.resource-label {
+  font-weight: 500;
+  color: #374151;
+}
+
+.resource-value {
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Network Information */
+.network-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.network-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #f0f9ff;
+  border-radius: 6px;
+  border-left: 4px solid #0ea5e9;
+}
+
+.network-label {
+  font-weight: 500;
+  color: #374151;
+}
+
+.network-value {
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Recommendations */
+.recommendations {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.recommendation {
+  padding: 16px;
+  border-radius: 8px;
+  border-left: 4px solid;
+}
+
+.recommendation.error {
+  background: #fef2f2;
+  border-left-color: #ef4444;
+}
+
+.recommendation.warning {
+  background: #fffbeb;
+  border-left-color: #f59e0b;
+}
+
+.recommendation.info {
+  background: #f0f9ff;
+  border-left-color: #3b82f6;
+}
+
+.rec-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.rec-metric {
+  font-weight: 600;
+  color: #111827;
+}
+
+.rec-priority {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.rec-priority.high {
+  background: #fecaca;
+  color: #dc2626;
+}
+
+.rec-priority.medium {
+  background: #fed7aa;
+  color: #ea580c;
+}
+
+.rec-priority.low {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.rec-message {
+  color: #374151;
+  line-height: 1.5;
+}
+
+/* Performance Score */
+.performance-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.score-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    #ef4444 0deg,
+    #f59e0b 60deg,
+    #22c55e 80deg,
+    #22c55e 360deg
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.score-circle::before {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: white;
+  border-radius: 50%;
+}
+
+.score-value {
+  font-size: 32px;
+  font-weight: 700;
+  color: #111827;
+  z-index: 1;
+}
+
+.score-label {
+  font-weight: 600;
+  color: #374151;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .performance-dashboard {
+    padding: 16px;
+  }
+  
+  .dashboard-content {
+    width: 100%;
+    max-height: 95vh;
+  }
+  
+  .dashboard-header {
+    padding: 16px;
+  }
+  
+  .dashboard-content {
+    padding: 16px;
+  }
+  
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .resource-grid,
+  .network-info {
+    grid-template-columns: 1fr;
+  }
+  
+  .metric-card {
+    padding: 16px;
+  }
+  
+  .score-circle {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .score-circle::before {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .score-value {
+    font-size: 24px;
+  }
+}
+
+/* Scrollbar Styling */
+.dashboard-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dashboard-content::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.dashboard-content::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.dashboard-content::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

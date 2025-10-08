@@ -3,6 +3,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import ResponsiveImage from '../../common/ResponsiveImage';
 
 const commitments = [
   {
@@ -66,10 +67,13 @@ const UnwaveringCommitmentSec = () => {
                   </p>
                 </div>
                 <div className="mt-auto">
-                  <img
+                  <ResponsiveImage
                     src={item.img}
                     alt={item.title}
+                    width={400}
+                    height={160}
                     className="rounded-b-2xl object-cover w-full h-40"
+                    quality={85}
                   />
                 </div>
               </div>

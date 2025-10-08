@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Download, ArrowRight, CheckCircle } from 'lucide-react';
+import ResponsiveImage from '../../common/ResponsiveImage';
 
 const LearningSec = () => {
   const [activeCategory, setActiveCategory] = useState('Finance');
@@ -198,10 +199,13 @@ const LearningSec = () => {
             >
               {/* Card Image */}
               <div className="relative h-48 overflow-hidden">
-                <img
+                <ResponsiveImage
                   src={program.image}
                   alt={program.title}
+                  width={400}
+                  height={192}
                   className="w-full h-full object-cover"
+                  quality={85}
                 />
                 {program.institute && (
                   <div className="absolute top-4 left-4 bg-white rounded-lg px-3 py-2 shadow-md max-w-xs">

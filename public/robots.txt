@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.eliteassociate.in/sitemap.xml
+
+# Disallow crawling of admin or private areas (if any)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+
+# Allow crawling of important pages
+Allow: /
+Allow: /about
+Allow: /courses
+Allow: /placement
+Allow: /contact
+Allow: /blog
+Allow: /gallery
+
+# Crawl-delay for better server performance
+Crawl-delay: 1
