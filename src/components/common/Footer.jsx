@@ -53,8 +53,8 @@ const Footer = () => {
   ];
 
   const contactInfo = [
-    { icon: MapPin, text: "123 Safety Street, Industrial City, IC 10001" },
-    { icon: Phone, text: "+1 (555) 123-4567" },
+    { icon: MapPin, text: "1st Floor Mohota Complex, Above State Bank Of India, Katol Road, Chhaoni Rd, Nagpur, Maharashtra, 440013" },
+    { icon: Phone, text: "+91 8855885807" },
     { icon: Mail, text: "info@eliteassociates.com" }
   ];
 
