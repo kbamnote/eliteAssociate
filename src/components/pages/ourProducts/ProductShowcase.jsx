@@ -169,7 +169,7 @@ const ProductShowcase = () => {
   };
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
+    <section className="py-20 px-4 bg-gradient-to-b from-gray-50 to-white font-body">
       <div className="container mx-auto max-w-6xl">
         <motion.div
           ref={ref}
@@ -179,10 +179,10 @@ const ProductShowcase = () => {
           className="text-center mb-16"
         >
           <motion.h2 
-            className="text-3xl md:text-5xl font-bold text-gray-900 mb-4"
+            className="text-3xl md:text-5xl font-heading font-bold text-gray-900 mb-4"
             variants={itemVariants}
           >
-            Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-blue-600">Flagship</span> Products
+            Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">Flagship</span> Products
           </motion.h2>
           <motion.p 
             className="text-xl text-gray-600 max-w-3xl mx-auto mb-6"
@@ -191,7 +191,7 @@ const ProductShowcase = () => {
             Innovative solutions designed to empower businesses and professionals across various domains
           </motion.p>
           <motion.div
-            className="w-24 h-1 bg-gradient-to-r from-teal-500 to-blue-500 mx-auto rounded-full"
+            className="w-24 h-1 bg-gradient-to-r from-purple-500 to-indigo-500 mx-auto rounded-full"
             variants={itemVariants}
           ></motion.div>
         </motion.div>
@@ -216,8 +216,8 @@ const ProductShowcase = () => {
                   <div className={`w-16 h-16 rounded-xl ${product.bgColor} ${product.textColor} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                     {product.icon}
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">{product.name}</h3>
-                  <p className="text-teal-600 font-medium text-sm mb-3">{product.tagline}</p>
+                  <h3 className="text-2xl font-heading font-bold text-gray-900 mb-2">{product.name}</h3>
+                  <p className="text-purple-600 font-medium text-sm mb-3">{product.tagline}</p>
                   <p className="text-gray-600 mb-6 flex-grow">{product.description}</p>
                   
                   <div className="flex justify-between items-center mb-4">
@@ -264,14 +264,14 @@ const ProductShowcase = () => {
 
         {/* Testimonials Section */}
         <motion.div
-          className="bg-gradient-to-r from-gray-900 to-blue-900 rounded-3xl p-8 md:p-12 text-white mb-20"
+          className="bg-gradient-to-r from-gray-900 to-purple-900 rounded-3xl p-8 md:p-12 text-white mb-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
           <div className="max-w-4xl mx-auto">
-            <h3 className="text-2xl md:text-3xl font-bold text-center mb-12">What Our <span className="text-teal-400">Clients</span> Say</h3>
+            <h3 className="text-2xl md:text-3xl font-heading font-bold text-center mb-12">What Our <span className="text-purple-400">Clients</span> Say</h3>
             
             <div className="relative">
               <AnimatePresence mode="wait">
@@ -292,7 +292,7 @@ const ProductShowcase = () => {
                       alt={testimonials[currentTestimonial].name}
                       width={96}
                       height={96}
-                      className="w-24 h-24 rounded-full object-cover border-4 border-teal-400"
+                      className="w-24 h-24 rounded-full object-cover border-4 border-purple-400"
                       quality={85}
                     />
                   </motion.div>
@@ -308,7 +308,7 @@ const ProductShowcase = () => {
                     <p className="text-xl italic mb-6">"{testimonials[currentTestimonial].content}"</p>
                     <div>
                       <p className="font-bold text-lg">{testimonials[currentTestimonial].name}</p>
-                      <p className="text-teal-400">{testimonials[currentTestimonial].role}</p>
+                      <p className="text-purple-400">{testimonials[currentTestimonial].role}</p>
                       <p className="text-gray-400">{testimonials[currentTestimonial].company}</p>
                     </div>
                   </div>
@@ -341,7 +341,7 @@ const ProductShowcase = () => {
                   key={index}
                   onClick={() => setCurrentTestimonial(index)}
                   className={`w-3 h-3 rounded-full transition-all ${
-                    index === currentTestimonial ? 'bg-teal-400 w-8' : 'bg-white/30'
+                    index === currentTestimonial ? 'bg-purple-400 w-8' : 'bg-white/30'
                   }`}
                   whileHover={{ scale: 1.2 }}
                 />

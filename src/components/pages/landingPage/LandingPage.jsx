@@ -20,7 +20,6 @@ import UnwaveringCommitmentSec from "./UnwaveringCommitmentSec";
 // New modern components
 import StatsSection from "../../common/StatsSection";
 import TestimonialsSection from "../../common/TestimonialsSection";
-import ChatBot from "../../common/ChatBot";
 
 const LandingPage = () => {
   return (
@@ -36,7 +35,6 @@ const LandingPage = () => {
       <PlacementStatsSec />
       <CompaniesSec />
       <FAQSec />
-      <ChatBot />
     </div>
   );
 };

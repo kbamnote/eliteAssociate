@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { HelmetProvider } from "react-helmet-async";
 import Header from "./components/common/Header";
 import Footer from "./components/common/Footer";
 import FloatingButton from "./components/common/FloatingButton";
+import ChatBot from "./components/common/ChatBot";
 import PerformanceMonitor from "./components/common/PerformanceMonitor";
 import PerformanceDashboard from "./components/common/PerformanceDashboard";
 import LandingPage from "./components/pages/landingPage/LandingPage";
@@ -15,12 +16,22 @@ import PlacementComp from "./components/pages/placement/PlacementComp";
 import GalleryComp from "./components/pages/gallery/GalleryComp";
 import BlogComp from "./components/pages/blog/BlogComp";
 
+// 🧭 ScrollToTop component
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
+
 function App() {
   const [showPerformanceMonitor, setShowPerformanceMonitor] = useState(false);
   const [showPerformanceDashboard, setShowPerformanceDashboard] = useState(false);
 
-  // Add keyboard shortcut to toggle performance monitor (Ctrl+Shift+P)
-  // Add keyboard shortcut to toggle performance dashboard (Ctrl+Shift+D)
+  // Keyboard shortcut for Performance Monitor & Dashboard
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.ctrlKey && event.shiftKey && event.key === 'P') {
@@ -36,10 +47,14 @@ function App() {
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
+
   return (
     <HelmetProvider>
       <div className="App">
+        {/* 🧭 Add ScrollToTop above Header */}
+        <ScrollToTop />
         <Header />
+
         <AnimatePresence mode="wait">
           <Routes>
             <Route
@@ -142,16 +157,18 @@ function App() {
             />
           </Routes>
         </AnimatePresence>
+
         <Footer />
         <FloatingButton />
-        
-        {/* Performance Monitor - Toggle with Ctrl+Shift+P */}
+        <ChatBot />
+
+        {/* Performance Monitor - Ctrl+Shift+P */}
         <PerformanceMonitor 
           isVisible={showPerformanceMonitor}
           onClose={() => setShowPerformanceMonitor(false)}
         />
-        
-        {/* Performance Dashboard - Toggle with Ctrl+Shift+D */}
+
+        {/* Performance Dashboard - Ctrl+Shift+D */}
         <PerformanceDashboard 
           isVisible={showPerformanceDashboard}
           onClose={() => setShowPerformanceDashboard(false)}

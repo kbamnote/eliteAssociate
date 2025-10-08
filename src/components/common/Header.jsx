@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X, Phone, Mail } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
-import ResponsiveImage from "./ResponsiveImage";
 import logo from "../../assets/Untitled design (2).png";
 
 const Header = () => {
@@ -31,11 +30,11 @@ const Header = () => {
           <div className="flex items-center gap-4 mb-2 md:mb-0">
             <span className="flex items-center gap-1">
               <Phone size={14} />
-              <span>+1 (555) 123-4567</span>
+              <span>+91 8855885807</span>
             </span>
             <span className="flex items-center gap-1">
               <Mail size={14} />
-              <span>info@eliteassociates.com</span>
+              <span>info@eliteassociates.in</span>
             </span>
           </div>
           <button className="bg-white text-purple-700 px-4 py-1 rounded-full font-medium hover:bg-gray-100 transition">
@@ -51,7 +50,7 @@ const Header = () => {
   <img
     src={logo}
     alt="Elite Associates"
-    className="max-h-16 md:max-h-20 w-auto object-contain"
+    className="max-h-16 md:max-h-14 w-auto object-contain"
     style={{ display: "block" }}
   />
 </Link>
@@ -71,7 +70,7 @@ const Header = () => {
             <Link
               key={item.path}
               to={item.path}
-              className={`px-5 py-2 rounded-full font-medium transition ${
+              className={`px-5 py-2 rounded-full text-md transition ${
                 isActive(item.path)
                   ? "bg-gradient-to-r from-purple-700 to-purple-800 text-white"
                   : "text-gray-800 hover:bg-gray-200"
@@ -112,7 +111,7 @@ const Header = () => {
                 key={item.path}
                 to={item.path}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`block w-full py-2 px-4 rounded-lg font-medium text-left ${
+                className={`block w-full py-2 px-4 rounded-lg text-left ${
                   isActive(item.path)
                     ? "bg-gradient-to-r from-purple-700 to-purple-800 text-white"
                     : "bg-gray-100 text-gray-800 hover:bg-gray-200"
