@@ -30,7 +30,7 @@ const AwardVideo = () => {
 
         {/* Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          {/* Left: Video */}
+          {/* Left: Portrait Video */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -38,7 +38,7 @@ const AwardVideo = () => {
             transition={{ duration: 0.6 }}
             className="flex justify-center"
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-lg border border-gray-200 max-w-[500px] w-full aspect-video">
+            <div className="relative rounded-2xl overflow-hidden shadow-lg border border-gray-200 max-w-[300px] w-full aspect-[9/16]">
               <video
                 src={awardVideo}
                 className="w-full h-full object-cover"
@@ -81,7 +81,6 @@ const AwardVideo = () => {
                   </li>
                 ))}
               </ul>
-            
             </div>
           </motion.div>
         </div>
