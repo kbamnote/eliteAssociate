@@ -7,6 +7,7 @@ import TestimonialsSec from "./TestimonialsSec";
 import PlacementStatsSec from "./PlacementStatsSec";
 import FAQSec from "./FAQSec";
 import HeroVideo from "./HeroVideo";
+import AwardVideo from "./AwardVideo";
 // Adding the remaining components
 import CompaniesSec from "./CompaniesSec";
 import LearningSec from "./LearningSec";
@@ -29,6 +30,7 @@ const LandingPage = () => {
       <AwardsSection/>
       <HeroSec />
       <FeaturesSec />
+       <AwardVideo />
       <StatsSection />
       <CoursesSec />
       <TrainersSec />
