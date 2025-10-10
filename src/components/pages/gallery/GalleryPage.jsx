@@ -1,73 +1,80 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronLeft, ChevronRight, X, ExternalLink } from 'lucide-react';
+import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import ResponsiveImage from '../../common/ResponsiveImage';
+// Real image assets
+import trainingOne from '../../../assets/trainingOne.jpeg';
+import trainingThree from '../../../assets/training3.jpeg';
+import trainingFour from '../../../assets/trainingFour.jpeg';
+import trainingSix from '../../../assets/trainingSix.jpeg';
+import directorOne from '../../../assets/directorOne.jpeg';
+import directorTwo from '../../../assets/directorTwo.jpeg';
+import directorThree from '../../../assets/directorThree.jpeg';
+import directorFour from '../../../assets/directorFour.jpeg';
+import directorFive from '../../../assets/directorFive.jpeg';
+import directorSix from '../../../assets/directorSix.jpeg';
+import teamOne from '../../../assets/teamOne.jpeg';
+import teamTwo from '../../../assets/teamTwo.jpeg';
+import teamFive from '../../../assets/teamFive.jpeg';
+import teamSix from '../../../assets/teamSix.jpeg';
+import teamSeven from '../../../assets/teamSeven.jpeg';
+import officeTwo from '../../../assets/officeTwo.jpeg';
+import officeThree from '../../../assets/officeThree.jpeg';
+import officeFour from '../../../assets/officeFour.jpeg';
+import officeTen from '../../../assets/officeTen.jpeg';
+import awardOne from '../../../assets/awardOne.jpeg';
+import awardTwo from '../../../assets/awardTwo.jpeg';
+import awardThree from '../../../assets/awardThree.jpeg';
+import awardFour from '../../../assets/awardFour.jpeg';
+import awardFive from '../../../assets/awardFive.jpeg';
+import awardSix from '../../../assets/awardSix.jpeg';
+import awardSeven from '../../../assets/awardSeven.jpeg';
 
 const GalleryPage = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Sample gallery data - in a real app, this would come from an API or CMS
+  // Real gallery data using local assets
   const galleryItems = [
-    {
-      id: 1,
-      title: "Fire Safety Training Session",
-      category: "Training",
-      image: "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?auto=format&fit=crop&w=800&h=600",
-      description: "Hands-on fire extinguisher training for new recruits"
-    },
-    {
-      id: 2,
-      title: "Industrial Safety Workshop",
-      category: "Workshop",
-      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&h=600",
-      description: "Advanced industrial safety protocols workshop"
-    },
-    {
-      id: 3,
-      title: "Emergency Response Drill",
-      category: "Drill",
-      image: "https://images.unsplash.com/photo-1588776813677-78b3e9d2e5b7?auto=format&fit=crop&w=800&h=600",
-      description: "Annual emergency response drill with local fire department"
-    },
-    {
-      id: 4,
-      title: "Safety Equipment Showcase",
-      category: "Equipment",
-      image: "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?auto=format&fit=crop&w=800&h=600",
-      description: "Latest safety equipment on display at our facility"
-    },
-    {
-      id: 5,
-      title: "Graduation Ceremony",
-      category: "Event",
-      image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&h=600",
-      description: "Congratulations to our latest batch of certified professionals"
-    },
-    {
-      id: 6,
-      title: "Instructor Training",
-      category: "Training",
-      image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&h=600",
-      description: "Our instructors receiving advanced training certification"
-    },
-    {
-      id: 7,
-      title: "Safety Seminar",
-      category: "Seminar",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&h=600",
-      description: "Industry experts sharing insights on workplace safety"
-    },
-    {
-      id: 8,
-      title: "Practical Assessment",
-      category: "Assessment",
-      image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&h=600",
-      description: "Students demonstrating their practical skills"
-    }
+    // Training
+    { id: 1, title: 'Fire Safety Training - Session 1', category: 'Training', image: trainingOne, description: 'Hands-on fire safety and extinguisher handling.' },
+    { id: 2, title: 'Fire Safety Training - Session 3', category: 'Training', image: trainingThree, description: 'Advanced training and emergency preparedness.' },
+    { id: 3, title: 'Fire Safety Training - Session 4', category: 'Training', image: trainingFour, description: 'Practical drills and evacuation procedures.' },
+    { id: 4, title: 'Fire Safety Training - Session 6', category: 'Training', image: trainingSix, description: 'Team-based training and safety audits.' },
+
+    // Directors
+    { id: 5, title: 'Director - Portrait 1', category: 'Directors', image: directorOne, description: 'Leadership and guidance at Elite Associate.' },
+    { id: 6, title: 'Director - Portrait 2', category: 'Directors', image: directorTwo, description: 'Visionary leadership and strategy.' },
+    { id: 7, title: 'Director - Portrait 3', category: 'Directors', image: directorThree, description: 'Driving excellence across departments.' },
+    { id: 8, title: 'Director - Portrait 4', category: 'Directors', image: directorFour, description: 'Committed to quality and innovation.' },
+    { id: 9, title: 'Director - Portrait 5', category: 'Directors', image: directorFive, description: 'Mentorship and organizational growth.' },
+    { id: 15, title: 'Director - Portrait 6', category: 'Directors', image: directorSix, description: 'Leadership and operational excellence.' },
+
+    // Team
+    { id: 10, title: 'Team - Group Photo 1', category: 'Team', image: teamOne, description: 'Our dedicated team at work.' },
+    { id: 11, title: 'Team - Group Photo 2', category: 'Team', image: teamTwo, description: 'Collaboration and teamwork in action.' },
+    { id: 12, title: 'Team - Group Photo 5', category: 'Team', image: teamFive, description: 'Celebrating milestones together.' },
+    { id: 13, title: 'Team - Group Photo 6', category: 'Team', image: teamSix, description: 'Committed to safety and excellence.' },
+    { id: 14, title: 'Team - Group Photo 7', category: 'Team', image: teamSeven, description: 'Building a culture of success.' },
+
+    // Office
+   
+    { id: 16, title: 'Office - Workspace 2', category: 'Office', image: officeTwo, description: 'Modern workspace and facilities.' },
+    { id: 17, title: 'Office - Workspace 3', category: 'Office', image: officeThree, description: 'Collaborative environment and meeting spaces.' },
+    { id: 18, title: 'Office - Lounge Area', category: 'Office', image: officeFour, description: 'Comfortable lounge for brainstorming.' },
+    { id: 19, title: 'Office - Conference 10', category: 'Office', image: officeTen, description: 'Conference room prepared for events.' },
+    
+    // Awards
+    { id: 20, title: 'Award - One', category: 'Awards', image: awardOne, description: 'Celebrating achievements and recognitions.' },
+    { id: 21, title: 'Award - Two', category: 'Awards', image: awardTwo, description: 'Honoring excellence in performance.' },
+    { id: 22, title: 'Award - Three', category: 'Awards', image: awardThree, description: 'Recognition of outstanding contributions.' },
+    { id: 23, title: 'Award - Four', category: 'Awards', image: awardFour, description: 'Celebrating milestones and success.' },
+    { id: 24, title: 'Award - Five', category: 'Awards', image: awardFive, description: 'Acknowledging team achievements.' },
+    { id: 25, title: 'Award - Six', category: 'Awards', image: awardSix, description: 'Distinction for innovation and quality.' },
+    { id: 26, title: 'Award - Seven', category: 'Awards', image: awardSeven, description: 'Proud moments and honors.' },
   ];
 
-  const categories = ["All", "Training", "Workshop", "Drill", "Equipment", "Event", "Seminar", "Assessment"];
+  const categories = ["All", "Training", "Directors", "Team", "Office", "Awards"];
   const [activeCategory, setActiveCategory] = useState("All");
 
   const filteredItems = activeCategory === "All" 
