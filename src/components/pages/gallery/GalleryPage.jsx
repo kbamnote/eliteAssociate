@@ -193,47 +193,48 @@ const GalleryPage = () => {
 
         {/* Lightbox */}
         {selectedImage && (
-          <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
-            <button
-              className="absolute top-6 right-6 text-white hover:text-gray-300 transition-colors"
-              onClick={closeLightbox}
-            >
-              <X size={32} />
-            </button>
-            
-            <button
-              className="absolute left-6 text-white hover:text-gray-300 transition-colors"
-              onClick={goToPrevious}
-            >
-              <ChevronLeft size={32} />
-            </button>
-            
-            <button
-              className="absolute right-6 text-white hover:text-gray-300 transition-colors"
-              onClick={goToNext}
-            >
-              <ChevronRight size={32} />
-            </button>
-            
-            <div className="max-w-4xl w-full max-h-[90vh]">
-              <ResponsiveImage
-                src={selectedImage.image}
-                alt={selectedImage.title}
-                className="w-full h-auto max-h-[70vh] object-contain"
-                width={800}
-                height={600}
-                quality={95}
-                loading="eager"
-              />
-              <div className="text-center mt-4 text-white">
-                <h3 className="text-2xl font-bold mb-2">{selectedImage.title}</h3>
-                <p className="text-gray-300 mb-1">{selectedImage.description}</p>
-                <span className="inline-block bg-purple-700 text-white text-sm font-bold px-3 py-1 rounded-full">
-                  {selectedImage.category}
-                </span>
-              </div>
-            </div>
-          </div>
+       <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
+  <button
+    className="absolute top-6 right-6 text-white hover:text-gray-300 transition-colors"
+    onClick={closeLightbox}
+  >
+    <X size={32} />
+  </button>
+
+  <button
+    className="absolute left-6 text-white hover:text-gray-300 transition-colors"
+    onClick={goToPrevious}
+  >
+    <ChevronLeft size={32} />
+  </button>
+
+  <button
+    className="absolute right-6 text-white hover:text-gray-300 transition-colors"
+    onClick={goToNext}
+  >
+    <ChevronRight size={32} />
+  </button>
+
+  <div className="max-w-5xl w-auto max-h-[85vh] flex flex-col items-center">
+    <ResponsiveImage
+      src={selectedImage.image}
+      alt={selectedImage.title}
+      className="max-w-full max-h-[80vh] object-contain mx-auto rounded-lg"
+      width={800}
+      height={600}
+      quality={95}
+      loading="eager"
+    />
+    <div className="text-center mt-4 text-white">
+      <h3 className="text-2xl font-bold mb-2">{selectedImage.title}</h3>
+      <p className="text-gray-300 mb-1">{selectedImage.description}</p>
+      <span className="inline-block bg-purple-700 text-white text-sm font-bold px-3 py-1 rounded-full">
+        {selectedImage.category}
+      </span>
+    </div>
+  </div>
+</div>
+
         )}
       </div>
     </div>
