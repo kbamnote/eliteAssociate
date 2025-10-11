@@ -29,6 +29,11 @@ import awardFour from '../../../assets/awardFour.jpeg';
 import awardFive from '../../../assets/awardFive.jpeg';
 import awardSix from '../../../assets/awardSix.jpeg';
 import awardSeven from '../../../assets/awardSeven.jpeg';
+import liveSessionOne from '../../../assets/liveSession (1).jpeg';
+import liveSessionTwo from '../../../assets/liveSession (2).jpeg';
+import liveSessionThree from '../../../assets/liveSession (3).jpeg';
+import liveSessionFour from '../../../assets/liveSession (4).jpeg';
+import liveSessionFive from '../../../assets/liveSession (5).jpeg';
 
 const GalleryPage = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -72,9 +77,16 @@ const GalleryPage = () => {
     { id: 24, title: 'Award - Five', category: 'Awards', image: awardFive, description: 'Acknowledging team achievements.' },
     { id: 25, title: 'Award - Six', category: 'Awards', image: awardSix, description: 'Distinction for innovation and quality.' },
     { id: 26, title: 'Award - Seven', category: 'Awards', image: awardSeven, description: 'Proud moments and honors.' },
+    
+    // Live Sessions
+    { id: 27, title: 'Live Session - Interactive Training 1', category: 'Live Sessions', image: liveSessionOne, description: 'Interactive live training session with participants.' },
+    { id: 28, title: 'Live Session - Workshop 2', category: 'Live Sessions', image: liveSessionTwo, description: 'Engaging workshop with real-time demonstrations.' },
+    { id: 29, title: 'Live Session - Q&A Session 3', category: 'Live Sessions', image: liveSessionThree, description: 'Live Q&A session with industry experts.' },
+    { id: 30, title: 'Live Session - Practical Demo 4', category: 'Live Sessions', image: liveSessionFour, description: 'Hands-on practical demonstration session.' },
+    { id: 31, title: 'Live Session - Group Discussion 5', category: 'Live Sessions', image: liveSessionFive, description: 'Collaborative group discussion and learning.' },
   ];
 
-  const categories = ["All", "Training", "Directors", "Team", "Office", "Awards"];
+  const categories = ["All", "Training", "Directors", "Team", "Office", "Awards", "Live Sessions"];
   const [activeCategory, setActiveCategory] = useState("All");
 
   const filteredItems = activeCategory === "All" 

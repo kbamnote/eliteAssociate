@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import HeroSec from "./HeroSec";
 import FeaturesSec from "./FeaturesSec";
 import CoursesSec from "./CoursesSec";
@@ -22,11 +22,43 @@ import UnwaveringCommitmentSec from "./UnwaveringCommitmentSec";
 import StatsSection from "../../common/StatsSection";
 import TestimonialsSection from "../../common/TestimonialsSection";
 import AwardsSection from "./AwardsSection";
+import ContactFormPopup from "../../common/ContactFormPopup";
 
 const LandingPage = () => {
+  const [showPopup, setShowPopup] = useState(false);
+  const [hasTriggeredPopup, setHasTriggeredPopup] = useState(false);
+  const heroVideoRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (hasTriggeredPopup) return;
+
+      const heroVideoElement = heroVideoRef.current;
+      if (heroVideoElement) {
+        const rect = heroVideoElement.getBoundingClientRect();
+        const heroVideoBottom = rect.bottom;
+        
+        // Trigger popup when user scrolls past the HeroVideo section
+        if (heroVideoBottom < 0) {
+          setShowPopup(true);
+          setHasTriggeredPopup(true);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [hasTriggeredPopup]);
+
+  const handleClosePopup = () => {
+    setShowPopup(false);
+  };
+
   return (
     <div>
-      <HeroVideo />
+      <div ref={heroVideoRef}>
+        <HeroVideo />
+      </div>
       <AwardsSection/>
       <HeroSec />
       <FeaturesSec />
@@ -39,6 +71,13 @@ const LandingPage = () => {
       <PlacementStatsSec />
       <CompaniesSec />
       <FAQSec />
+      
+      {/* Contact Form Popup */}
+      <ContactFormPopup 
+        isOpen={showPopup} 
+        onClose={handleClosePopup}
+        title="Ready to Transform Your Career?"
+      />
     </div>
   );
 };

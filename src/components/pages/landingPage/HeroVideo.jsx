@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import ResponsiveVideo from "../../common/ResponsiveVideo";
 import CTAButton from "../../common/CTAButton";
+import ContactFormPopup from "../../common/ContactFormPopup";
 import { trackButtonClick } from "../../../utils/analytics";
 import heroVideo from "../../../assets/AZm5_8IEeXnFAANsg8S6nA-AZm5_8IE2VF8dXOiFxIcow.mp4"; // 👈 update the path if needed
 
 const HeroVideo = () => {
+  const [showPopup, setShowPopup] = useState(false);
+
   const handleStartJourney = () => {
     trackButtonClick('Start Your Journey', 'Hero Video Section');
-    // Add navigation logic here
+    setShowPopup(true);
+  };
+
+  const handleClosePopup = () => {
+    setShowPopup(false);
   };
 
   return (
@@ -68,6 +75,13 @@ const HeroVideo = () => {
           </motion.div>
         </motion.div>
       </div>
+
+      {/* Contact Form Popup */}
+      <ContactFormPopup 
+        isOpen={showPopup} 
+        onClose={handleClosePopup}
+        title="Start Your Journey Today!"
+      />
     </section>
   );
 };
