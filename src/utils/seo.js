@@ -129,10 +129,15 @@ export const updateCanonical = (url) => {
  * @param {object} data - Structured data object
  */
 export const addStructuredData = (data) => {
+  if (typeof document === 'undefined') return; // SSR safety check
+  
   const script = document.createElement('script');
   script.type = 'application/ld+json';
   script.textContent = JSON.stringify(data);
-  document.head.appendChild(script);
+  
+  if (document.head) {
+    document.head.appendChild(script);
+  }
 };
 
 /**

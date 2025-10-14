@@ -15,11 +15,17 @@ const OurProducts = () => {
     window.scrollTo(0, 0);
     
     // Add a class to body for specific styling if needed
-    document.body.classList.add('products-page');
+    const bodyClassList = typeof document !== 'undefined' && document.body && document.body.classList;
+    if (bodyClassList && typeof bodyClassList.add === 'function') {
+      bodyClassList.add('products-page');
+    }
     
     // Cleanup function
     return () => {
-      document.body.classList.remove('products-page');
+      const removeClassList = typeof document !== 'undefined' && document.body && document.body.classList;
+      if (removeClassList && typeof removeClassList.remove === 'function') {
+        removeClassList.remove('products-page');
+      }
     };
   }, []);
 

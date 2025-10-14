@@ -2,10 +2,14 @@ import React, { useState, useEffect } from "react";
 import { Menu, X, Phone, Mail } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../../assets/Untitled design (2).png";
+import ContactFormPopup from "./ContactFormPopup";
+import { trackButtonClick } from "../../utils/analytics";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isContactOpen, setIsContactOpen] = useState(false);
+  const [popupTitle, setPopupTitle] = useState("Get Started Today!");
   const location = useLocation();
 
   useEffect(() => {
@@ -18,7 +22,18 @@ const Header = () => {
 
   const isActive = (path) => location.pathname === path;
 
+  const openContact = (title, trackingName) => {
+    if (trackingName) {
+      trackButtonClick(trackingName, "Header");
+    }
+    setPopupTitle(title || "Get Started Today!");
+    setIsContactOpen(true);
+  };
+
+  const closeContact = () => setIsContactOpen(false);
+
   return (
+    <>
     <header
       className={`w-full sticky top-0 z-50 transition-all duration-300 ${
         scrolled ? "bg-white shadow-lg" : "bg-white"
@@ -37,7 +52,10 @@ const Header = () => {
               <span>info@eliteassociates.in</span>
             </span>
           </div>
-          <button className="bg-white text-purple-700 px-4 py-1 rounded-full font-medium hover:bg-gray-100 transition">
+          <button
+            onClick={() => openContact("Apply Now", "Apply Now")}
+            className="bg-white text-purple-700 px-4 py-1 rounded-full font-medium hover:bg-gray-100 transition"
+          >
             Apply Now
           </button>
         </div>
@@ -83,7 +101,10 @@ const Header = () => {
 
         {/* Actions */}
         <div className="flex items-center gap-4">
-          <button className="hidden lg:block bg-gradient-to-r from-purple-600 to-purple-700 text-white px-5 py-2 rounded-full font-medium hover:from-purple-700 hover:to-purple-800 transition">
+          <button
+            onClick={() => openContact("Request a Callback", "Get a Callback")}
+            className="hidden lg:block bg-gradient-to-r from-purple-600 to-purple-700 text-white px-5 py-2 rounded-full font-medium hover:from-purple-700 hover:to-purple-800 transition"
+          >
             Get a Callback
           </button>
           <button
@@ -133,6 +154,8 @@ const Header = () => {
         </div>
       )}
     </header>
+    <ContactFormPopup isOpen={isContactOpen} onClose={closeContact} title={popupTitle} />
+    </>
   );
 };
 

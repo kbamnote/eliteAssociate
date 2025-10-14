@@ -41,7 +41,9 @@ export const useMetaDescription = (description) => {
     if (!metaDescription) {
       metaDescription = document.createElement('meta');
       metaDescription.name = 'description';
-      document.head.appendChild(metaDescription);
+      if (document.head) {
+        document.head.appendChild(metaDescription);
+      }
     }
     
     metaDescription.content = description;

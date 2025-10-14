@@ -29,16 +29,29 @@ const BlogPage = () => {
       title: "How to Crack Technical Interviews at Top Companies",
       excerpt: "Essential tips and strategies to ace your technical interviews at FAANG and other top tech companies.",
       content: "Technical interviews can be challenging, but with the right preparation and mindset, you can succeed...",
-      author: "Placement Team",
+      author: "Interview Expert",
       date: "2024-01-10",
       readTime: "8 min read",
       category: "Interview",
       tags: ["Interview", "Career", "Tips"],
       image: "/api/placeholder/600/300",
-      featured: false
+      featured: true
     },
     {
       id: 3,
+      title: "Building Scalable Web Applications with React",
+      excerpt: "Learn best practices for developing scalable and maintainable React applications for enterprise-level projects.",
+      content: "React has become the go-to library for building modern web applications...",
+      author: "Development Team",
+      date: "2024-01-05",
+      readTime: "10 min read",
+      category: "Development",
+      tags: ["React", "Development", "Web"],
+      image: "/api/placeholder/600/300",
+      featured: false
+    },
+    {
+      id: 7,
       title: "Full Stack Development: Complete Roadmap for Beginners",
       excerpt: "A comprehensive guide to becoming a full stack developer from scratch with practical projects and resources.",
       content: "Full stack development is one of the most sought-after skills in the tech industry today...",
@@ -53,54 +66,68 @@ const BlogPage = () => {
     {
       id: 4,
       title: "Data Science Career Path: Skills and Opportunities",
-      excerpt: "Best practices for developing and implementing effective emergency response procedures in manufacturing environments.",
-      category: "safety-tips",
-      author: "Emma Rodriguez",
-      date: "Sep 20, 2025",
+      excerpt: "Explore the exciting world of data science with comprehensive career guidance and skill development roadmap.",
+      content: "Data science is one of the most promising career paths in today's technology-driven world...",
+      author: "Data Science Team",
+      date: "2024-01-01",
       readTime: "7 min read",
-      image: "emergency-planning"
+      category: "Data Science",
+      tags: ["Data Science", "Career", "Analytics"],
+      image: "/api/placeholder/600/300",
+      featured: false
     },
     {
       id: 5,
-      title: "Industry Trends: Safety Technology in 2025",
-      excerpt: "Explore the latest technological advancements transforming workplace safety and risk management.",
-      category: "industry-news",
-      author: "Dr. Robert Johnson",
-      date: "Sep 15, 2025",
+      title: "DevOps Best Practices for Modern Development",
+      excerpt: "Learn essential DevOps practices that streamline development workflows and improve deployment efficiency.",
+      content: "DevOps has revolutionized how we develop, deploy, and maintain software applications...",
+      author: "DevOps Team",
+      date: "2023-12-28",
       readTime: "6 min read",
-      image: "safety-technology"
+      category: "DevOps",
+      tags: ["DevOps", "CI/CD", "Automation"],
+      image: "/api/placeholder/600/300",
+      featured: false
     },
     {
       id: 6,
-      title: "First Aid Certification: Why It Matters for All Employees",
-      excerpt: "The importance of first aid training in creating safer workplaces and building a culture of safety awareness.",
-      category: "training",
-      author: "Sarah Williams",
-      date: "Sep 10, 2025",
+      title: "Success Story: From Fresher to Senior Developer",
+      excerpt: "Inspiring journey of our student who landed a senior developer role at a top tech company within 2 years.",
+      content: "This is the inspiring story of one of our students who transformed their career...",
+      author: "Success Stories Team",
+      date: "2023-12-25",
       readTime: "4 min read",
-      image: "first-aid"
+      category: "Success Stories",
+      tags: ["Success Story", "Career Growth", "Inspiration"],
+      image: "/api/placeholder/600/300",
+      featured: false
     }
   ];
 
   useEffect(() => {
-    let filtered = blogPosts;
+    let filtered = [...blogPosts]; // Create a copy to avoid mutation
 
-    if (selectedCategory !== 'all') {
-      filtered = filtered.filter(post => post.category === selectedCategory);
+    if (selectedCategory && selectedCategory !== 'all') {
+      filtered = filtered.filter(post => post && post.category === selectedCategory);
     }
 
-    if (searchTerm) {
-      filtered = filtered.filter(post =>
-        post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        post.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
-      );
+    if (searchTerm && searchTerm.trim()) {
+      filtered = filtered.filter(post => {
+        if (!post) return false;
+        
+        const titleMatch = post.title && post.title.toLowerCase().includes(searchTerm.toLowerCase());
+        const excerptMatch = post.excerpt && post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
+        const tagsMatch = post.tags && Array.isArray(post.tags) && 
+          post.tags.some(tag => tag && tag.toLowerCase().includes(searchTerm.toLowerCase()));
+        
+        return titleMatch || excerptMatch || tagsMatch;
+      });
     }
 
     setFilteredPosts(filtered);
   }, [searchTerm, selectedCategory]);
 
-  const featuredPosts = blogPosts.filter(post => post.featured);
+  const featuredPosts = blogPosts.filter(post => post && post.featured === true);
 
   return (
     <>
@@ -198,7 +225,7 @@ const BlogPage = () => {
                       <p className="text-gray-600 mb-6">{post.excerpt}</p>
                       <div className="flex items-center justify-between">
                         <div className="flex gap-2">
-                          {post.tags.slice(0, 2).map((tag) => (
+                          {post.tags && post.tags.slice(0, 2).map((tag) => (
                             <span
                               key={tag}
                               className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm"

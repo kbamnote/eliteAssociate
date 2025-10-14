@@ -34,6 +34,27 @@ import liveSessionTwo from '../../../assets/liveSession (2).jpeg';
 import liveSessionThree from '../../../assets/liveSession (3).jpeg';
 import liveSessionFour from '../../../assets/liveSession (4).jpeg';
 import liveSessionFive from '../../../assets/liveSession (5).jpeg';
+// Classroom images
+import eliteClassOne from '../../../assets/elite class 1.jpg';
+import eliteClassTwo from '../../../assets/elite class 2.jpg';
+import eliteClassThree from '../../../assets/elite class 3.jpg';
+// Offer letter images
+import offerLetterOne from '../../../assets/offer letter 1.jpg';
+import offerLetterTwo from '../../../assets/offer letter 2.jpg';
+import offerLetterFour from '../../../assets/offer letter 4.jpg';
+import offerLetterFive from '../../../assets/offer letter 5.jpg';
+import iciciOfferFive from '../../../assets/icici offer 5.jpg';
+// Additional director images
+import directorSeven from '../../../assets/directrorSeven.jpg';
+import directorEight from '../../../assets/directorEight.jpg';
+import directorNine from '../../../assets/directorNine.jpg';
+import directorTen from '../../../assets/directorTen.jpg';
+import directorEleven from '../../../assets/directorEleven.jpg';
+// Additional team images
+import teamNine from '../../../assets/teamNine.jpg';
+import teamTen from '../../../assets/teamTen (1).jpg';
+import teamEleven from '../../../assets/teamEleven.jpg';
+import teamTwelve from '../../../assets/teamTwelve.jpg';
 
 const GalleryPage = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -54,6 +75,11 @@ const GalleryPage = () => {
     { id: 8, title: 'Director - Portrait 4', category: 'Directors', image: directorFour, description: 'Committed to quality and innovation.' },
     { id: 9, title: 'Director - Portrait 5', category: 'Directors', image: directorFive, description: 'Mentorship and organizational growth.' },
     { id: 15, title: 'Director - Portrait 6', category: 'Directors', image: directorSix, description: 'Leadership and operational excellence.' },
+    { id: 40, title: 'Director - Portrait 7', category: 'Directors', image: directorSeven, description: 'Strategic vision and corporate leadership.' },
+    { id: 41, title: 'Director - Portrait 8', category: 'Directors', image: directorEight, description: 'Innovation and business development.' },
+    { id: 42, title: 'Director - Portrait 9', category: 'Directors', image: directorNine, description: 'Operational excellence and team management.' },
+    { id: 43, title: 'Director - Portrait 10', category: 'Directors', image: directorTen, description: 'Corporate governance and strategic planning.' },
+    { id: 44, title: 'Director - Portrait 11', category: 'Directors', image: directorEleven, description: 'Executive leadership and organizational growth.' },
 
     // Team
     { id: 10, title: 'Team - Group Photo 1', category: 'Team', image: teamOne, description: 'Our dedicated team at work.' },
@@ -61,6 +87,10 @@ const GalleryPage = () => {
     { id: 12, title: 'Team - Group Photo 5', category: 'Team', image: teamFive, description: 'Celebrating milestones together.' },
     { id: 13, title: 'Team - Group Photo 6', category: 'Team', image: teamSix, description: 'Committed to safety and excellence.' },
     { id: 14, title: 'Team - Group Photo 7', category: 'Team', image: teamSeven, description: 'Building a culture of success.' },
+    { id: 45, title: 'Team - Group Photo 9', category: 'Team', image: teamNine, description: 'Team collaboration and professional development.' },
+    { id: 46, title: 'Team - Group Photo 10', category: 'Team', image: teamTen, description: 'Team building and corporate activities.' },
+    { id: 47, title: 'Team - Group Photo 11', category: 'Team', image: teamEleven, description: 'Professional team meetings and discussions.' },
+    { id: 48, title: 'Team - Group Photo 12', category: 'Team', image: teamTwelve, description: 'Team achievements and milestone celebrations.' },
 
     // Office
    
@@ -84,9 +114,21 @@ const GalleryPage = () => {
     { id: 29, title: 'Live Session - Q&A Session 3', category: 'Live Sessions', image: liveSessionThree, description: 'Live Q&A session with industry experts.' },
     { id: 30, title: 'Live Session - Practical Demo 4', category: 'Live Sessions', image: liveSessionFour, description: 'Hands-on practical demonstration session.' },
     { id: 31, title: 'Live Session - Group Discussion 5', category: 'Live Sessions', image: liveSessionFive, description: 'Collaborative group discussion and learning.' },
+    
+    // Classroom
+    { id: 32, title: 'Elite Class - Training Session 1', category: 'Classroom', image: eliteClassOne, description: 'Professional training session in our modern classroom.' },
+    { id: 33, title: 'Elite Class - Learning Environment 2', category: 'Classroom', image: eliteClassTwo, description: 'Interactive learning environment with latest technology.' },
+    { id: 34, title: 'Elite Class - Workshop 3', category: 'Classroom', image: eliteClassThree, description: 'Hands-on workshop session with expert instructors.' },
+    
+    // Offer Letters
+    { id: 35, title: 'Offer Letter - Success Story 1', category: 'Offer Letters', image: offerLetterOne, description: 'Successful placement offer letter from top company.' },
+    { id: 36, title: 'Offer Letter - Achievement 2', category: 'Offer Letters', image: offerLetterTwo, description: 'Outstanding placement achievement and offer.' },
+    { id: 37, title: 'Offer Letter - Career Milestone 4', category: 'Offer Letters', image: offerLetterFour, description: 'Career milestone with prestigious company offer.' },
+    { id: 38, title: 'Offer Letter - Professional Growth 5', category: 'Offer Letters', image: offerLetterFive, description: 'Professional growth opportunity with leading firm.' },
+    { id: 39, title: 'ICICI Offer - Banking Sector', category: 'Offer Letters', image: iciciOfferFive, description: 'Prestigious offer from ICICI Bank for banking sector.' },
   ];
 
-  const categories = ["All", "Training", "Directors", "Team", "Office", "Awards", "Live Sessions"];
+  const categories = ["All", "Training", "Directors", "Team", "Office", "Awards", "Live Sessions", "Classroom", "Offer Letters"];
   const [activeCategory, setActiveCategory] = useState("All");
 
   const filteredItems = activeCategory === "All" 
@@ -193,39 +235,40 @@ const GalleryPage = () => {
 
         {/* Lightbox */}
         {selectedImage && (
-       <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
+       <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 overflow-auto">
   <button
-    className="absolute top-6 right-6 text-white hover:text-gray-300 transition-colors"
+    className="absolute top-6 right-6 text-white hover:text-gray-300 transition-colors z-10"
     onClick={closeLightbox}
   >
     <X size={32} />
   </button>
 
   <button
-    className="absolute left-6 text-white hover:text-gray-300 transition-colors"
+    className="absolute left-6 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 transition-colors z-10"
     onClick={goToPrevious}
   >
     <ChevronLeft size={32} />
   </button>
 
   <button
-    className="absolute right-6 text-white hover:text-gray-300 transition-colors"
+    className="absolute right-6 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 transition-colors z-10"
     onClick={goToNext}
   >
     <ChevronRight size={32} />
   </button>
 
-  <div className="max-w-5xl w-auto max-h-[85vh] flex flex-col items-center">
-    <ResponsiveImage
-      src={selectedImage.image}
-      alt={selectedImage.title}
-      className="max-w-full max-h-[80vh] object-contain mx-auto rounded-lg"
-      width={800}
-      height={600}
-      quality={95}
-      loading="eager"
-    />
-    <div className="text-center mt-4 text-white">
+  <div className="w-full h-full flex flex-col items-center justify-center min-h-0 py-16">
+    <div className="flex-shrink-0 max-w-none">
+      <div className="relative">
+        <img
+          src={selectedImage.image}
+          alt={selectedImage.title}
+          className="block mx-auto rounded-lg shadow-2xl max-h-[80vh] max-w-[90vw] w-auto h-auto object-contain"
+          loading="eager"
+        />
+      </div>
+    </div>
+    <div className="text-center mt-6 text-white flex-shrink-0">
       <h3 className="text-2xl font-bold mb-2">{selectedImage.title}</h3>
       <p className="text-gray-300 mb-1">{selectedImage.description}</p>
       <span className="inline-block bg-purple-700 text-white text-sm font-bold px-3 py-1 rounded-full">

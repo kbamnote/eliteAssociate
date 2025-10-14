@@ -1,179 +1,131 @@
-import React, { useState, useEffect } from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
-import { AnimatePresence, motion } from "framer-motion";
-import { HelmetProvider } from "react-helmet-async";
-import Header from "./components/common/Header";
-import Footer from "./components/common/Footer";
-import FloatingButton from "./components/common/FloatingButton";
-import ChatBot from "./components/common/ChatBot";
-import PerformanceMonitor from "./components/common/PerformanceMonitor";
-import PerformanceDashboard from "./components/common/PerformanceDashboard";
-import LandingPage from "./components/pages/landingPage/LandingPage";
-import OurProducts from "./components/pages/ourProducts/OurProducts";
-import ContactPage from "./components/pages/contact/ContactPage";
-import AboutUsPage from "./components/pages/about/AboutUsPage";
-import PlacementComp from "./components/pages/placement/PlacementComp";
-import GalleryComp from "./components/pages/gallery/GalleryComp";
-import BlogComp from "./components/pages/blog/BlogComp";
+import { Suspense, lazy } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { ErrorBoundary } from 'react-error-boundary';
+import { HelmetProvider } from 'react-helmet-async';
 
-// 🧭 ScrollToTop component
-const ScrollToTop = () => {
-  const { pathname } = useLocation();
+// Layout Components
+import Header from './components/common/Header';
+import Footer from './components/common/Footer';
+import ScrollToTop from './components/common/ScrollToTop';
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+// Lazy load pages for better performance
+const Home = lazy(() => import('./components/pages/landingPage/LandingPage'));
+const About = lazy(() => import('./components/pages/about/AboutUsPage'));
+const OurProducts = lazy(() => import('./components/pages/ourProducts/OurProducts'));
+const Gallery = lazy(() => import('./components/pages/gallery/GalleryComp'));
+const Placement = lazy(() => import('./components/pages/placement/PlacementComp'));
+const Blog = lazy(() => import('./components/pages/blog/BlogComp'));
+const Contact = lazy(() => import('./components/pages/contact/ContactPage'));
 
-  return null;
-};
+// Loading Spinner
+const LoadingSpinner = () => (
+  <div className="min-h-screen flex items-center justify-center bg-gray-50">
+    <div className="text-center">
+      <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-primary-600 mx-auto mb-4"></div>
+      <p className="text-gray-600 font-medium">Loading...</p>
+    </div>
+  </div>
+);
+
+// Error Fallback
+const ErrorFallback = ({ error, resetErrorBoundary }) => (
+  <div className="min-h-screen flex items-center justify-center bg-gray-50">
+    <div className="text-center max-w-md mx-auto p-8">
+      <div className="text-red-600 mb-4">
+        <svg className="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.5 0L4.268 15.5c-.77.833.192 2.5 1.732 2.5z" />
+        </svg>
+      </div>
+      <h2 className="text-2xl font-bold text-gray-900 mb-4">Oops! Something went wrong</h2>
+      <p className="text-gray-600 mb-6">We're sorry for the inconvenience. Please try refreshing the page.</p>
+      <button
+        onClick={resetErrorBoundary}
+        className="btn-primary"
+      >
+        Try Again
+      </button>
+      {process.env.NODE_ENV === 'development' && (
+        <details className="mt-4 text-left">
+          <summary className="cursor-pointer text-sm text-gray-500">Error Details</summary>
+          <pre className="mt-2 text-xs text-red-600 bg-red-50 p-2 rounded overflow-auto">
+            {error.message}
+          </pre>
+        </details>
+      )}
+    </div>
+  </div>
+);
 
 function App() {
-  const [showPerformanceMonitor, setShowPerformanceMonitor] = useState(false);
-  const [showPerformanceDashboard, setShowPerformanceDashboard] = useState(false);
-
-  // Keyboard shortcut for Performance Monitor & Dashboard
-  useEffect(() => {
-    const handleKeyDown = (event) => {
-      if (event.ctrlKey && event.shiftKey && event.key === 'P') {
-        event.preventDefault();
-        setShowPerformanceMonitor(prev => !prev);
-      }
-      if (event.ctrlKey && event.shiftKey && event.key === 'D') {
-        event.preventDefault();
-        setShowPerformanceDashboard(prev => !prev);
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
-
   return (
     <HelmetProvider>
-      <div className="App">
-        {/* 🧭 Add ScrollToTop above Header */}
-        <ScrollToTop />
-        <Header />
+      <ErrorBoundary
+        FallbackComponent={ErrorFallback}
+        onReset={() => window.location.reload()}
+      >
+        <div className="min-h-screen bg-white flex flex-col">
+          {/* 🧭 Scroll to top on every route change */}
+          <ScrollToTop />
 
-        <AnimatePresence mode="wait">
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <motion.div
-                  key="home"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <LandingPage />
-                </motion.div>
-              }
-            />
-            <Route
-              path="/our-products"
-              element={
-                <motion.div
-                  key="products"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <OurProducts />
-                </motion.div>
-              }
-            />
-            <Route
-              path="/contact"
-              element={
-                <motion.div
-                  key="contact"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <ContactPage />
-                </motion.div>
-              }
-            />
-            <Route
-              path="/about"
-              element={
-                <motion.div
-                  key="about"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <AboutUsPage />
-                </motion.div>
-              }
-            />
-            <Route
-              path="/placement"
-              element={
-                <motion.div
-                  key="placement"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <PlacementComp />
-                </motion.div>
-              }
-            />
-            <Route
-              path="/gallery"
-              element={
-                <motion.div
-                  key="gallery"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <GalleryComp />
-                </motion.div>
-              }
-            />
-            <Route
-              path="/blog"
-              element={
-                <motion.div
-                  key="blog"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <BlogComp />
-                </motion.div>
-              }
-            />
-          </Routes>
-        </AnimatePresence>
+          {/* Header */}
+          <Header />
 
-        <Footer />
-        <FloatingButton />
-        <ChatBot />
+          {/* Main Content */}
+          <main id="main-content" className="flex-1">
+            <Suspense fallback={<LoadingSpinner />}>
+              <Routes>
+              {/* Home Page */}
+              <Route path="/" element={<Home />} />
 
-        {/* Performance Monitor - Ctrl+Shift+P */}
-        <PerformanceMonitor 
-          isVisible={showPerformanceMonitor}
-          onClose={() => setShowPerformanceMonitor(false)}
-        />
+              {/* About Page */}
+              <Route path="/about" element={<About />} />
 
-        {/* Performance Dashboard - Ctrl+Shift+D */}
-        <PerformanceDashboard 
-          isVisible={showPerformanceDashboard}
-          onClose={() => setShowPerformanceDashboard(false)}
-        />
-      </div>
+              {/* Our Products */}
+              <Route path="/our-products" element={<OurProducts />} />
+
+              {/* Gallery */}
+              <Route path="/gallery" element={<Gallery />} />
+
+              {/* Placement */}
+              <Route path="/placement" element={<Placement />} />
+
+              {/* Blog */}
+              <Route path="/blog" element={<Blog />} />
+
+              {/* Contact */}
+              <Route path="/contact" element={<Contact />} />
+
+              {/* 404 Page */}
+              <Route
+                path="*"
+                element={
+                  <div className="min-h-screen flex items-center justify-center bg-gray-50">
+                    <div className="text-center max-w-md mx-auto p-8">
+                      <div className="text-red-600 mb-4">
+                        <svg className="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
+                        </svg>
+                      </div>
+                      <h1 className="text-2xl font-bold text-gray-900 mb-2">Page Not Found</h1>
+                      <p className="text-gray-600 mb-6">The page you're looking for doesn't exist.</p>
+                      <button
+                        onClick={() => window.location.href = '/'}
+                        className="bg-primary-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-primary-700 transition"
+                      >
+                        Go Home
+                      </button>
+                    </div>
+                  </div>
+                }
+              />
+              </Routes>
+            </Suspense>
+          </main>
+
+          {/* Footer */}
+          <Footer />
+        </div>
+      </ErrorBoundary>
     </HelmetProvider>
   );
 }
