@@ -27,10 +27,11 @@ const ChatBot = () => {
   const botResponses = {
     "course information": "We offer various courses including Full Stack Development, Data Science, DevOps, Cybersecurity, and UI/UX Design. All courses are designed with industry requirements and include hands-on projects.",
     "placement assistance": "We provide 100% placement assistance with our network of 500+ partner companies. Our dedicated placement team helps with resume building, interview preparation, and job matching.",
-    "fee structure": "Our course fees are very competitive and we offer flexible payment options including EMI. Please contact our counselor at +91-XXXXXXXXXX for detailed fee information.",
+    "fee structure": "Our course fees are very competitive and we offer flexible payment options including EMI. Please contact our counselor at +91 8855885807 for detailed fee information.",
+    "placement": "We have an excellent placement record with 95%+ placement rate. Our students are placed in top companies across India and abroad.",
     "admission process": "Admission is simple! Just fill out our online form, attend a counseling session, and you're ready to start your journey. We have multiple batches starting every month.",
-    "contact details": "📞 Phone: +91-XXXXXXXXXX\n📧 Email: info@eliteassociate.in\n📍 Address: Elite Associate Training Institute\n🌐 Website: www.eliteassociate.in",
-    "default": "Thank you for your question! For detailed information, please contact our counselor at +91-XXXXXXXXXX or visit our website. Our team will be happy to assist you!"
+    "contact details": "📞 Phone: +91 8855885807\n📧 Email: info@eliteassociate.in\n📍 Address: 1st Floor Mohota Complex, Above State Bank Of India, Katol Road, Chhaoni Rd, Nagpur, Maharashtra, 440013\n🌐 Website: www.eliteassociate.in",
+    "default": "Thank you for your question! For detailed information, please contact our counselor at +91 8855885807 or visit our website. Our team will be happy to assist you!"
   };
 
   const scrollToBottom = () => {

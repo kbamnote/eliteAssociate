@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { ChevronDown, Shield } from 'lucide-react';
 
 const FAQSec = () => {
@@ -117,13 +118,15 @@ const FAQSec = () => {
                 <p className="text-purple-100 mb-4">
                   Our admissions team is ready to help you find the perfect program
                 </p>
-                <motion.button
-                  className="bg-white text-purple-700 hover:bg-gray-100 font-bold py-3 px-6 rounded-full transition-all"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Contact Us
-                </motion.button>
+                <Link to="/contact">
+                  <motion.button
+                    className="bg-white text-purple-700 hover:bg-gray-100 font-bold py-3 px-6 rounded-full transition-all"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    Contact Us
+                  </motion.button>
+                </Link>
               </div>
             </div>
           </div>

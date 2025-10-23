@@ -3,9 +3,12 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Clock, Users, Award, BookOpen, Play, Download, CheckCircle } from 'lucide-react';
 import SEOHead from '../../common/SEOHead';
+import ContactFormPopup from '../../common/ContactFormPopup';
 
 const ProductDetails = () => {
   const [activeTab, setActiveTab] = useState('curriculum');
+  const [isEnrollPopupOpen, setIsEnrollPopupOpen] = useState(false);
+  const [selectedCourse, setSelectedCourse] = useState(null);
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -74,6 +77,11 @@ const ProductDetails = () => {
     { id: 'certification', label: 'Certification', icon: <Award className="w-4 h-4" /> },
     { id: 'resources', label: 'Resources', icon: <Download className="w-4 h-4" /> }
   ];
+
+  const handleEnrollNow = (course) => {
+    setSelectedCourse(course);
+    setIsEnrollPopupOpen(true);
+  };
 
   const renderTabContent = () => {
     switch (activeTab) {
@@ -249,6 +257,7 @@ const ProductDetails = () => {
                     <motion.button
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
+                      onClick={() => handleEnrollNow(course)}
                       className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-indigo-700 transition-all duration-300"
                     >
                       Enroll Now
@@ -300,6 +309,12 @@ const ProductDetails = () => {
           </div>
         </section>
       </div>
+
+      <ContactFormPopup
+        isOpen={isEnrollPopupOpen}
+        onClose={() => setIsEnrollPopupOpen(false)}
+        title={selectedCourse ? `Enroll in ${selectedCourse.title}` : "Enroll Now"}
+      />
     </>
   );
 };

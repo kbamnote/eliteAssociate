@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Building, Users, TrendingUp, Award } from 'lucide-react';
+import ContactFormPopup from '../../common/ContactFormPopup';
 
 const PlacementStatsSec = () => {
+  const [isCallbackPopupOpen, setIsCallbackPopupOpen] = useState(false);
+
   const stats = [
     {
       icon: <Users className="w-8 h-8" />,
@@ -93,17 +97,20 @@ const PlacementStatsSec = () => {
               Join thousands of professionals who have transformed their careers with our training programs
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <motion.button
-                className="bg-white text-purple-700 hover:bg-gray-100 font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Explore Courses
-              </motion.button>
+              <Link to="/our-products">
+                <motion.button
+                  className="bg-white text-purple-700 hover:bg-gray-100 font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Explore Courses
+                </motion.button>
+              </Link>
               <motion.button
                 className="bg-transparent border-2 border-white hover:bg-white/10 font-bold py-4 px-8 rounded-full text-lg transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => setIsCallbackPopupOpen(true)}
               >
                 Get a Callback
               </motion.button>
@@ -111,6 +118,12 @@ const PlacementStatsSec = () => {
           </div>
         </motion.div>
       </div>
+
+      <ContactFormPopup
+        isOpen={isCallbackPopupOpen}
+        onClose={() => setIsCallbackPopupOpen(false)}
+        title="Request a Callback"
+      />
     </section>
   );
 };

@@ -73,8 +73,8 @@ const LandingPage = () => {
       <FAQSec />
       
       {/* Contact Form Popup */}
-      <ContactFormPopup 
-        isOpen={showPopup} 
+      <ContactFormPopup
+        isOpen={showPopup}
         onClose={handleClosePopup}
         title="Ready to Transform Your Career?"
       />

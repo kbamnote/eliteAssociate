@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Check, ArrowRight } from 'lucide-react';
 
 const PricingSec = () => {
@@ -145,18 +146,35 @@ const PricingSec = () => {
                 ))}
               </ul>
               
-              <motion.button
-                className={`w-full py-4 rounded-full font-bold flex items-center justify-center gap-2 ${
-                  plan.popular
-                    ? 'bg-gradient-to-r from-teal-500 to-blue-600 text-white hover:from-teal-600 hover:to-blue-700'
-                    : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
-                } transition-all`}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                {plan.cta}
-                <ArrowRight className="w-4 h-4" />
-              </motion.button>
+              {plan.cta === "Contact Sales" ? (
+                <Link to="/contact">
+                  <motion.button
+                    className={`w-full py-4 rounded-full font-bold flex items-center justify-center gap-2 ${
+                      plan.popular
+                        ? 'bg-gradient-to-r from-teal-500 to-blue-600 text-white hover:from-teal-600 hover:to-blue-700'
+                        : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
+                    } transition-all`}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    {plan.cta}
+                    <ArrowRight className="w-4 h-4" />
+                  </motion.button>
+                </Link>
+              ) : (
+                <motion.button
+                  className={`w-full py-4 rounded-full font-bold flex items-center justify-center gap-2 ${
+                    plan.popular
+                      ? 'bg-gradient-to-r from-teal-500 to-blue-600 text-white hover:from-teal-600 hover:to-blue-700'
+                      : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
+                  } transition-all`}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  {plan.cta}
+                  <ArrowRight className="w-4 h-4" />
+                </motion.button>
+              )}
             </motion.div>
           ))}
         </div>
@@ -171,13 +189,15 @@ const PricingSec = () => {
           <p className="text-gray-600 mb-4">
             Need a custom solution for your organization?
           </p>
-          <motion.button
-            className="text-teal-600 font-bold hover:text-teal-700 flex items-center justify-center mx-auto gap-2"
-            whileHover={{ x: 5 }}
-          >
-            Contact our sales team
-            <ArrowRight className="w-4 h-4" />
-          </motion.button>
+          <Link to="/contact">
+            <motion.button
+              className="text-teal-600 font-bold hover:text-teal-700 flex items-center justify-center mx-auto gap-2"
+              whileHover={{ x: 5 }}
+            >
+              Contact our sales team
+              <ArrowRight className="w-4 h-4" />
+            </motion.button>
+          </Link>
         </motion.div>
       </div>
     </section>

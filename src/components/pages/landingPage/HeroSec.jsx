@@ -4,13 +4,16 @@ import { Play, Shield, ArrowRight, CheckCircle, Star } from 'lucide-react';
 import CTAButton from '../../common/CTAButton';
 import AnimatedCounter from '../../common/AnimatedCounter';
 import ResponsiveImage from '../../common/ResponsiveImage';
+import ContactFormPopup from '../../common/ContactFormPopup';
 import { trackButtonClick } from '../../../utils/analytics';
 
 const HeroSec = () => {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+  const [isEnrollPopupOpen, setIsEnrollPopupOpen] = useState(false);
 
   const handleEnrollNow = () => {
     trackButtonClick('Enroll Now', 'Hero Section');
+    setIsEnrollPopupOpen(true);
   };
 
   const handleBookDemo = () => {
@@ -238,6 +241,13 @@ const HeroSec = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Contact Form Popup for Enrollment */}
+      <ContactFormPopup
+        isOpen={isEnrollPopupOpen}
+        onClose={() => setIsEnrollPopupOpen(false)}
+        title="Enroll Now - Start Your Journey!"
+      />
     </div>
   );
 };

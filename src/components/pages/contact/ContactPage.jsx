@@ -29,12 +29,12 @@ const ContactPage = () => {
     {
       icon: <MapPin className="w-6 h-6" />,
       title: 'Our Location',
-      details: '123 Safety Street, Industrial City, IC 10001'
+      details: '1st Floor Mohota Complex, Above State Bank Of India, Katol Road, Chhaoni Rd, Nagpur, Maharashtra, 440013'
     },
     {
       icon: <Phone className="w-6 h-6" />,
       title: 'Call Us',
-      details: '+1 (555) 123-4567'
+      details: '+91 8855885807'
     },
     {
       icon: <Mail className="w-6 h-6" />,
@@ -109,7 +109,7 @@ const ContactPage = () => {
                     <div className="text-center text-white">
                       <MapPin className="w-12 h-12 mx-auto mb-3" />
                       <p className="text-lg font-medium">Interactive Map</p>
-                      <p className="text-purple-100">123 Safety Street, Industrial City</p>
+                      <p className="text-purple-100">Katol Road, Chhaoni Rd, Nagpur</p>
                     </div>
                   </div>
                 </div>

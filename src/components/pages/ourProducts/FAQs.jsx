@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { Link } from 'react-router-dom';
 import { ChevronDown, Search, HelpCircle, MessageCircle, Phone, Mail } from 'lucide-react';
 import SEOHead from '../../common/SEOHead';
 
@@ -119,7 +120,7 @@ const FAQs = () => {
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Phone Support",
-      description: "+1 (555) 123-4567",
+      description: "+91 8855885807",
       action: "Call Now",
       color: "from-green-500 to-green-600"
     },
@@ -300,13 +301,35 @@ const FAQs = () => {
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">{option.title}</h3>
                   <p className="text-gray-600 mb-4">{option.description}</p>
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className={`bg-gradient-to-r ${option.color} text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300`}
-                  >
-                    {option.action}
-                  </motion.button>
+                  {option.title === "Phone Support" ? (
+                    <motion.a
+                      href="tel:+918855885807"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className={`inline-block bg-gradient-to-r ${option.color} text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300`}
+                    >
+                      {option.action}
+                    </motion.a>
+                  ) : option.title === "Email Support" ? (
+                    <motion.a
+                      href="mailto:support@eliteassociate.com"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className={`inline-block bg-gradient-to-r ${option.color} text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300`}
+                    >
+                      {option.action}
+                    </motion.a>
+                  ) : (
+                    <Link to="/contact">
+                      <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className={`bg-gradient-to-r ${option.color} text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300`}
+                      >
+                        {option.action}
+                      </motion.button>
+                    </Link>
+                  )}
                 </motion.div>
               ))}
             </div>

@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, User, GraduationCap, Phone, Mail, Send } from 'lucide-react';
+import { addDetail } from '../../utils/Api';
 
 const ContactFormPopup = ({ isOpen, onClose, title = "Get Started Today!" }) => {
   const [formData, setFormData] = useState({
     fullName: '',
-    education: '',
-    phone: '',
+    specialisation: '',
+    phoneNo: '',
     email: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState('');
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -23,22 +25,41 @@ const ContactFormPopup = ({ isOpen, onClose, title = "Get Started Today!" }) => 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError('');
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    
-    // Auto close after success
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({ fullName: '', education: '', phone: '', email: '' });
-      onClose();
-    }, 2000);
+    try {
+      // Prepare data for API call
+      const formDataToSend = {
+        fullName: formData.fullName,
+        specialisation: formData.specialisation,
+        phoneNo: formData.phoneNo,
+        email: formData.email,
+        productCompany: 'Elite-Associate',
+        formType: title || 'Contact Form' // Include the form type/title for context
+      };
+
+      // Make API call
+      const response = await addDetail(formDataToSend);
+      
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+      
+      // Auto close after success
+      setTimeout(() => {
+         setIsSubmitted(false);
+         setFormData({ fullName: '', specialisation: '', phoneNo: '', email: '' });
+         setError('');
+         onClose();
+       }, 2000);
+      
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setIsSubmitting(false);
+      setError('Failed to submit form. Please try again.');
+    }
   };
 
-  const isFormValid = formData.fullName && formData.education && formData.phone && formData.email;
+  const isFormValid = formData.fullName && formData.specialisation && formData.phoneNo && formData.email;
 
   return (
     <AnimatePresence>
@@ -91,19 +112,19 @@ const ContactFormPopup = ({ isOpen, onClose, title = "Get Started Today!" }) => 
                     />
                   </div>
 
-                  {/* Education/Institute */}
+                  {/* Specialisation */}
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       <GraduationCap className="w-4 h-4 inline mr-2" />
-                      Education/Institute Name
+                      Specialisation
                     </label>
                     <input
                       type="text"
-                      name="education"
-                      value={formData.education}
+                      name="specialisation"
+                      value={formData.specialisation}
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
-                      placeholder="Your current education or institute"
+                      placeholder="Your area of specialisation"
                       required
                     />
                   </div>
@@ -116,8 +137,8 @@ const ContactFormPopup = ({ isOpen, onClose, title = "Get Started Today!" }) => 
                     </label>
                     <input
                       type="tel"
-                      name="phone"
-                      value={formData.phone}
+                      name="phoneNo"
+                      value={formData.phoneNo}
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
                       placeholder="Your phone number"
@@ -141,6 +162,17 @@ const ContactFormPopup = ({ isOpen, onClose, title = "Get Started Today!" }) => 
                       required
                     />
                   </div>
+
+                  {/* Error Message */}
+                  {error && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg"
+                    >
+                      {error}
+                    </motion.div>
+                  )}
 
                   {/* Submit Button */}
                   <motion.button

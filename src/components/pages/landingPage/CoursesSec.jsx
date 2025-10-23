@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { ArrowRight, Clock, User, Calendar, Shield } from 'lucide-react';
 
 const CoursesSec = () => {
@@ -159,15 +160,6 @@ const CoursesSec = () => {
                     <span>{course.students}</span>
                   </div>
                 </div>
-                
-                <motion.button
-                  className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-semibold py-3 rounded-lg flex items-center justify-center gap-2 transition-all"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  View Details
-                  <ArrowRight className="w-4 h-4" />
-                </motion.button>
               </div>
             </motion.div>
           ))}
@@ -180,6 +172,7 @@ const CoursesSec = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
+          <Link to="/our-products">
           <motion.button
             className="bg-white border border-purple-600 text-purple-600 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-purple-50 transition-all flex items-center gap-2 mx-auto"
             whileHover={{ scale: 1.05 }}
@@ -188,6 +181,7 @@ const CoursesSec = () => {
             View All Courses
             <ArrowRight className="w-4 h-4" />
           </motion.button>
+        </Link>
         </motion.div>
       </div>
     </section>

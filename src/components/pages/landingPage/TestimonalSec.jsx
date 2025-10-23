@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 
 const TestimonalSec = () => {
@@ -200,10 +201,12 @@ const TestimonalSec = () => {
 
         {/* CTA Button */}
         <div className="flex justify-center">
-          <button className="group bg-white hover:bg-teal-50 text-teal-700 font-bold py-4 px-8 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center gap-3">
-            <span className="text-lg">Explore Our Courses</span>
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-          </button>
+          <Link to="/our-products">
+            <button className="group bg-white hover:bg-teal-50 text-teal-700 font-bold py-4 px-8 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center gap-3">
+              <span className="text-lg">Explore Our Courses</span>
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+            </button>
+          </Link>
         </div>
       </div>
     </div>

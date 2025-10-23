@@ -77,10 +77,10 @@ const HeroVideo = () => {
       </div>
 
       {/* Contact Form Popup */}
-      <ContactFormPopup 
-        isOpen={showPopup} 
-        onClose={handleClosePopup}
-        title="Start Your Journey Today!"
+      <ContactFormPopup
+        isOpen={showPopup}
+        onClose={() => setShowPopup(false)}
+        title="Get Started Today!"
       />
     </section>
   );

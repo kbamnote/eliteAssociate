@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, Award, Users, Briefcase, TrendingUp, CheckCircle, Star, Phone, Mail } from 'lucide-react';
 import ResponsiveImage from '../../common/ResponsiveImage';
 
@@ -86,9 +87,11 @@ export default function AboutHero() {
                 Start Your Journey
                 <ArrowRight className="inline-block ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
-              <button className="px-8 py-4 bg-white border-2 border-purple-600 rounded-full text-purple-700 font-semibold hover:bg-purple-50 transition-all duration-300">
-                View Courses
-              </button>
+              <Link to="/our-products">
+                <button className="px-8 py-4 bg-white border-2 border-purple-600 rounded-full text-purple-700 font-semibold hover:bg-purple-50 transition-all duration-300">
+                  View Courses
+                </button>
+              </Link>
             </div>
 
             {/* Stats */}
