@@ -56,6 +56,15 @@ import teamTen from '../../../assets/teamTen (1).jpg';
 import teamEleven from '../../../assets/teamEleven.jpg';
 import teamTwelve from '../../../assets/teamTwelve.jpg';
 
+// Celebrations images
+import celebrationOne from '../../../assets/celebrationOne.jpeg';
+import celebrationTwo from '../../../assets/celebrationTwo.jpeg';
+import celebrationThree from '../../../assets/celebrationThree.jpeg';
+import celebrationFour from '../../../assets/celebrationFour.jpeg';
+import celebrationFive from '../../../assets/celebrationFive.jpeg';
+import celebrationSix from '../../../assets/celebrationSix.jpeg';
+import celebrationSeven from '../../../assets/celebrationSeven.jpeg';
+import celebrationEight from '../../../assets/celebrationEight.jpeg';
 const GalleryPage = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -83,6 +92,7 @@ const GalleryPage = () => {
 
     // Team
     { id: 10, title: 'Team - Group Photo 1', category: 'Team', image: teamOne, description: 'Our dedicated team at work.' },
+    { id: 50, title: 'Team', category: 'Team', image: celebrationTwo, description: 'Building a culture of success.' },
     { id: 11, title: 'Team - Group Photo 2', category: 'Team', image: teamTwo, description: 'Collaboration and teamwork in action.' },
     { id: 12, title: 'Team - Group Photo 5', category: 'Team', image: teamFive, description: 'Celebrating milestones together.' },
     { id: 13, title: 'Team - Group Photo 6', category: 'Team', image: teamSix, description: 'Committed to safety and excellence.' },
@@ -126,9 +136,29 @@ const GalleryPage = () => {
     { id: 37, title: 'Offer Letter - Career Milestone 4', category: 'Offer Letters', image: offerLetterFour, description: 'Career milestone with prestigious company offer.' },
     { id: 38, title: 'Offer Letter - Professional Growth 5', category: 'Offer Letters', image: offerLetterFive, description: 'Professional growth opportunity with leading firm.' },
     { id: 39, title: 'ICICI Offer - Banking Sector', category: 'Offer Letters', image: iciciOfferFive, description: 'Prestigious offer from ICICI Bank for banking sector.' },
+
+    // Celebrations
+    { id: 49, title: 'Celebration - 1', category: 'Celebrations', image: celebrationOne, description: 'Memorable team celebrations and events.' },
+    
+    { id: 51, title: 'Celebration - 3', category: 'Celebrations', image: celebrationThree, description: 'Memorable team celebrations and events.' },
+    { id: 52, title: 'Celebration - 4', category: 'Celebrations', image: celebrationFour, description: 'Memorable team celebrations and events.' },
+    { id: 53, title: 'Celebration - 5', category: 'Celebrations', image: celebrationFive, description: 'Memorable team celebrations and events.' },
+    { id: 54, title: 'Celebration - 6', category: 'Celebrations', image: celebrationSix, description: 'Memorable team celebrations and events.' },
+    { id: 55, title: 'Celebration - 7', category: 'Celebrations', image: celebrationSeven, description: 'Memorable team celebrations and events.' },
+    { id: 56, title: 'Celebration - 8', category: 'Celebrations', image: celebrationEight, description: 'Memorable team celebrations and events.' },
+
+    // Team (Celebrations)
+    { id: 57, title: 'Team - Celebrations 1', category: 'Team', image: celebrationOne, description: 'Team celebrating achievements and events.' },
+    
+    { id: 59, title: 'Team - Celebrations 3', category: 'Team', image: celebrationThree, description: 'Team celebrating achievements and events.' },
+    { id: 60, title: 'Team - Celebrations 4', category: 'Team', image: celebrationFour, description: 'Team celebrating achievements and events.' },
+    { id: 61, title: 'Team - Celebrations 5', category: 'Team', image: celebrationFive, description: 'Team celebrating achievements and events.' },
+    { id: 62, title: 'Team - Celebrations 6', category: 'Team', image: celebrationSix, description: 'Team celebrating achievements and events.' },
+    { id: 63, title: 'Team - Celebrations 7', category: 'Team', image: celebrationSeven, description: 'Team celebrating achievements and events.' },
+    { id: 64, title: 'Team - Celebrations 8', category: 'Team', image: celebrationEight, description: 'Team celebrating achievements and events.' },
   ];
 
-  const categories = ["All", "Training", "Directors", "Team", "Office", "Awards", "Live Sessions", "Classroom", "Offer Letters"];
+  const categories = ["All", "Training", "Directors", "Team", "Office", "Awards", "Live Sessions", "Classroom", "Offer Letters", "Celebrations"];
   const [activeCategory, setActiveCategory] = useState("All");
 
   const filteredItems = activeCategory === "All" 
