@@ -141,7 +141,7 @@ const GalleryPage = () => {
     { id: 49, title: 'Celebration - 1', category: 'Celebrations', image: celebrationOne, description: 'Memorable team celebrations and events.' },
     
     { id: 51, title: 'Celebration - 3', category: 'Celebrations', image: celebrationThree, description: 'Memorable team celebrations and events.' },
-    { id: 52, title: 'Celebration - 4', category: 'Celebrations', image: celebrationFour, description: 'Memorable team celebrations and events.' },
+   
     { id: 53, title: 'Celebration - 5', category: 'Celebrations', image: celebrationFive, description: 'Memorable team celebrations and events.' },
     { id: 54, title: 'Celebration - 6', category: 'Celebrations', image: celebrationSix, description: 'Memorable team celebrations and events.' },
     { id: 55, title: 'Celebration - 7', category: 'Celebrations', image: celebrationSeven, description: 'Memorable team celebrations and events.' },
