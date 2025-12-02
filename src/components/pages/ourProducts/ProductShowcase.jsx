@@ -18,26 +18,6 @@ const ProductShowcase = () => {
 
   const products = [
     {
-      id: 1,
-      name: "JIFSA",
-      tagline: "Job Integrated Financial Services Academy",
-      description: "Comprehensive training and certification for finance professionals",
-      fullDescription: "JIFSA offers industry-leading financial education programs that combine theoretical knowledge with practical application. Our curriculum is designed by industry experts and updated regularly to match market demands. With over 50,000+ professionals trained, we're the preferred choice for financial upskilling.",
-      features: [
-        "Certified courses in investment banking",
-        "Real-time market simulations",
-        "Industry expert mentorship",
-        "Global certification recognition"
-      ],
-      icon: <TrendingUp className="w-10 h-10" />,
-      color: "from-blue-500 to-teal-500",
-      bgColor: "bg-blue-100",
-      textColor: "text-blue-800",
-      link: "https://www.jifsacareers.com",
-      stats: { users: "50K+", rating: "4.9/5" },
-      image: "https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=1200&q=80&auto=format&fit=crop"
-    },
-    {
       id: 2,
       name: "Elite Jobs",
       tagline: "Premium Career Platform",
@@ -56,6 +36,66 @@ const ProductShowcase = () => {
       link: "https://www.eliteindiajobs.com",
       stats: { users: "2M+", rating: "4.8/5" },
       image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&q=80&auto=format&fit=crop"
+    },
+    {
+      id: 6,
+      name: "Elite Cards",
+      tagline: "Professional Networking Cards",
+      description: "Digital business cards with advanced networking features",
+      fullDescription: "Elite Cards revolutionizes professional networking with smart digital business cards that adapt to your audience. With real-time analytics, customizable templates, and seamless integration with leading CRM platforms, Elite Cards helps professionals make meaningful connections that matter.",
+      features: [
+        "Smart digital business cards",
+        "Real-time interaction analytics",
+        "Customizable templates",
+        "CRM integration"
+      ],
+      icon: <Code className="w-10 h-10" />,
+      color: "from-teal-500 to-blue-500",
+      bgColor: "bg-teal-100",
+      textColor: "text-teal-800",
+      link: "https://www.elitedigitalcards.com",
+      stats: { users: "500K+", rating: "4.9/5" },
+      image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1200&q=80&auto=format&fit=crop"
+    },
+    {
+      id: 5,
+      name: "EEE Technologies",
+      tagline: "Energy Efficient Engineering",
+      description: "Sustainable and green technology implementations",
+      fullDescription: "EEE Technologies pioneers sustainable engineering solutions that reduce energy consumption while maximizing efficiency. Our innovative products help businesses transition to greener operations without compromising performance.",
+      features: [
+        "Energy consumption analytics",
+        "Smart grid integration",
+        "Renewable energy solutions",
+        "Carbon footprint tracking"
+      ],
+      icon: <Code className="w-10 h-10" />,
+      color: "from-indigo-500 to-purple-500",
+      bgColor: "bg-indigo-100",
+      textColor: "text-indigo-800",
+      link: "https://www.eeetechnologies.in",
+      stats: { users: "12K+", rating: "4.8/5" },
+      image: "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?w=1200&q=80&auto=format&fit=crop"
+    },
+    {
+      id: 1,
+      name: "JIFSA",
+      tagline: "Job Integrated Financial Services Academy",
+      description: "Comprehensive training and certification for finance professionals",
+      fullDescription: "JIFSA offers industry-leading financial education programs that combine theoretical knowledge with practical application. Our curriculum is designed by industry experts and updated regularly to match market demands. With over 50,000+ professionals trained, we're the preferred choice for financial upskilling.",
+      features: [
+        "Certified courses in investment banking",
+        "Real-time market simulations",
+        "Industry expert mentorship",
+        "Global certification recognition"
+      ],
+      icon: <TrendingUp className="w-10 h-10" />,
+      color: "from-blue-500 to-teal-500",
+      bgColor: "bg-blue-100",
+      textColor: "text-blue-800",
+      link: "https://www.jifsacareers.com",
+      stats: { users: "50K+", rating: "4.9/5" },
+      image: "https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=1200&q=80&auto=format&fit=crop"
     },
     {
       id: 3,
@@ -96,26 +136,6 @@ const ProductShowcase = () => {
       link: "https://www.elitebifs.in",
       stats: { users: "8K+", rating: "4.9/5" },
       image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1200&q=80&auto=format&fit=crop"
-    },
-    {
-      id: 5,
-      name: "EEE Technologies",
-      tagline: "Energy Efficient Engineering",
-      description: "Sustainable and green technology implementations",
-      fullDescription: "EEE Technologies pioneers sustainable engineering solutions that reduce energy consumption while maximizing efficiency. Our innovative products help businesses transition to greener operations without compromising performance.",
-      features: [
-        "Energy consumption analytics",
-        "Smart grid integration",
-        "Renewable energy solutions",
-        "Carbon footprint tracking"
-      ],
-      icon: <Code className="w-10 h-10" />,
-      color: "from-indigo-500 to-purple-500",
-      bgColor: "bg-indigo-100",
-      textColor: "text-indigo-800",
-      link: "https://www.eeetechnologies.in",
-      stats: { users: "12K+", rating: "4.8/5" },
-      image: "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?w=1200&q=80&auto=format&fit=crop"
     }
   ];
 
