@@ -35,7 +35,7 @@ const ProductShowcase = () => {
       textColor: "text-purple-800",
       link: "https://www.eliteindiajobs.com",
       stats: { users: "2M+", rating: "4.8/5" },
-      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&q=80&auto=format&fit=crop"
+      image: "https://static.vecteezy.com/system/resources/previews/001/829/377/non_2x/agents-who-find-jobs-for-job-seekers-and-companies-that-need-professional-workers-for-career-interview-flat-illustration-concept-for-landing-page-web-ui-banner-flyer-poster-template-background-free-vector.jpg"
     },
     {
       id: 6,
@@ -53,21 +53,21 @@ const ProductShowcase = () => {
       color: "from-teal-500 to-blue-500",
       bgColor: "bg-teal-100",
       textColor: "text-teal-800",
-      link: "https://www.elitedigitalcards.com",
+      link: "https://www.elitecards.in",
       stats: { users: "500K+", rating: "4.9/5" },
-      image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1200&q=80&auto=format&fit=crop"
+      image: "https://graphicdesigneye.com/images/top-benefits-of-digital-business-cards.jpg"
     },
     {
       id: 5,
       name: "EEE Technologies",
-      tagline: "Energy Efficient Engineering",
-      description: "Sustainable and green technology implementations",
-      fullDescription: "EEE Technologies pioneers sustainable engineering solutions that reduce energy consumption while maximizing efficiency. Our innovative products help businesses transition to greener operations without compromising performance.",
+      tagline: "Elite Edutech Education",
+      description: "Educational platform offering diverse IT related courses and training programs",
+      fullDescription: "EEE Technologies (Elite Edutech Education) provides a wide range of educational courses and training programs designed to enhance professional skills and knowledge. Our platform offers both online and offline learning options with expert instructors and industry-aligned curricula.",
       features: [
-        "Energy consumption analytics",
-        "Smart grid integration",
-        "Renewable energy solutions",
-        "Carbon footprint tracking"
+        "Diverse IT related course catalog",
+        "Expert instructors in IT related fields",
+        "Online and offline learning",
+        "Industry-aligned curricula"
       ],
       icon: <Code className="w-10 h-10" />,
       color: "from-indigo-500 to-purple-500",
@@ -75,27 +75,27 @@ const ProductShowcase = () => {
       textColor: "text-indigo-800",
       link: "https://www.eeetechnologies.in",
       stats: { users: "12K+", rating: "4.8/5" },
-      image: "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?w=1200&q=80&auto=format&fit=crop"
+      image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&q=80&auto=format&fit=crop"
     },
     {
       id: 1,
       name: "JIFSA",
-      tagline: "Job Integrated Financial Services Academy",
-      description: "Comprehensive training and certification for finance professionals",
-      fullDescription: "JIFSA offers industry-leading financial education programs that combine theoretical knowledge with practical application. Our curriculum is designed by industry experts and updated regularly to match market demands. With over 50,000+ professionals trained, we're the preferred choice for financial upskilling.",
+      tagline: "ST. JOSEPH'S INTERNATIONAL FIRE AND SAFETY ACADEMY",
+      description: "Comprehensive training and certification for fire and safety professionals",
+      fullDescription: "JIFSA (ST. JOSEPH'S INTERNATIONAL FIRE AND SAFETY ACADEMY) offers specialized training programs in fire safety, industrial safety, and emergency response. Our courses are designed by industry experts and accredited by leading safety organizations. With over 50,000+ professionals trained, we're the preferred choice for fire and safety upskilling.",
       features: [
-        "Certified courses in investment banking",
-        "Real-time market simulations",
-        "Industry expert mentorship",
-        "Global certification recognition"
+        "Fire safety certification courses",
+        "Industrial safety training",
+        "Emergency response programs",
+        "Internationally recognized accreditation"
       ],
       icon: <TrendingUp className="w-10 h-10" />,
-      color: "from-blue-500 to-teal-500",
-      bgColor: "bg-blue-100",
-      textColor: "text-blue-800",
+      color: "from-red-500 to-orange-500",
+      bgColor: "bg-red-100",
+      textColor: "text-red-800",
       link: "https://www.jifsacareers.com",
       stats: { users: "50K+", rating: "4.9/5" },
-      image: "https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=1200&q=80&auto=format&fit=crop"
+      image: "https://jifsa.in/assets/images/residential/residentialpageimage4.jpg"
     },
     {
       id: 3,
@@ -119,32 +119,32 @@ const ProductShowcase = () => {
     },
     {
       id: 4,
-      name: "Elite BISF",
-      tagline: "Business Intelligence & Strategic Forecasting",
-      description: "Data-driven decision making platform",
-      fullDescription: "Elite BISF transforms raw data into actionable insights through advanced analytics and forecasting models. Our platform helps businesses predict market trends, optimize operations, and make strategic decisions with confidence.",
+      name: "Elite BIFS",
+      tagline: "Banking Insurance Financial Services",
+      description: "Comprehensive training and certification for banking and finance professionals",
+      fullDescription: "Elite BIFS offers industry-leading financial education programs specializing in banking and finance. Our curriculum covers investment banking, commercial banking, insurance, and financial services. With expert instructors and real-world case studies, we prepare professionals for success in the financial sector.",
       features: [
-        "Predictive analytics engine",
-        "Real-time data visualization",
-        "Custom forecasting models",
-        "Integration with 50+ data sources"
+        "Banking and finance certification courses",
+        "Investment banking training",
+        "Insurance sector programs",
+        "Real-world case studies"
       ],
       icon: <Zap className="w-10 h-10" />,
-      color: "from-orange-500 to-red-500",
-      bgColor: "bg-orange-100",
-      textColor: "text-orange-800",
+      color: "from-blue-500 to-teal-500",
+      bgColor: "bg-blue-100",
+      textColor: "text-blue-800",
       link: "https://www.elitebifs.in",
       stats: { users: "8K+", rating: "4.9/5" },
-      image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1200&q=80&auto=format&fit=crop"
+      image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&q=80&auto=format&fit=crop"
     }
   ];
 
   const testimonials = [
     {
       name: "Priya Sharma",
-      role: "Finance Director",
-      company: "Global Investments Ltd",
-      content: "JIFSA transformed our team's capabilities. The practical approach to financial education has directly contributed to a 35% improvement in our portfolio performance.",
+      role: "Safety Manager",
+      company: "Industrial Safety Corp",
+      content: "JIFSA (ST. JOSEPH'S INTERNATIONAL FIRE AND SAFETY ACADEMY) transformed our team's capabilities. The practical approach to fire safety education has directly contributed to a 35% improvement in our safety compliance.",
       avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face",
       rating: 5
     },
@@ -158,9 +158,9 @@ const ProductShowcase = () => {
     },
     {
       name: "Anjali Verma",
-      role: "Data Scientist",
-      company: "TechInsights",
-      content: "Elite BISF's predictive models have improved our forecasting accuracy by 42%. The platform's intuitive interface makes complex analytics accessible to our entire team.",
+      role: "Banking Professional",
+      company: "FinanceCorp",
+      content: "Elite BIFS's banking and finance programs have improved our team's expertise significantly. The real-world case studies and expert instruction have been invaluable for our professional development.",
       avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
       rating: 5
     }
