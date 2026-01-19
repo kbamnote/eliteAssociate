@@ -2,6 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Phone, Mail, MapPin, Clock, ArrowRight, Users, Headphones, MessageCircle, Zap } from 'lucide-react';
 import ResponsiveImage from '../../common/ResponsiveImage';
 
+// Import contact hero images
+import bg6 from '../../../assets/images/AboutHero/bg6.jpeg';
+import placementBg from '../../../assets/images/placement/bg .jpeg';
+import bg2 from '../../../assets/images/AboutHero/bg2.jpeg';
+
 export default function ContactHero() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
@@ -90,9 +95,9 @@ export default function ContactHero() {
                 {/* Image Slides */}
                 <div className="relative h-full">
                   {[
-                    'public/AboutHero/bg6.jpeg', // support team
-                    'public/placement/bg .jpeg', // handshake partnership
-                    'public/AboutHero/bg2.jpeg' // office meeting
+                    bg6, // support team
+                    placementBg, // handshake partnership
+                    bg2 // office meeting
                   ].map((img, index) => (
                     <div
                       key={index}

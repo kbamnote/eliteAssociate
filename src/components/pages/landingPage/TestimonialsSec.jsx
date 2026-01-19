@@ -2,6 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
 
+// Import testimonial images
+import photo5 from '../../../assets/images/Review/photo5.jpeg';
+import photo1 from '../../../assets/images/Review/photo1.jpeg';
+import photo9 from '../../../assets/images/Review/photo9.jpeg';
+import photo7 from '../../../assets/images/Review/photo7.jpeg';
+
 const TestimonialsSec = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -23,7 +29,7 @@ const TestimonialsSec = () => {
       company: "Global Manufacturing Inc.",
       content: "The Fire Safety Management course completely transformed my career. I went from an entry-level position to leading safety protocols for a Fortune 500 company within just 18 months.",
       rating: 5,
-      image: "public/Review/photo5.jpeg"
+      image: photo5
     },
     {
       id: 2,
@@ -32,7 +38,7 @@ const TestimonialsSec = () => {
       company: "TechSafety Solutions",
       content: "The hands-on training and real-world simulations were invaluable. I felt completely prepared for my role in industrial safety management. The instructors' expertise is unmatched.",
       rating: 5,
-      image: "public/Review/photo1.jpeg"
+      image: photo1
     },
     {
       id: 3,
@@ -41,7 +47,7 @@ const TestimonialsSec = () => {
       company: "City Emergency Services",
       content: "Elite Associates provided me with the credentials and confidence to advance in emergency response. The placement support team helped me secure my dream job within weeks of graduation.",
       rating: 5,
-      image: "public/Review/photo9.jpeg"
+      image: photo9
     },
     {
       id: 4,
@@ -50,7 +56,7 @@ const TestimonialsSec = () => {
       company: "HealthFirst Corporation",
       content: "The comprehensive curriculum and expert instruction gave me a deep understanding of workplace safety. I've been promoted twice since completing the program!",
       rating: 5,
-      image: "public/Review/photo7.jpeg"
+      image: photo7
     }
   ];
 

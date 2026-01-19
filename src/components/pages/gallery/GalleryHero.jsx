@@ -2,6 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { ArrowRight, Camera, Image, Award, CheckCircle, Star, Sparkles, Users, Calendar, Trophy } from 'lucide-react';
 import ResponsiveImage from '../../common/ResponsiveImage';
 
+// Import gallery hero images
+import bg1 from '../../../assets/images/AboutHero/bg1.jpeg';
+import bg3 from '../../../assets/images/AboutHero/bg3.jpeg';
+import bg2 from '../../../assets/images/AboutHero/bg2.jpeg';
+
 export default function GalleryHero() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
@@ -120,9 +125,9 @@ export default function GalleryHero() {
                 {/* Image Slides */}
                 <div className="relative h-full">
                   {[
-                    'public/AboutHero/bg1.jpeg',
-                    'public/AboutHero/bg3.jpeg',
-                    'public/AboutHero/bg2.jpeg'
+                    bg1,
+                    bg3,
+                    bg2
                   ].map((img, index) => (
                     <div
                       key={index}

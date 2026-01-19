@@ -3,6 +3,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { ArrowRight, Users, Building, Zap, Code, TrendingUp, ChevronLeft, ChevronRight, Star, ExternalLink, Briefcase } from 'lucide-react';
 
+// Import testimonial avatar images
+import mahimaPatel from '../../assets/images/mahima_patel.jpg';
+import image1 from '../../assets/images/4a5c2f2a828314d79432bb91afeb3ef3.jpg';
+import image2 from '../../assets/images/4da5901373d491ba9f5d0ed8106f88c0.jpg';
+
 const ResponsiveImage = ({ src, alt, className, width, height }) => (
   <img src={src} alt={alt} className={className} width={width} height={height} loading="lazy" />
 );
@@ -205,7 +210,7 @@ const ProductShowcase = () => {
       role: "Safety Manager",
       company: "Industrial Safety Corp",
       content: "JIFSA (ST. JOSEPH'S INTERNATIONAL FIRE AND SAFETY ACADEMY) transformed our team's capabilities. The practical approach to fire safety education has directly contributed to a 35% improvement in our safety compliance.",
-      avatar: "public/mahima_patel.jpg",
+      avatar: mahimaPatel,
       rating: 5
     },
     {
@@ -213,7 +218,7 @@ const ProductShowcase = () => {
       role: "Construction Manager",
       company: "UrbanBuild Corp",
       content: "Elite BIM reduced our project errors by 60% and accelerated delivery timelines. The collaborative platform has revolutionized how we work with stakeholders.",
-      avatar: "public/4a5c2f2a828314d79432bb91afeb3ef3.jpg",
+      avatar: image1,
       rating: 5
     },
     {
@@ -221,7 +226,7 @@ const ProductShowcase = () => {
       role: "Banking Professional",
       company: "FinanceCorp",
       content: "Elite BIFS's banking and finance programs have improved our team's expertise significantly. The real-world case studies and expert instruction have been invaluable for our professional development.",
-      avatar: "public/4da5901373d491ba9f5d0ed8106f88c0.jpg",
+      avatar: image2,
       rating: 5
     }
   ];

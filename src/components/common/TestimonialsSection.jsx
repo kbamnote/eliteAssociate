@@ -2,6 +2,13 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 
+// Import testimonial images
+import photo6 from '../../assets/images/Review/photo6.jpeg';
+import photo4 from '../../assets/images/Review/photo4.jpeg';
+import photo10 from '../../assets/images/Review/photo10.jpeg';
+import photo3 from '../../assets/images/Review/photo3.jpeg';
+import photo11 from '../../assets/images/Review/photo11.jpeg';
+
 const TestimonialsSection = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
@@ -11,7 +18,7 @@ const TestimonialsSection = () => {
       name: "Rahul Sharma",
       role: "Software Engineer",
       company: "TCS",
-      image: "public/Review/photo6.jpeg",
+      image: photo6,
       rating: 5,
       text: "Elite Associate transformed my career completely. The training was industry-focused and the placement assistance was exceptional. I got placed in TCS with a great package!",
       course: "Full Stack Development"
@@ -21,7 +28,7 @@ const TestimonialsSection = () => {
       name: "Priya Patel",
       role: "Data Analyst",
       company: "Infosys",
-      image: "public/Review/photo4.jpeg",
+      image: photo4,
       rating: 5,
       text: "The best decision I made was joining Elite Associate. The trainers are industry experts and the curriculum is updated with latest technologies. Highly recommended!",
       course: "Data Science"
@@ -31,7 +38,7 @@ const TestimonialsSection = () => {
       name: "Amit Kumar",
       role: "DevOps Engineer",
       company: "Wipro",
-      image: "public/Review/photo10.jpeg",
+      image: photo10,
       rating: 5,
       text: "100% placement assistance is not just a promise here, it's a reality. The support team helped me throughout the placement process. Thank you Elite Associate!",
       course: "DevOps & Cloud"
@@ -41,7 +48,7 @@ const TestimonialsSection = () => {
       name: "Sneha Reddy",
       role: "UI/UX Designer",
       company: "Accenture",
-      image: "public/Review/photo3.jpeg",
+      image: photo3,
       rating: 5,
       text: "The practical approach to learning and live project experience gave me the confidence to crack interviews. Elite Associate is truly the best training institute!",
       course: "UI/UX Design"
@@ -51,7 +58,7 @@ const TestimonialsSection = () => {
       name: "Vikash Singh",
       role: "Cybersecurity Analyst",
       company: "IBM",
-      image: "public/Review/photo11.jpeg",
+      image: photo11,
       rating: 5,
       text: "From zero knowledge to getting placed in IBM, Elite Associate made it possible. The mentorship and guidance throughout the journey was outstanding.",
       course: "Cybersecurity"

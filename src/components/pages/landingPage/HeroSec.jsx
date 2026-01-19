@@ -7,6 +7,9 @@ import ResponsiveImage from '../../common/ResponsiveImage';
 import ContactFormPopup from '../../common/ContactFormPopup';
 import { trackButtonClick } from '../../../utils/analytics';
 
+// Import hero image
+import bg3 from '../../../assets/images/Hero/bg3.jpeg';
+
 const HeroSec = () => {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const [isEnrollPopupOpen, setIsEnrollPopupOpen] = useState(false);
@@ -185,7 +188,7 @@ const HeroSec = () => {
           >
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <ResponsiveImage
-                src="public/Hero/bg3.jpeg"
+                src={bg3}
                 alt="Training and Placement - Students learning technology skills"
                 className="w-full h-auto aspect-video rounded-3xl object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"

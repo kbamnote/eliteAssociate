@@ -3,6 +3,11 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Award, Users, Briefcase, TrendingUp, CheckCircle, Star, Phone, Mail } from 'lucide-react';
 import ResponsiveImage from '../../common/ResponsiveImage';
 
+// Import hero images
+import bg2 from '../../../assets/images/AboutHero/bg2.jpeg';
+import bg5 from '../../../assets/images/AboutHero/bg5.jpeg';
+import bg7 from '../../../assets/images/AboutHero/bg7.jpeg';
+
 export default function AboutHero() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
@@ -126,9 +131,9 @@ export default function AboutHero() {
                 {/* Image Slides */}
                 <div className="relative h-full">
                   {[
-                    'public/AboutHero/bg2.jpeg',
-                    'public/AboutHero/bg5.jpeg',
-                    'public/AboutHero/bg7.jpeg'
+                    bg2,
+                    bg5,
+                    bg7
                   ].map((img, index) => (
                     <div
                       key={index}

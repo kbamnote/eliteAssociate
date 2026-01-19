@@ -2,6 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Building, Users, TrendingUp, Award, Shield, CheckCircle } from 'lucide-react';
 
+// Import placement page images
+import photo5 from '../../../assets/images/Review/photo5.jpeg';
+import photo3 from '../../../assets/images/Review/photo3.jpeg/';
+
 const PlacementPage = () => {
   const stats = [
     { number: "95%", label: "Placement Rate" },
@@ -46,14 +50,14 @@ const PlacementPage = () => {
       role: "Fire Safety Officer",
       company: "Global Manufacturing Inc.",
       quote: "Elite Associates helped me transition from an entry-level position to leading safety protocols for a Fortune 500 company within 18 months.",
-      image: "public/Review/photo5.jpeg"
+      image: photo5
     },
     {
       name: "Nupur Mahore",
       role: "Industrial Safety Specialist",
       company: "TechSafety Solutions",
       quote: "The placement support team connected me with my dream job. I'm now managing safety for a major tech company.",
-      image: "public/Review/photo3.jpeg"
+      image: photo3
     },
     {
       name: "Purvanshu khapra",

@@ -2,6 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { ArrowRight, Target, Building2, TrendingUp, CheckCircle, Star, Rocket, Users, Award, Briefcase } from 'lucide-react';
 import ResponsiveImage from '../../common/ResponsiveImage';
 
+// Import placement hero images
+import placementBg from '../../../assets/images/placement/bg .jpeg';
+import heroBg3 from '../../../assets/images/Hero/bg3.jpeg';
+import aboutBg1 from '../../../assets/images/AboutHero/bg1.jpeg';
+
 export default function PlacementHero() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
@@ -120,9 +125,9 @@ export default function PlacementHero() {
                 {/* Image Slides */}
                 <div className="relative h-full">
                   {[
-                    'public/placement/bg .jpeg',
-                    'public/Hero/bg3.jpeg',
-                    'public/AboutHero/bg1.jpeg'
+                    placementBg,
+                    heroBg3,
+                    aboutBg1
                   ].map((img, index) => (
                     <div
                       key={index}
