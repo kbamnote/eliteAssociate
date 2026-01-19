@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { ArrowRight, Users, Building, Zap, Code, TrendingUp, ChevronLeft, ChevronRight, Star, ExternalLink } from 'lucide-react';
+import { ArrowRight, Users, Building, Zap, Code, TrendingUp, ChevronLeft, ChevronRight, Star, ExternalLink, Briefcase } from 'lucide-react';
 
 const ResponsiveImage = ({ src, alt, className, width, height }) => (
   <img src={src} alt={alt} className={className} width={width} height={height} loading="lazy" />
@@ -30,32 +30,12 @@ const ProductShowcase = () => {
         "Premium employer network"
       ],
       icon: <Users className="w-10 h-10" />,
-      color: "from-purple-500 to-pink-500",
-      bgColor: "bg-purple-100",
-      textColor: "text-purple-800",
+      color: "from-blue-500 to-cyan-500",
+      bgColor: "bg-blue-100",
+      textColor: "text-blue-800",
       link: "https://www.eliteindiajobs.com",
       stats: { users: "2M+", rating: "4.8/5" },
-      image: "https://static.vecteezy.com/system/resources/previews/001/829/377/non_2x/agents-who-find-jobs-for-job-seekers-and-companies-that-need-professional-workers-for-career-interview-flat-illustration-concept-for-landing-page-web-ui-banner-flyer-poster-template-background-free-vector.jpg"
-    },
-    {
-      id: 6,
-      name: "Elite Cards",
-      tagline: "Professional Networking Cards",
-      description: "Digital business cards with advanced networking features",
-      fullDescription: "Elite Cards revolutionizes professional networking with smart digital business cards that adapt to your audience. With real-time analytics, customizable templates, and seamless integration with leading CRM platforms, Elite Cards helps professionals make meaningful connections that matter.",
-      features: [
-        "Smart digital business cards",
-        "Real-time interaction analytics",
-        "Customizable templates",
-        "CRM integration"
-      ],
-      icon: <Code className="w-10 h-10" />,
-      color: "from-teal-500 to-blue-500",
-      bgColor: "bg-teal-100",
-      textColor: "text-teal-800",
-      link: "https://www.elitecards.in",
-      stats: { users: "500K+", rating: "4.9/5" },
-      image: "https://graphicdesigneye.com/images/top-benefits-of-digital-business-cards.jpg"
+      image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&q=80"
     },
     {
       id: 5,
@@ -70,32 +50,12 @@ const ProductShowcase = () => {
         "Industry-aligned curricula"
       ],
       icon: <Code className="w-10 h-10" />,
-      color: "from-indigo-500 to-purple-500",
-      bgColor: "bg-indigo-100",
-      textColor: "text-indigo-800",
+      color: "from-blue-500 to-blue-600",
+      bgColor: "bg-blue-100",
+      textColor: "text-blue-800",
       link: "https://www.eeetechnologies.in",
       stats: { users: "12K+", rating: "4.8/5" },
       image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&q=80&auto=format&fit=crop"
-    },
-    {
-      id: 1,
-      name: "JIFSA",
-      tagline: "ST. JOSEPH'S INTERNATIONAL FIRE AND SAFETY ACADEMY",
-      description: "Comprehensive training and certification for fire and safety professionals",
-      fullDescription: "JIFSA (ST. JOSEPH'S INTERNATIONAL FIRE AND SAFETY ACADEMY) offers specialized training programs in fire safety, industrial safety, and emergency response. Our courses are designed by industry experts and accredited by leading safety organizations. With over 50,000+ professionals trained, we're the preferred choice for fire and safety upskilling.",
-      features: [
-        "Fire safety certification courses",
-        "Industrial safety training",
-        "Emergency response programs",
-        "Internationally recognized accreditation"
-      ],
-      icon: <TrendingUp className="w-10 h-10" />,
-      color: "from-red-500 to-orange-500",
-      bgColor: "bg-red-100",
-      textColor: "text-red-800",
-      link: "https://www.jifsacareers.com",
-      stats: { users: "50K+", rating: "4.9/5" },
-      image: "https://jifsa.in/assets/images/residential/residentialpageimage4.jpg"
     },
     {
       id: 3,
@@ -118,6 +78,26 @@ const ProductShowcase = () => {
       image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&q=80&auto=format&fit=crop"
     },
     {
+      id: 7,
+      name: "Elite Management",
+      tagline: "Enterprise Resource Planning",
+      description: "Comprehensive management solutions for modern enterprises",
+      fullDescription: "Elite Management provides a powerful suite of enterprise resource planning tools designed to streamline operations, manage resources efficiently, and drive organizational growth. From HR management to financial tracking, it's the all-in-one solution for modern businesses.",
+      features: [
+        "Real-time resource tracking",
+        "Automated HR workflows",
+        "Financial management suite",
+        "Integrated analytics dashboard"
+      ],
+      icon: <Briefcase className="w-10 h-10" />,
+      color: "from-blue-600 to-indigo-600",
+      bgColor: "bg-blue-100",
+      textColor: "text-blue-800",
+      link: "#",
+      stats: { users: "5K+", rating: "4.8/5" },
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80&auto=format&fit=crop"
+    },
+    {
       id: 4,
       name: "Elite BIFS",
       tagline: "Banking Insurance Financial Services",
@@ -136,6 +116,86 @@ const ProductShowcase = () => {
       link: "https://www.elitebifs.in",
       stats: { users: "8K+", rating: "4.9/5" },
       image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&q=80&auto=format&fit=crop"
+    },
+    {
+      id: 6,
+      name: "Elite Cards",
+      tagline: "Professional Networking Cards",
+      description: "Digital business cards with advanced networking features",
+      fullDescription: "Elite Cards revolutionizes professional networking with smart digital business cards that adapt to your audience. With real-time analytics, customizable templates, and seamless integration with leading CRM platforms, Elite Cards helps professionals make meaningful connections that matter.",
+      features: [
+        "Smart digital business cards",
+        "Real-time interaction analytics",
+        "Customizable templates",
+        "CRM integration"
+      ],
+      icon: <Code className="w-10 h-10" />,
+      color: "from-teal-500 to-blue-500",
+      bgColor: "bg-teal-100",
+      textColor: "text-teal-800",
+      link: "https://www.elitedigitalcards.com",
+      stats: { users: "500K+", rating: "4.9/5" },
+      image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80"
+    },
+    {
+      id: 9,
+      name: "Elite Properties",
+      tagline: "Real Estate Management",
+      description: "End-to-end solutions for property management and investment",
+      fullDescription: "Elite Properties offers a comprehensive platform for property owners, managers, and investors. From listing management to tenant communication and investment analytics, we provide the tools needed to succeed in the competitive real estate market.",
+      features: [
+        "Property listing management",
+        "Tenant screening & portal",
+        "Investment analytics",
+        "Automated rent collection"
+      ],
+      icon: <Building className="w-10 h-10" />,
+      color: "from-amber-500 to-orange-500",
+      bgColor: "bg-amber-100",
+      textColor: "text-amber-800",
+      link: "#",
+      stats: { users: "3K+", rating: "4.7/5" },
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&q=80&auto=format&fit=crop"
+    },
+    {
+      id: 8,
+      name: "Elite Paisa",
+      tagline: "Digital Financial Solutions",
+      description: "Secure and efficient payment and financial management platform",
+      fullDescription: "Elite Paisa is a cutting-edge digital finance platform that simplifies payments, transfers, and financial planning. With enterprise-grade security and a user-friendly interface, it's designed to make financial management accessible and efficient for everyone.",
+      features: [
+        "Secure digital payments",
+        "Instant fund transfers",
+        "Financial planning tools",
+        "Multi-currency support"
+      ],
+      icon: <TrendingUp className="w-10 h-10" />,
+      color: "from-emerald-500 to-teal-500",
+      bgColor: "bg-emerald-100",
+      textColor: "text-emerald-800",
+      link: "#",
+      stats: { users: "10K+", rating: "4.9/5" },
+      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&q=80&auto=format&fit=crop"
+    },
+    {
+      id: 1,
+      name: "JIFSA",
+      tagline: "ST. JOSEPH'S INTERNATIONAL FIRE AND SAFETY ACADEMY",
+      description: "Comprehensive training and certification for fire and safety professionals",
+      fullDescription: "JIFSA (ST. JOSEPH'S INTERNATIONAL FIRE AND SAFETY ACADEMY) offers specialized training programs in fire safety, industrial safety, and emergency response. Our courses are designed by industry experts and accredited by leading safety organizations. With over 50,000+ professionals trained, we're the preferred choice for fire and safety upskilling.",
+      features: [
+        "Fire safety certification courses",
+        "Industrial safety training",
+        "Emergency response programs",
+        "Internationally recognized accreditation"
+      ],
+      icon: <TrendingUp className="w-10 h-10" />,
+      color: "from-red-500 to-orange-500",
+      bgColor: "bg-red-100",
+      textColor: "text-red-800",
+      link: "https://www.jifsacareers.com",
+      stats: { users: "50K+", rating: "4.9/5" },
+      image: "https://jifsa.in/assets/images/residential/residentialpageimage4.jpg"
     }
   ];
 
@@ -145,7 +205,7 @@ const ProductShowcase = () => {
       role: "Safety Manager",
       company: "Industrial Safety Corp",
       content: "JIFSA (ST. JOSEPH'S INTERNATIONAL FIRE AND SAFETY ACADEMY) transformed our team's capabilities. The practical approach to fire safety education has directly contributed to a 35% improvement in our safety compliance.",
-      avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face",
+      avatar: "public/mahima_patel.jpg",
       rating: 5
     },
     {
@@ -153,7 +213,7 @@ const ProductShowcase = () => {
       role: "Construction Manager",
       company: "UrbanBuild Corp",
       content: "Elite BIM reduced our project errors by 60% and accelerated delivery timelines. The collaborative platform has revolutionized how we work with stakeholders.",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+      avatar: "public/4a5c2f2a828314d79432bb91afeb3ef3.jpg",
       rating: 5
     },
     {
@@ -161,7 +221,7 @@ const ProductShowcase = () => {
       role: "Banking Professional",
       company: "FinanceCorp",
       content: "Elite BIFS's banking and finance programs have improved our team's expertise significantly. The real-world case studies and expert instruction have been invaluable for our professional development.",
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
+      avatar: "public/4da5901373d491ba9f5d0ed8106f88c0.jpg",
       rating: 5
     }
   ];
@@ -209,7 +269,7 @@ const ProductShowcase = () => {
           className="text-center mb-16 relative"
         >
           <motion.div
-            className="absolute top-0 left-1/4 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20"
+            className="absolute top-0 left-1/4 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-20"
             animate={{
               scale: [1, 1.2, 1],
               x: [0, 50, 0],
@@ -222,7 +282,7 @@ const ProductShowcase = () => {
             }}
           />
           <motion.div
-            className="absolute top-0 right-1/4 w-72 h-72 bg-indigo-300 rounded-full mix-blend-multiply filter blur-xl opacity-20"
+            className="absolute top-0 right-1/4 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-20"
             animate={{
               scale: [1.2, 1, 1.2],
               x: [0, -50, 0],
@@ -240,7 +300,7 @@ const ProductShowcase = () => {
             variants={itemVariants}
           >
             Our <motion.span 
-              className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-indigo-600"
+              className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-700"
               animate={{
                 backgroundPosition: ['0%', '100%', '0%'],
               }}
@@ -261,7 +321,7 @@ const ProductShowcase = () => {
             Innovative solutions designed to empower businesses and professionals across various domains
           </motion.p>
           <motion.div
-            className="w-24 h-1 bg-gradient-to-r from-purple-500 to-indigo-500 mx-auto rounded-full relative z-10 overflow-hidden"
+            className="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto rounded-full relative z-10 overflow-hidden"
             variants={itemVariants}
           >
             <motion.div
@@ -289,11 +349,12 @@ const ProductShowcase = () => {
               key={product.id}
               variants={itemVariants}
               whileHover={{ 
-                y: -15,
-                scale: 1.02,
-                transition: { duration: 0.3 }
+                y: -10,
+                scale: 1.01,
+                transition: { duration: 0.3 },
+                boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)'
               }}
-              className="bg-white rounded-2xl shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl cursor-pointer group relative"
+              className="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl cursor-pointer group relative flex flex-col h-full border border-gray-100"
               onClick={() => setSelectedProduct(product)}
             >
               <div className="absolute inset-0 overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
@@ -325,27 +386,28 @@ const ProductShowcase = () => {
                 />
                 
                 <div className="bg-white h-full flex flex-col relative">
-                  <div className="relative h-40 w-full overflow-hidden rounded-xl m-6 mt-6">
-                    <motion.div
-                      whileHover={{ scale: 1.1 }}
-                      transition={{ duration: 0.6 }}
-                    >
-                      <ResponsiveImage
-                        src={product.image}
-                        alt={product.name}
-                        width={600}
-                        height={240}
-                        className="w-full h-full object-cover"
-                      />
-                    </motion.div>
+                  <div className="relative w-full overflow-hidden rounded-t-xl border-b border-gray-200" style={{ height: '200px' }}>
+                    <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-white"></div>
+                    <div className="flex items-center justify-center h-full p-4">
+                      <div className="relative">
+                        <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-xl shadow-inner"></div>
+                        <ResponsiveImage
+                          src={product.image}
+                          alt={product.name}
+                          width={300}
+                          height={150}
+                          className="object-contain max-h-32 relative z-10"
+                        />
+                      </div>
+                    </div>
                     <motion.div 
-                      className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"
-                      initial={{ opacity: 0.3 }}
-                      whileHover={{ opacity: 0.6 }}
+                      className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent"
+                      initial={{ opacity: 0.1 }}
+                      whileHover={{ opacity: 0.3 }}
                       transition={{ duration: 0.3 }}
                     />
                     <motion.div 
-                      className={`absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-semibold ${product.bgColor} ${product.textColor} backdrop-blur`}
+                      className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold bg-white/80 backdrop-blur z-10 shadow-sm ${product.bgColor} ${product.textColor}`}
                       initial={{ x: -10, opacity: 0 }}
                       animate={{ x: 0, opacity: 1 }}
                       transition={{ delay: 0.2 }}
@@ -355,103 +417,42 @@ const ProductShowcase = () => {
                     </motion.div>
                   </div>
                   
-                  <div className="px-6 pb-6 flex-1 flex flex-col">
-                    <motion.div 
-                      className={`w-16 h-16 rounded-xl ${product.bgColor} ${product.textColor} flex items-center justify-center mb-6 relative overflow-hidden`}
-                      whileHover={{ 
-                        rotate: [0, -10, 10, -10, 0],
-                        scale: 1.1 
-                      }}
-                      transition={{ duration: 0.5 }}
-                    >
-                      <motion.div
-                        className="absolute inset-0 bg-white/20"
-                        initial={{ scale: 0, opacity: 0 }}
-                        whileHover={{ scale: 2, opacity: [0, 1, 0] }}
-                        transition={{ duration: 0.6 }}
-                      />
-                      {product.icon}
-                    </motion.div>
-                    
-                    <motion.h3 
-                      className="text-2xl font-bold text-gray-900 mb-2"
-                      whileHover={{ x: 5 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      {product.name}
-                    </motion.h3>
-                    <p className="text-purple-600 font-medium text-sm mb-3">{product.tagline}</p>
-                    <p className="text-gray-600 mb-6 flex-grow">{product.description}</p>
-                    
-                    <motion.div 
-                      className="flex justify-between items-center mb-4"
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.3 }}
-                    >
-                      <span className="text-gray-500 text-sm">{product.stats.users} Users</span>
-                      <div className="flex items-center">
-                        <div className="flex">
-                          {[...Array(5)].map((_, i) => (
-                            <motion.div
-                              key={i}
-                              initial={{ opacity: 0, scale: 0 }}
-                              animate={{ opacity: 1, scale: 1 }}
-                              transition={{ delay: 0.4 + i * 0.1 }}
-                              whileHover={{ 
-                                scale: 1.3,
-                                rotate: 180,
-                                transition: { duration: 0.3 }
-                              }}
-                            >
-                              <Star 
-                                className={`w-4 h-4 ${i < Math.floor(parseFloat(product.stats.rating)) ? 'text-yellow-500 fill-current' : 'text-gray-300'}`} 
-                              />
-                            </motion.div>
-                          ))}
-                        </div>
-                        <span className="text-gray-700 font-medium ml-1">{product.stats.rating}</span>
+                  <div className="px-6 pb-6 flex-1 flex flex-col" style={{ minHeight: '250px' }}>
+                    <div className="flex items-center mb-4">
+                      <div className={`w-12 h-12 rounded-lg ${product.bgColor} ${product.textColor} flex items-center justify-center mr-3`}>
+                        {product.icon}
                       </div>
-                    </motion.div>
+                      <h3 className="text-xl font-bold text-gray-900">{product.name}</h3>
+                    </div>
                     
-                    <div className="flex justify-between items-center">
+                    <p className="text-gray-600 mb-4 flex-grow text-sm">{product.description}</p>
+                    
+                    <div className="flex justify-between items-center mb-4 text-sm">
+                      <span className="text-gray-500">{product.stats.users} users</span>
+                      <div className="flex items-center space-x-1">
+                        <Star className="w-4 h-4 text-yellow-400 fill-current" />
+                        <span className="text-gray-700 font-medium">{product.stats.rating}</span>
+                      </div>
+                    </div>
+                    
+                    <div className="flex justify-between items-center pt-2 mt-auto">
                       <motion.a 
                         href={product.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`flex items-center font-semibold ${product.textColor}`}
+                        className={`text-sm font-medium ${product.textColor} hover:underline`}
                         onClick={(e) => e.stopPropagation()}
-                        whileHover={{ x: 5 }}
-                        whileTap={{ scale: 0.95 }}
                       >
                         Visit Website
-                        <motion.div
-                          animate={{ x: [0, 3, 0] }}
-                          transition={{ 
-                            duration: 1.5,
-                            repeat: Infinity,
-                            ease: "easeInOut"
-                          }}
-                        >
-                          <ExternalLink className="ml-2 w-4 h-4" />
-                        </motion.div>
                       </motion.a>
                       <motion.button 
-                        className="text-gray-400 hover:text-gray-700 relative px-3 py-1"
+                        className={`text-sm font-medium px-4 py-2 rounded-lg ${product.bgColor} ${product.textColor} hover:opacity-90 transition-opacity`}
                         onClick={(e) => {
                           e.stopPropagation();
                           setSelectedProduct(product);
                         }}
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
                       >
-                        <span className="relative z-10">Details</span>
-                        <motion.div
-                          className="absolute inset-0 bg-gray-200 rounded"
-                          initial={{ scale: 0 }}
-                          whileHover={{ scale: 1 }}
-                          transition={{ duration: 0.2 }}
-                        />
+                        Details
                       </motion.button>
                     </div>
                   </div>
@@ -462,7 +463,7 @@ const ProductShowcase = () => {
         </motion.div>
 
         <motion.div
-          className="bg-gradient-to-r from-gray-900 via-purple-900 to-gray-900 rounded-3xl p-8 md:p-12 text-white mb-20 relative overflow-hidden"
+          className="bg-gradient-to-r from-gray-900 via-blue-900 to-gray-900 rounded-3xl p-8 md:p-12 text-white mb-20 relative overflow-hidden"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -498,12 +499,12 @@ const ProductShowcase = () => {
               viewport={{ once: true }}
             >
               What Our <motion.span 
-                className="text-purple-400"
+                className="text-blue-400"
                 animate={{
                   textShadow: [
-                    '0 0 10px rgba(192, 132, 252, 0.5)',
-                    '0 0 20px rgba(192, 132, 252, 0.8)',
-                    '0 0 10px rgba(192, 132, 252, 0.5)',
+                    '0 0 10px rgba(99, 102, 241, 0.5)',
+                    '0 0 20px rgba(99, 102, 241, 0.8)',
+                    '0 0 10px rgba(99, 102, 241, 0.5)',
                   ]
                 }}
                 transition={{
@@ -531,7 +532,7 @@ const ProductShowcase = () => {
                     transition={{ type: "spring", stiffness: 300 }}
                   >
                     <motion.div
-                      className="absolute -inset-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full blur-lg"
+                      className="absolute -inset-2 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full blur-lg"
                       animate={{
                         scale: [1, 1.2, 1],
                         opacity: [0.5, 0.8, 0.5],
@@ -546,7 +547,7 @@ const ProductShowcase = () => {
                       alt={testimonials[currentTestimonial].name}
                       width={96}
                       height={96}
-                      className="w-24 h-24 rounded-full object-cover border-4 border-purple-400 relative z-10"
+                      className="w-24 h-24 rounded-full object-cover border-4 border-blue-400 relative z-10"
                     />
                   </motion.div>
                   <div className="text-center md:text-left">
@@ -588,7 +589,7 @@ const ProductShowcase = () => {
                       transition={{ delay: 0.5 }}
                     >
                       <p className="font-bold text-lg">{testimonials[currentTestimonial].name}</p>
-                      <p className="text-purple-400">{testimonials[currentTestimonial].role}</p>
+                      <p className="text-blue-400">{testimonials[currentTestimonial].role}</p>
                       <p className="text-gray-400">{testimonials[currentTestimonial].company}</p>
                     </motion.div>
                   </div>
@@ -621,12 +622,12 @@ const ProductShowcase = () => {
                   key={index}
                   onClick={() => setCurrentTestimonial(index)}
                   className={`h-3 rounded-full transition-all ${
-                    index === currentTestimonial ? 'bg-purple-400 w-8' : 'bg-white/30 w-3'
+                    index === currentTestimonial ? 'bg-blue-400 w-8' : 'bg-white/30 w-3'
                   }`}
                   whileHover={{ scale: 1.3 }}
                   whileTap={{ scale: 0.9 }}
                   animate={index === currentTestimonial ? {
-                    boxShadow: ['0 0 0 0 rgba(192, 132, 252, 0.7)', '0 0 0 10px rgba(192, 132, 252, 0)', '0 0 0 0 rgba(192, 132, 252, 0)']
+                    boxShadow: ['0 0 0 0 rgba(99, 102, 241, 0.7)', '0 0 0 10px rgba(99, 102, 241, 0)', '0 0 0 0 rgba(99, 102, 241, 0)']
                   } : {}}
                   transition={{ duration: 1.5, repeat: Infinity }}
                 />
@@ -636,7 +637,7 @@ const ProductShowcase = () => {
         </motion.div>
 
         <motion.div
-          className="bg-gradient-to-r from-teal-500 via-blue-600 to-purple-600 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden"
+          className="bg-gradient-to-r from-teal-500 via-blue-600 to-blue-600 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -863,7 +864,7 @@ const ProductShowcase = () => {
                       transition={{ type: "spring", stiffness: 300 }}
                     >
                       <motion.div
-                        className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-blue-500/10"
+                        className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-blue-500/10"
                         initial={{ x: '-100%' }}
                         whileHover={{ x: '100%' }}
                         transition={{ duration: 0.6 }}

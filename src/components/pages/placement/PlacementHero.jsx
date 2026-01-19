@@ -33,8 +33,8 @@ export default function PlacementHero() {
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute w-96 h-96 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob top-20 -left-4"></div>
-        <div className="absolute w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000 top-20 right-0"></div>
-        <div className="absolute w-96 h-96 bg-indigo-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000 bottom-0 left-20"></div>
+        <div className="absolute w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000 top-20 right-0"></div>
+        <div className="absolute w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000 bottom-0 left-20"></div>
       </div>
 
       {/* Grid Pattern Overlay */}
@@ -54,7 +54,7 @@ export default function PlacementHero() {
             <div className="space-y-4">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight">
                 Your Dream Job
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-purple-700 to-indigo-700 animate-gradient">
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-blue-600 to-blue-700 animate-gradient">
                   Awaits You
                 </span>
               </h1>
@@ -79,7 +79,7 @@ export default function PlacementHero() {
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4">
-              <button className="group relative px-8 py-4 bg-gradient-to-r from-blue-700 via-purple-700 to-indigo-700 rounded-full text-white font-semibold shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transition-all duration-300 hover:scale-105">
+              <button className="group relative px-8 py-4 bg-gradient-to-r from-blue-700 via-blue-600 to-blue-700 rounded-full text-white font-semibold shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transition-all duration-300 hover:scale-105">
                 Register for Placement
                 <ArrowRight className="inline-block ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
@@ -113,16 +113,16 @@ export default function PlacementHero() {
           <div className={`relative transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
             <div className="relative h-[500px] lg:h-[600px]">
               {/* Decorative Elements */}
-              <div className="absolute -top-4 -right-4 w-72 h-72 bg-gradient-to-br from-blue-400 via-purple-400 to-indigo-600 rounded-3xl opacity-20 blur-3xl animate-pulse"></div>
+              <div className="absolute -top-4 -right-4 w-72 h-72 bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 rounded-3xl opacity-20 blur-3xl animate-pulse"></div>
               
               {/* Main Image Container */}
-              <div className="relative h-full bg-gradient-to-br from-blue-100 via-purple-50 to-indigo-50 rounded-3xl border-2 border-blue-200 overflow-hidden shadow-2xl">
+              <div className="relative h-full bg-gradient-to-br from-blue-100 via-blue-50 to-blue-50 rounded-3xl border-2 border-blue-200 overflow-hidden shadow-2xl">
                 {/* Image Slides */}
                 <div className="relative h-full">
                   {[
-                    'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&q=80',
-                    'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80',
-                    'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80'
+                    'public/placement/bg .jpeg',
+                    'public/Hero/bg3.jpeg',
+                    'public/AboutHero/bg1.jpeg'
                   ].map((img, index) => (
                     <div
                       key={index}
@@ -147,7 +147,7 @@ export default function PlacementHero() {
                 {/* Floating Card */}
                 <div className="absolute bottom-8 left-8 right-8 bg-white/95 backdrop-blur-md rounded-2xl p-6 border border-blue-200 shadow-xl">
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-700 via-purple-700 to-indigo-700 rounded-full flex items-center justify-center">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-700 via-blue-600 to-blue-700 rounded-full flex items-center justify-center">
                       <Target className="w-6 h-6 text-white" />
                     </div>
                     <div>
@@ -172,7 +172,7 @@ export default function PlacementHero() {
               </div>
 
               {/* Floating Elements */}
-              <div className="absolute -bottom-6 -left-6 bg-gradient-to-br from-blue-700 via-purple-700 to-indigo-700 rounded-2xl p-4 shadow-xl animate-float">
+              <div className="absolute -bottom-6 -left-6 bg-gradient-to-br from-blue-700 via-blue-600 to-blue-700 rounded-2xl p-4 shadow-xl animate-float">
                 <div className="text-white text-center">
                   <div className="text-3xl font-bold">98%</div>
                   <div className="text-sm opacity-90">Satisfaction Rate</div>
@@ -192,7 +192,7 @@ export default function PlacementHero() {
       </div>
 
       {/* Bottom Gradient Bar */}
-      <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-r from-blue-700 via-purple-700 to-indigo-700"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-r from-blue-700 via-blue-600 to-blue-700"></div>
 
       <style jsx>{`
         @keyframes blob {

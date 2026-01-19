@@ -80,7 +80,7 @@ const ContactFormPopup = ({ isOpen, onClose, title = "Get Started Today!" }) => 
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
-            <div className="relative bg-gradient-to-r from-purple-700 to-purple-600 text-white p-6 rounded-t-2xl">
+            <div className="relative bg-gradient-to-r from-blue-700 to-blue-600 text-white p-6 rounded-t-2xl">
               <button
                 onClick={onClose}
                 className="absolute top-4 right-4 text-white/80 hover:text-white transition-colors"
@@ -88,7 +88,7 @@ const ContactFormPopup = ({ isOpen, onClose, title = "Get Started Today!" }) => 
                 <X size={24} />
               </button>
               <h2 className="text-2xl font-bold mb-2">{title}</h2>
-              <p className="text-purple-100">Fill in your details to begin your journey with Elite Associates</p>
+              <p className="text-blue-100">Fill in your details to begin your journey with Elite Associates</p>
             </div>
 
             {/* Form Content */}
@@ -106,7 +106,7 @@ const ContactFormPopup = ({ isOpen, onClose, title = "Get Started Today!" }) => 
                       name="fullName"
                       value={formData.fullName}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                       placeholder="Enter your full name"
                       required
                     />
@@ -123,7 +123,7 @@ const ContactFormPopup = ({ isOpen, onClose, title = "Get Started Today!" }) => 
                       name="specialisation"
                       value={formData.specialisation}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                       placeholder="Your area of specialisation"
                       required
                     />
@@ -140,7 +140,7 @@ const ContactFormPopup = ({ isOpen, onClose, title = "Get Started Today!" }) => 
                       name="phoneNo"
                       value={formData.phoneNo}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                       placeholder="Your phone number"
                       required
                     />
@@ -157,7 +157,7 @@ const ContactFormPopup = ({ isOpen, onClose, title = "Get Started Today!" }) => 
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                       placeholder="Your email address"
                       required
                     />
@@ -180,7 +180,7 @@ const ContactFormPopup = ({ isOpen, onClose, title = "Get Started Today!" }) => 
                     disabled={!isFormValid || isSubmitting}
                     className={`w-full py-3 px-6 rounded-lg font-medium transition-all flex items-center justify-center gap-2 ${
                       isFormValid && !isSubmitting
-                        ? 'bg-gradient-to-r from-purple-700 to-purple-600 text-white hover:from-purple-800 hover:to-purple-700 shadow-lg'
+                        ? 'bg-gradient-to-r from-blue-700 to-blue-600 text-white hover:from-blue-800 hover:to-blue-700 shadow-lg'
                         : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                     }`}
                     whileHover={isFormValid && !isSubmitting ? { scale: 1.02 } : {}}

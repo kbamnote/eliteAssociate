@@ -16,7 +16,7 @@ const FloatingButton = () => {
       <div className="fixed bottom-8 right-8 z-50">
         <motion.button
           onClick={toggleContactModal}
-          className="bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700 text-white p-4 rounded-full shadow-2xl flex items-center justify-center"
+          className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white p-4 rounded-full shadow-2xl flex items-center justify-center"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           initial={{ scale: 0 }}

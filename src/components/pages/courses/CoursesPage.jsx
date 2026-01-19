@@ -139,7 +139,7 @@ const CoursesPage = () => {
           transition={{ duration: 0.6 }}
         >
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-indigo-700">Training Programs</span>
+            Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-700">Training Programs</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
             Professional courses designed to equip you with industry-recognized skills and certifications
@@ -157,7 +157,7 @@ const CoursesPage = () => {
                 placeholder="Search courses..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-12 pr-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                className="w-full pl-12 pr-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
             
@@ -175,7 +175,7 @@ const CoursesPage = () => {
                 key={category.id}
                 className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
                   activeCategory === category.id
-                    ? 'bg-purple-600 text-white shadow-md'
+                    ? 'bg-blue-600 text-white shadow-md'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
                 whileHover={{ scale: 1.05 }}
@@ -199,7 +199,7 @@ const CoursesPage = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -10 }}
             >
-              <div className="h-48 bg-gradient-to-r from-purple-500 to-indigo-600 flex items-center justify-center">
+              <div className="h-48 bg-gradient-to-r from-blue-500 to-cyan-600 flex items-center justify-center">
                 <div className="text-white text-center p-4">
                   <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4 inline-block mb-3">
                     <Shield className="w-12 h-12 mx-auto" />
@@ -211,7 +211,7 @@ const CoursesPage = () => {
               <div className="p-6">
                 <div className="flex justify-between items-start mb-4">
                   <h3 className="text-xl font-bold text-gray-900">{course.title}</h3>
-                  <span className="bg-purple-100 text-purple-800 text-xs font-semibold px-2 py-1 rounded">
+                  <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2 py-1 rounded">
                     {course.level}
                   </span>
                 </div>
@@ -244,7 +244,7 @@ const CoursesPage = () => {
                 </div>
                 
                 <motion.button
-                  className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-semibold py-3 rounded-lg flex items-center justify-center gap-2 transition-all"
+                  className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 rounded-lg flex items-center justify-center gap-2 transition-all"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >

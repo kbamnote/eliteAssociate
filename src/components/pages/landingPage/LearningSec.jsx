@@ -19,7 +19,7 @@ const LearningSec = () => {
             '100% Job Assurance',
             '18 LPA Highest Salary'
           ],
-          badge: '4500+ Career Transitions',
+          badge: '50000+ Career Transitions',
           companies: [
             { name: 'Bank of America', logo: 'https://logo.clearbit.com/bankofamerica.com' },
             { name: 'BNP Paribas', logo: 'https://logo.clearbit.com/bnpparibas.com' },
@@ -32,7 +32,7 @@ const LearningSec = () => {
           title: 'Postgraduate Program in Banking and Finance',
           features: [
             '100% Job Assurance',
-            '10000+ Learners Impacted'
+            '50000+ Learners Impacted'
           ],
           badge: '85% Placement Record',
           companies: [
@@ -49,7 +49,7 @@ const LearningSec = () => {
             '100% Job Assurance',
             '1200+ Batches Completed'
           ],
-          badge: '36000+ Placements',
+          badge: '50000+ Placements',
           companies: [
             { name: 'JP Morgan', logo: 'https://logo.clearbit.com/jpmorgan.com' },
             { name: 'Goldman Sachs', logo: 'https://logo.clearbit.com/goldmansachs.com' },
@@ -80,7 +80,7 @@ const LearningSec = () => {
             'Masterclasses by KPMG in India',
             'Extensive Career Support'
           ],
-          badge: '45,000+ Career Transitions',
+          badge: '50000+ Career Transitions',
           image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=400&fit=crop'
         },
         {
@@ -112,7 +112,7 @@ const LearningSec = () => {
             { name: 'EY', logo: 'https://logo.clearbit.com/ey.com' },
             { name: 'PwC', logo: 'https://logo.clearbit.com/pwc.com' }
           ],
-          image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop'
+          image: 'https://images.unsplash.com/photo-1518186239717-2e9b1331d725?w=800&h=400&fit=crop'
         }
       ]
     },

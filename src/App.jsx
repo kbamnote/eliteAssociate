@@ -18,6 +18,8 @@ const Blog = lazy(() => import('./components/pages/blog/BlogComp'));
 const Contact = lazy(() => import('./components/pages/contact/ContactPage'));
 
 // Loading Spinner
+const HiringInternships = lazy(() => import('./components/pages/placement/HiringInternships'));
+const ApplicationForm = lazy(() => import('./components/pages/placement/ApplicationForm'));
 const LoadingSpinner = () => (
   <div className="min-h-screen flex items-center justify-center bg-gray-50">
     <div className="text-center">
@@ -94,6 +96,12 @@ function App() {
 
               {/* Contact */}
               <Route path="/contact" element={<Contact />} />
+
+              {/* Hiring & Internships */}
+              <Route path="/hiring-internships" element={<HiringInternships />} />
+
+              {/* Application Form */}
+              <Route path="/apply/:id" element={<ApplicationForm />} />
 
               {/* 404 Page */}
               <Route

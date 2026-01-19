@@ -10,7 +10,7 @@ const PlacementStatsSec = () => {
   const stats = [
     {
       icon: <Users className="w-8 h-8" />,
-      number: "5000+",
+      number: "50000+",
       label: "Students Trained",
       description: "Professional safety professionals trained since 2008"
     },
@@ -28,7 +28,7 @@ const PlacementStatsSec = () => {
     },
     {
       icon: <Award className="w-8 h-8" />,
-      number: "15+",
+      number: "25+",
       label: "Years Experience",
       description: "Of excellence in fire and safety education"
     }
@@ -45,7 +45,7 @@ const PlacementStatsSec = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Our <span className="text-purple-600">Placement Success</span>
+            Our <span className="text-blue-600">Placement Success</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Impressive results that demonstrate our commitment to your career success
@@ -63,7 +63,7 @@ const PlacementStatsSec = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -10 }}
             >
-              <div className="bg-purple-100 w-16 h-16 rounded-xl flex items-center justify-center text-purple-600 mb-6">
+              <div className="bg-blue-100 w-16 h-16 rounded-xl flex items-center justify-center text-blue-600 mb-6">
                 {stat.icon}
               </div>
               
@@ -83,7 +83,7 @@ const PlacementStatsSec = () => {
         </div>
 
         <motion.div
-          className="mt-20 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-3xl p-8 md:p-12 text-white"
+          className="mt-20 bg-gradient-to-r from-blue-500 to-blue-600 rounded-3xl p-8 md:p-12 text-white"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -93,13 +93,13 @@ const PlacementStatsSec = () => {
             <h3 className="text-2xl md:text-3xl font-bold mb-4">
               Ready to Start Your Career in Fire & Safety?
             </h3>
-            <p className="text-xl mb-8 text-purple-100 max-w-2xl mx-auto">
+            <p className="text-xl mb-8 text-blue-100 max-w-2xl mx-auto">
               Join thousands of professionals who have transformed their careers with our training programs
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link to="/our-products">
                 <motion.button
-                  className="bg-white text-purple-700 hover:bg-gray-100 font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  className="bg-white text-blue-700 hover:bg-gray-100 font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >

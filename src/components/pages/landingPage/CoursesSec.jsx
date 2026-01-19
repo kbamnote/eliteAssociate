@@ -94,7 +94,7 @@ const CoursesSec = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Our <span className="text-purple-600">Training Programs</span>
+            Our <span className="text-blue-600">Training Programs</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
             Professional courses designed to equip you with industry-recognized skills
@@ -107,7 +107,7 @@ const CoursesSec = () => {
                 key={category.id}
                 className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
                   activeCategory === category.id
-                    ? 'bg-purple-600 text-white shadow-md'
+                    ? 'bg-blue-600 text-white shadow-md'
                     : 'bg-white text-gray-700 hover:bg-gray-100'
                 }`}
                 whileHover={{ scale: 1.05 }}
@@ -143,7 +143,7 @@ const CoursesSec = () => {
               <div className="p-6">
                 <div className="flex justify-between items-start mb-4">
                   <h3 className="text-xl font-bold text-gray-900">{course.title}</h3>
-                  <span className="bg-purple-100 text-purple-800 text-xs font-semibold px-2 py-1 rounded">
+                  <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2 py-1 rounded">
                     {course.level}
                   </span>
                 </div>
@@ -174,7 +174,7 @@ const CoursesSec = () => {
         >
           <Link to="/our-products">
           <motion.button
-            className="bg-white border border-purple-600 text-purple-600 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-purple-50 transition-all flex items-center gap-2 mx-auto"
+            className="bg-white border border-blue-600 text-blue-600 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-50 transition-all flex items-center gap-2 mx-auto"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

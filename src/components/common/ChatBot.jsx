@@ -86,7 +86,7 @@ const ChatBot = () => {
     <>
       {/* Chat Button */}
       <motion.button
-        className="fixed bottom-8 right-25 bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 z-50"
+        className="fixed bottom-8 right-25 bg-gradient-to-r from-blue-600 to-cyan-500 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 z-50"
         onClick={() => setIsOpen(true)}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
@@ -106,7 +106,7 @@ const ChatBot = () => {
             transition={{ duration: 0.3 }}
           >
             {/* Header */}
-            <div className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-4 flex items-center justify-between">
+            <div className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white p-4 flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
                   <Bot className="w-5 h-5" />
@@ -134,7 +134,7 @@ const ChatBot = () => {
                   <div
                     className={`max-w-[80%] p-3 rounded-2xl ${
                       message.sender === 'user'
-                        ? 'bg-purple-600 text-white'
+                        ? 'bg-blue-600 text-white'
                         : 'bg-gray-100 text-gray-800'
                     }`}
                   >
@@ -166,7 +166,7 @@ const ChatBot = () => {
                     <button
                       key={index}
                       onClick={() => handleQuickReply(reply)}
-                      className="text-xs bg-purple-100 text-purple-700 px-3 py-1 rounded-full hover:bg-purple-200 transition-colors"
+                      className="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full hover:bg-blue-200 transition-colors"
                     >
                       {reply}
                     </button>
@@ -184,11 +184,11 @@ const ChatBot = () => {
                   onChange={(e) => setInputMessage(e.target.value)}
                   onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
                   placeholder="Type your message..."
-                  className="flex-1 border border-gray-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:border-purple-500"
+                  className="flex-1 border border-gray-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:border-blue-500"
                 />
                 <button
                   onClick={() => handleSendMessage()}
-                  className="bg-purple-600 text-white p-2 rounded-full hover:bg-purple-700 transition-colors"
+                  className="bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700 transition-colors"
                 >
                   <Send className="w-4 h-4" />
                 </button>

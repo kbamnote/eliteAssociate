@@ -48,7 +48,7 @@ const FAQSec = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Frequently Asked <span className="text-purple-600">Questions</span>
+            Frequently Asked <span className="text-blue-600">Questions</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Everything you need to know about our training programs
@@ -77,7 +77,7 @@ const FAQSec = () => {
                     animate={{ rotate: openIndex === index ? 180 : 0 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <ChevronDown className="w-6 h-6 text-purple-600" />
+                    <ChevronDown className="w-6 h-6 text-blue-600" />
                   </motion.div>
                 </button>
                 
@@ -108,19 +108,19 @@ const FAQSec = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <div className="bg-gradient-to-r from-purple-500 to-indigo-600 rounded-2xl p-8 max-w-3xl mx-auto">
+          <div className="bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl p-8 max-w-3xl mx-auto">
             <div className="flex flex-col md:flex-row items-center gap-6">
               <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4">
                 <Shield className="w-12 h-12 text-white" />
               </div>
               <div>
                 <h3 className="text-xl font-bold text-white mb-2">Still have questions?</h3>
-                <p className="text-purple-100 mb-4">
+                <p className="text-blue-100 mb-4">
                   Our admissions team is ready to help you find the perfect program
                 </p>
                 <Link to="/contact">
                   <motion.button
-                    className="bg-white text-purple-700 hover:bg-gray-100 font-bold py-3 px-6 rounded-full transition-all"
+                    className="bg-white text-blue-700 hover:bg-gray-100 font-bold py-3 px-6 rounded-full transition-all"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >

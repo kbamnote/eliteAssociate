@@ -66,7 +66,7 @@ const HeroVideo = () => {
           >
             <CTAButton
               onClick={handleStartJourney}
-              className="bg-purple-700 hover:bg-purple-800 text-white font-medium px-6 py-3 md:px-8 md:py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
+              className="bg-blue-700 hover:bg-blue-800 text-white font-medium px-6 py-3 md:px-8 md:py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
               trackingName="Start Your Journey"
               trackingLocation="Hero Video Section"
             >

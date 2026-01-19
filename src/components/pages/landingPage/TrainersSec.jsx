@@ -6,15 +6,15 @@ const TrainersSec = () => {
   const trainers = [
     {
       id: 1,
-      name: "Dr. Robert Johnson",
+      name: "Dr. Rajesh Kumar",
       role: "Chief Fire Safety Instructor",
       experience: "20+ years",
       bio: "Former fire chief with extensive experience in industrial fire safety protocols.",
-      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80"
     },
     {
       id: 2,
-      name: "Sarah Williams",
+      name: "Priya Sharma",
       role: "Industrial Safety Specialist",
       experience: "15+ years",
       bio: "Certified safety professional with expertise in hazard assessment and risk management.",
@@ -22,19 +22,19 @@ const TrainersSec = () => {
     },
     {
       id: 3,
-      name: "Michael Chen",
+      name: "Amit Patel",
       role: "Emergency Response Expert",
       experience: "18+ years",
       bio: "Specializes in emergency preparedness and crisis management for industrial facilities.",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80"
     },
     {
       id: 4,
-      name: "Emma Rodriguez",
+      name: "Sneha Nair",
       role: "Occupational Health Specialist",
       experience: "12+ years",
       bio: "Expert in workplace health regulations and employee wellness programs.",
-      image: "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=800&q=80"
     }
   ];
 
@@ -49,7 +49,7 @@ const TrainersSec = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Meet Our <span className="text-purple-600">Expert Trainers</span>
+            Meet Our <span className="text-blue-600">Expert Trainers</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Learn from industry veterans with decades of real-world experience
@@ -78,20 +78,20 @@ const TrainersSec = () => {
               
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-1">{trainer.name}</h3>
-                <p className="text-purple-600 font-medium mb-3">{trainer.role}</p>
+                <p className="text-blue-600 font-medium mb-3">{trainer.role}</p>
                 <p className="text-sm text-gray-500 mb-4">{trainer.experience} experience</p>
                 <p className="text-gray-600 text-sm">{trainer.bio}</p>
                 
                 <div className="flex justify-center mt-6">
                   <div className="flex gap-2">
-                    <div className="bg-purple-100 p-2 rounded-lg">
-                      <Award className="w-5 h-5 text-purple-600" />
+                    <div className="bg-blue-100 p-2 rounded-lg">
+                      <Award className="w-5 h-5 text-blue-600" />
                     </div>
-                    <div className="bg-purple-100 p-2 rounded-lg">
-                      <Shield className="w-5 h-5 text-purple-600" />
+                    <div className="bg-blue-100 p-2 rounded-lg">
+                      <Shield className="w-5 h-5 text-blue-600" />
                     </div>
-                    <div className="bg-purple-100 p-2 rounded-lg">
-                      <Users className="w-5 h-5 text-purple-600" />
+                    <div className="bg-blue-100 p-2 rounded-lg">
+                      <Users className="w-5 h-5 text-blue-600" />
                     </div>
                   </div>
                 </div>

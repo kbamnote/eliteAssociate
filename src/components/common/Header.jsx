@@ -40,7 +40,7 @@ const Header = () => {
       }`}
     >
       {/* Top Banner */}
-      <div className="bg-gradient-to-r from-purple-700 to-purple-900 text-white py-2 px-4">
+      <div className="bg-gradient-to-r from-blue-700 to-blue-900 text-white py-2 px-4">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm">
           <div className="flex items-center gap-4 mb-2 md:mb-0">
             <span className="flex items-center gap-1">
@@ -54,7 +54,7 @@ const Header = () => {
           </div>
           <button
             onClick={() => openContact("Apply Now", "Apply Now")}
-            className="bg-white text-purple-700 px-4 py-1 rounded-full font-medium hover:bg-gray-100 transition"
+            className="bg-white text-blue-700 px-4 py-1 rounded-full font-medium hover:bg-gray-100 transition"
           >
             Apply Now
           </button>
@@ -82,7 +82,8 @@ const Header = () => {
             { name: "About", path: "/about" },
             { name: "Gallery", path: "/gallery" },
             { name: "Placement", path: "/placement" },
-            { name: "Blog", path: "/blog" },
+            { name: "Hiring", path: "/hiring-internships" },
+           
             { name: "Contact", path: "/contact" },
           ].map((item) => (
             <Link
@@ -90,7 +91,7 @@ const Header = () => {
               to={item.path}
               className={`px-5 py-2 rounded-full text-md transition ${
                 isActive(item.path)
-                  ? "bg-gradient-to-r from-purple-700 to-purple-800 text-white"
+                  ? "bg-gradient-to-r from-blue-700 to-blue-800 text-white"
                   : "text-gray-800 hover:bg-gray-200"
               }`}
             >
@@ -103,13 +104,13 @@ const Header = () => {
         <div className="flex items-center gap-4">
           <button
             onClick={() => openContact("Request a Callback", "Get a Callback")}
-            className="hidden lg:block bg-gradient-to-r from-purple-600 to-purple-700 text-white px-5 py-2 rounded-full font-medium hover:from-purple-700 hover:to-purple-800 transition"
+            className="hidden lg:block bg-gradient-to-r from-blue-600 to-blue-700 text-white px-5 py-2 rounded-full font-medium hover:from-blue-700 hover:to-blue-800 transition"
           >
             Get a Callback
           </button>
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden text-purple-800 p-2 rounded-lg hover:bg-gray-100 transition"
+            className="lg:hidden text-blue-800 p-2 rounded-lg hover:bg-gray-100 transition"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -125,6 +126,7 @@ const Header = () => {
               { name: "About", path: "/about" },
               { name: "Gallery", path: "/gallery" },
               { name: "Placement", path: "/placement" },
+              { name: "Hiring & Internships", path: "/hiring-internships" },
               { name: "Blog", path: "/blog" },
               { name: "Contact", path: "/contact" },
             ].map((item) => (
@@ -134,7 +136,7 @@ const Header = () => {
                 onClick={() => setIsMobileMenuOpen(false)}
                 className={`block w-full py-2 px-4 rounded-lg text-left ${
                   isActive(item.path)
-                    ? "bg-gradient-to-r from-purple-700 to-purple-800 text-white"
+                    ? "bg-gradient-to-r from-blue-700 to-blue-800 text-white"
                     : "bg-gray-100 text-gray-800 hover:bg-gray-200"
                 }`}
               >
@@ -143,10 +145,10 @@ const Header = () => {
             ))}
 
             <div className="pt-3 border-t border-gray-200">
-              <button className="w-full bg-gradient-to-r from-purple-600 to-purple-700 text-white py-2 rounded-full font-medium hover:from-purple-700 hover:to-purple-800 transition mb-3">
+              <button className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-2 rounded-full font-medium hover:from-blue-700 hover:to-blue-800 transition mb-3">
                 Get a Callback
               </button>
-              <button className="w-full border border-purple-800 text-purple-800 py-2 rounded-full font-medium hover:bg-purple-800 hover:text-white transition">
+              <button className="w-full border border-blue-800 text-blue-800 py-2 rounded-full font-medium hover:bg-blue-800 hover:text-white transition">
                 Login
               </button>
             </div>

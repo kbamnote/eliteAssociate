@@ -15,7 +15,7 @@ const AwardVideo = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="inline-flex items-center gap-3 text-purple-600 mb-3">
+          <div className="inline-flex items-center gap-3 text-blue-600 mb-3">
             <Award className="w-6 h-6" />
             <span className="font-semibold">Awards & Recognition</span>
           </div>
@@ -76,7 +76,7 @@ const AwardVideo = () => {
                   "Innovative, hands-on curriculum designed by experts",
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-3">
-                    <span className="mt-1 w-2 h-2 rounded-full bg-purple-600"></span>
+                    <span className="mt-1 w-2 h-2 rounded-full bg-blue-600"></span>
                     <span className="text-gray-700">{item}</span>
                   </li>
                 ))}

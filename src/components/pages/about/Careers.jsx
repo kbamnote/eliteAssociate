@@ -138,7 +138,7 @@ const Careers = () => {
           transition={{ duration: 0.6 }}
         >
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Join Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-indigo-700">Team</span>
+            Join Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-700">Team</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Be part of a mission-driven organization committed to making the world safer through education and training.
@@ -171,7 +171,7 @@ const Careers = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -10 }}
               >
-                <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center text-purple-600 mx-auto mb-6">
+                <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center text-blue-600 mx-auto mb-6">
                   {benefit.icon}
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{benefit.title}</h3>
@@ -181,95 +181,9 @@ const Careers = () => {
           </div>
         </div>
 
-        {/* Positions Section */}
-        <div className="mb-20">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Open Positions</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Join our team of passionate professionals
-            </p>
-          </motion.div>
-
-          {/* Department Filters */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
-            {departments.map((department) => (
-              <motion.button
-                key={department.id}
-                className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
-                  activeDepartment === department.id
-                    ? 'bg-gradient-to-r from-purple-700 to-purple-800 text-white shadow-md'
-                    : 'bg-white text-gray-700 hover:bg-gray-100 shadow'
-                }`}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setActiveDepartment(department.id)}
-              >
-                {department.name}
-              </motion.button>
-            ))}
-          </div>
-
-          {/* Positions List */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {filteredPositions.map((position, index) => (
-              <motion.div
-                key={position.id}
-                className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-300"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <div className="flex justify-between items-start mb-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">{position.title}</h3>
-                    <div className="flex flex-wrap gap-2 mb-3">
-                      <span className="bg-purple-100 text-purple-800 text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1">
-                        <MapPin className="w-3 h-3" />
-                        {position.location}
-                      </span>
-                      <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">
-                        {position.type}
-                      </span>
-                      <span className="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">
-                        {position.experience}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                
-                <p className="text-gray-600 mb-4">{position.description}</p>
-                
-                <div className="mb-6">
-                  <h4 className="font-bold text-gray-900 mb-2">Requirements:</h4>
-                  <ul className="space-y-1">
-                    {position.requirements.map((req, reqIndex) => (
-                      <li key={reqIndex} className="text-gray-600 text-sm flex items-start">
-                        <span className="w-1.5 h-1.5 bg-purple-600 rounded-full mt-2 mr-2 flex-shrink-0"></span>
-                        {req}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                
-                <button className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-semibold py-3 rounded-lg flex items-center justify-center gap-2 transition-all">
-                  <Mail className="w-4 h-4" />
-                  Apply for this Position
-                </button>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
         {/* CTA Section */}
         <motion.div
-          className="bg-gradient-to-r from-purple-500 to-indigo-600 rounded-3xl p-8 md:p-12 text-center"
+          className="bg-gradient-to-r from-blue-500 to-cyan-600 rounded-3xl p-8 md:p-12 text-center"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -278,10 +192,10 @@ const Careers = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Don't see a position that fits?
           </h2>
-          <p className="text-purple-100 text-xl mb-8 max-w-3xl mx-auto">
+          <p className="text-blue-100 text-xl mb-8 max-w-3xl mx-auto">
             We're always looking for talented individuals to join our team. Send us your resume and we'll get in touch.
           </p>
-          <button className="bg-white text-purple-700 font-bold py-4 px-8 rounded-full hover:bg-gray-100 transition-all transform hover:scale-105 active:scale-95 shadow-lg">
+          <button className="bg-white text-blue-700 font-bold py-4 px-8 rounded-full hover:bg-gray-100 transition-all transform hover:scale-105 active:scale-95 shadow-lg">
             Send Your Resume
           </button>
         </motion.div>

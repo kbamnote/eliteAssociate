@@ -11,7 +11,7 @@ const TestimonialsSection = () => {
       name: "Rahul Sharma",
       role: "Software Engineer",
       company: "TCS",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop",
+      image: "public/Review/photo6.jpeg",
       rating: 5,
       text: "Elite Associate transformed my career completely. The training was industry-focused and the placement assistance was exceptional. I got placed in TCS with a great package!",
       course: "Full Stack Development"
@@ -21,7 +21,7 @@ const TestimonialsSection = () => {
       name: "Priya Patel",
       role: "Data Analyst",
       company: "Infosys",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop",
+      image: "public/Review/photo4.jpeg",
       rating: 5,
       text: "The best decision I made was joining Elite Associate. The trainers are industry experts and the curriculum is updated with latest technologies. Highly recommended!",
       course: "Data Science"
@@ -31,7 +31,7 @@ const TestimonialsSection = () => {
       name: "Amit Kumar",
       role: "DevOps Engineer",
       company: "Wipro",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop",
+      image: "public/Review/photo10.jpeg",
       rating: 5,
       text: "100% placement assistance is not just a promise here, it's a reality. The support team helped me throughout the placement process. Thank you Elite Associate!",
       course: "DevOps & Cloud"
@@ -41,7 +41,7 @@ const TestimonialsSection = () => {
       name: "Sneha Reddy",
       role: "UI/UX Designer",
       company: "Accenture",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop",
+      image: "public/Review/photo3.jpeg",
       rating: 5,
       text: "The practical approach to learning and live project experience gave me the confidence to crack interviews. Elite Associate is truly the best training institute!",
       course: "UI/UX Design"
@@ -51,7 +51,7 @@ const TestimonialsSection = () => {
       name: "Vikash Singh",
       role: "Cybersecurity Analyst",
       company: "IBM",
-      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&h=200&fit=crop",
+      image: "public/Review/photo11.jpeg",
       rating: 5,
       text: "From zero knowledge to getting placed in IBM, Elite Associate made it possible. The mentorship and guidance throughout the journey was outstanding.",
       course: "Cybersecurity"
@@ -67,7 +67,7 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <section className="py-16 bg-gradient-to-br from-purple-50 to-indigo-50">
+    <section className="py-16 bg-gradient-to-br from-blue-50 to-cyan-50">
       <div className="container mx-auto px-4">
         <motion.div
           className="text-center mb-12"
@@ -77,7 +77,7 @@ const TestimonialsSection = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            Success <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">Stories</span>
+            Success <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Stories</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Hear from our successful students who transformed their careers with Elite Associate
@@ -88,14 +88,14 @@ const TestimonialsSection = () => {
           {/* Navigation Buttons - Outside the card */}
           <button
             onClick={prevTestimonial}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white hover:bg-purple-600 rounded-full p-3 shadow-lg border border-gray-200 transition-all duration-300 hover:scale-110 z-10 group"
+            className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white hover:bg-blue-600 rounded-full p-3 shadow-lg border border-gray-200 transition-all duration-300 hover:scale-110 z-10 group"
           >
             <ChevronLeft className="w-6 h-6 text-gray-600 group-hover:text-white transition-colors" />
           </button>
           
           <button
             onClick={nextTestimonial}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white hover:bg-purple-600 rounded-full p-3 shadow-lg border border-gray-200 transition-all duration-300 hover:scale-110 z-10 group"
+            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white hover:bg-blue-600 rounded-full p-3 shadow-lg border border-gray-200 transition-all duration-300 hover:scale-110 z-10 group"
           >
             <ChevronRight className="w-6 h-6 text-gray-600 group-hover:text-white transition-colors" />
           </button>
@@ -116,7 +116,7 @@ const TestimonialsSection = () => {
                       <img 
                         src={testimonials[currentTestimonial].image}
                         alt={testimonials[currentTestimonial].name}
-                        className="w-24 h-24 rounded-full object-cover border-4 border-purple-100"
+                        className="w-24 h-24 rounded-full object-cover border-4 border-blue-100"
                       />
                       <div className="absolute -top-2 -right-2 bg-green-500 rounded-full p-1">
                         <Star className="w-4 h-4 text-white fill-current" />
@@ -126,7 +126,7 @@ const TestimonialsSection = () => {
 
                   <div className="flex-1 text-center md:text-left">
                     <div className="flex justify-center md:justify-start mb-4">
-                      <Quote className="w-8 h-8 text-purple-500" />
+                      <Quote className="w-8 h-8 text-blue-500" />
                     </div>
                     
                     <p className="text-lg md:text-xl text-gray-700 mb-6 leading-relaxed">
@@ -143,7 +143,7 @@ const TestimonialsSection = () => {
                       <h4 className="text-xl font-bold text-gray-900">
                         {testimonials[currentTestimonial].name}
                       </h4>
-                      <p className="text-purple-600 font-semibold">
+                      <p className="text-blue-600 font-semibold">
                         {testimonials[currentTestimonial].role} at {testimonials[currentTestimonial].company}
                       </p>
                       <p className="text-gray-500 text-sm">
@@ -164,7 +164,7 @@ const TestimonialsSection = () => {
                 onClick={() => setCurrentTestimonial(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
                   index === currentTestimonial
-                    ? 'bg-purple-600 w-8'
+                    ? 'bg-blue-600 w-8'
                     : 'bg-gray-300 hover:bg-gray-400'
                 }`}
               />

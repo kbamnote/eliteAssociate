@@ -197,7 +197,7 @@ const GalleryPage = () => {
           transition={{ duration: 0.6 }}
         >
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-indigo-700">Gallery</span>
+            Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-blue-600">Gallery</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Explore moments from our training sessions, events, and achievements
@@ -211,7 +211,7 @@ const GalleryPage = () => {
               key={category}
               className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
                 activeCategory === category
-                  ? 'bg-gradient-to-r from-purple-700 to-purple-800 text-white shadow-md'
+                  ? 'bg-gradient-to-r from-blue-700 to-blue-800 text-white shadow-md'
                   : 'bg-white text-gray-700 hover:bg-gray-100 shadow'
               }`}
               whileHover={{ scale: 1.05 }}
@@ -251,7 +251,7 @@ const GalleryPage = () => {
                     <p className="text-sm text-gray-200">{item.category}</p>
                   </div>
                 </div>
-                <div className="absolute top-4 right-4 bg-purple-700 text-white text-xs font-bold px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute top-4 right-4 bg-blue-700 text-white text-xs font-bold px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   View
                 </div>
               </div>
@@ -301,7 +301,7 @@ const GalleryPage = () => {
     <div className="text-center mt-6 text-white flex-shrink-0">
       <h3 className="text-2xl font-bold mb-2">{selectedImage.title}</h3>
       <p className="text-gray-300 mb-1">{selectedImage.description}</p>
-      <span className="inline-block bg-purple-700 text-white text-sm font-bold px-3 py-1 rounded-full">
+      <span className="inline-block bg-blue-700 text-white text-sm font-bold px-3 py-1 rounded-full">
         {selectedImage.category}
       </span>
     </div>

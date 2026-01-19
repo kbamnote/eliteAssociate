@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import HeroSec from "./HeroSec";
 import FeaturesSec from "./FeaturesSec";
 import CoursesSec from "./CoursesSec";
-import TrainersSec from "./TrainersSec";
 import TestimonialsSec from "./TestimonialsSec";
 import PlacementStatsSec from "./PlacementStatsSec";
 import FAQSec from "./FAQSec";
@@ -64,8 +63,6 @@ const LandingPage = () => {
       <FeaturesSec />
        <AwardVideo />
       <StatsSection />
-      <CoursesSec />
-      <TrainersSec />
       <TestimonialsSection />
       <TestimonialsSec />
       <PlacementStatsSec />

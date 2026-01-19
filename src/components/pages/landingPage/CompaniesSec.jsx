@@ -89,14 +89,14 @@ const CompaniesSec = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
             We place you with{' '}
-            <span className="text-purple-600 relative inline-block">
+            <span className="text-blue-600 relative inline-block">
               industry leaders
-              <div className="absolute bottom-0 left-0 w-full h-1 bg-purple-600 rounded"></div>
+              <div className="absolute bottom-0 left-0 w-full h-1 bg-blue-600 rounded"></div>
             </span>{' '}
             in every field
           </h2>
           <p className="text-lg md:text-xl text-gray-600 mt-6">
-            3500+ leading companies hire our learners
+            50000+ leading companies hire our learners
           </p>
         </div>
 
@@ -106,7 +106,7 @@ const CompaniesSec = () => {
             onClick={() => setActiveTab('investment')}
             className={`px-6 py-3 text-base md:text-lg font-semibold transition-all duration-300 border-b-4 ${
               activeTab === 'investment'
-                ? 'text-purple-700 border-purple-700'
+                ? 'text-blue-700 border-blue-700'
                 : 'text-gray-500 border-transparent hover:text-gray-700'
             }`}
           >
@@ -116,7 +116,7 @@ const CompaniesSec = () => {
             onClick={() => setActiveTab('retail')}
             className={`px-6 py-3 text-base md:text-lg font-semibold transition-all duration-300 border-b-4 ${
               activeTab === 'retail'
-                ? 'text-purple-700 border-purple-700'
+                ? 'text-blue-700 border-blue-700'
                 : 'text-gray-500 border-transparent hover:text-gray-700'
             }`}
           >
@@ -126,7 +126,7 @@ const CompaniesSec = () => {
             onClick={() => setActiveTab('tech')}
             className={`px-6 py-3 text-base md:text-lg font-semibold transition-all duration-300 border-b-4 ${
               activeTab === 'tech'
-                ? 'text-purple-700 border-purple-700'
+                ? 'text-blue-700 border-blue-700'
                 : 'text-gray-500 border-transparent hover:text-gray-700'
             }`}
           >
@@ -143,7 +143,7 @@ const CompaniesSec = () => {
                 {[...row1, ...row1].map((company, index) => (
                   <div
                     key={index}
-                    className="flex-shrink-0 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 min-w-[200px] h-32 flex flex-col items-center justify-center border border-gray-100 hover:scale-105 hover:border-purple-200"
+                    className="flex-shrink-0 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 min-w-[200px] h-32 flex flex-col items-center justify-center border border-gray-100 hover:scale-105 hover:border-blue-200"
                     loading="lazy"
                   >
                     <div className="text-4xl mb-2">{company.logo}</div>
@@ -163,7 +163,7 @@ const CompaniesSec = () => {
                 {[...row2, ...row2].map((company, index) => (
                   <div
                     key={index}
-                    className="flex-shrink-0 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 min-w-[200px] h-32 flex flex-col items-center justify-center border border-gray-100 hover:scale-105 hover:border-purple-200"
+                    className="flex-shrink-0 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 min-w-[200px] h-32 flex flex-col items-center justify-center border border-gray-100 hover:scale-105 hover:border-blue-200"
                     loading="lazy"
                   >
                     <div className="text-4xl mb-2">{company.logo}</div>
@@ -183,7 +183,7 @@ const CompaniesSec = () => {
                 {[...row1, ...row1].map((company, index) => (
                   <div
                     key={index}
-                    className="flex-shrink-0 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 min-w-[200px] h-32 flex flex-col items-center justify-center border border-gray-100 hover:scale-105 hover:border-purple-200"
+                    className="flex-shrink-0 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 min-w-[200px] h-32 flex flex-col items-center justify-center border border-gray-100 hover:scale-105 hover:border-blue-200"
                     loading="lazy"
                   >
                     <div className="text-4xl mb-2">{company.logo}</div>

@@ -65,7 +65,7 @@ const OurHistory = () => {
           transition={{ duration: 0.6 }}
         >
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-indigo-700">Journey</span>
+            Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-700">Journey</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             A timeline of milestones and achievements that shaped Elite Associates into India's leading fire and safety training institute.
@@ -75,7 +75,7 @@ const OurHistory = () => {
         {/* Timeline */}
         <div className="relative">
           {/* Vertical line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-purple-500 to-indigo-600 hidden md:block"></div>
+          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-blue-500 to-cyan-600 hidden md:block"></div>
           
           <div className="space-y-12">
             {milestones.map((milestone, index) => (
@@ -89,7 +89,7 @@ const OurHistory = () => {
               >
                 {/* Year */}
                 <div className="md:w-1/2 mb-4 md:mb-0 flex justify-center md:justify-end md:pr-8">
-                  <div className="bg-gradient-to-r from-purple-700 to-indigo-700 text-white font-bold text-xl w-20 h-20 rounded-full flex items-center justify-center shadow-lg">
+                  <div className="bg-gradient-to-r from-blue-700 to-cyan-700 text-white font-bold text-xl w-20 h-20 rounded-full flex items-center justify-center shadow-lg">
                     {milestone.year}
                   </div>
                 </div>
@@ -98,7 +98,7 @@ const OurHistory = () => {
                 <div className="md:w-1/2 md:pl-8">
                   <div className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
                     <div className="flex items-center gap-4 mb-4">
-                      <div className="bg-purple-100 p-3 rounded-lg text-purple-600">
+                      <div className="bg-blue-100 p-3 rounded-lg text-blue-600">
                         {milestone.icon}
                       </div>
                       <h3 className="text-2xl font-bold text-gray-900">{milestone.title}</h3>
@@ -113,7 +113,7 @@ const OurHistory = () => {
 
         {/* Stats Section */}
         <motion.div
-          className="mt-20 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-3xl p-8 md:p-12"
+          className="mt-20 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-3xl p-8 md:p-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -121,20 +121,20 @@ const OurHistory = () => {
         >
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl font-bold text-white mb-2">15+</div>
-              <div className="text-purple-100 text-lg">Years of Excellence</div>
+              <div className="text-4xl font-bold text-white mb-2">25+</div>
+              <div className="text-blue-100 text-lg">Years of Excellence</div>
             </div>
             <div>
               <div className="text-4xl font-bold text-white mb-2">50+</div>
-              <div className="text-purple-100 text-lg">Training Programs</div>
+              <div className="text-blue-100 text-lg">Training Programs</div>
             </div>
             <div>
               <div className="text-4xl font-bold text-white mb-2">10,000+</div>
-              <div className="text-purple-100 text-lg">Graduates</div>
+              <div className="text-blue-100 text-lg">Graduates</div>
             </div>
             <div>
               <div className="text-4xl font-bold text-white mb-2">500+</div>
-              <div className="text-purple-100 text-lg">Industry Partners</div>
+              <div className="text-blue-100 text-lg">Industry Partners</div>
             </div>
           </div>
         </motion.div>
