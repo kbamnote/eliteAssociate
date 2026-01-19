@@ -32,9 +32,9 @@ export default function GalleryHero() {
     <div className="relative min-h-screen bg-white overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute w-96 h-96 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob top-20 -left-4"></div>
-        <div className="absolute w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000 top-20 right-0"></div>
-        <div className="absolute w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000 bottom-0 left-20"></div>
+        <div className="absolute w-96 h-96 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob top-20 -left-4"></div>
+        <div className="absolute w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000 top-20 right-0"></div>
+        <div className="absolute w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000 bottom-0 left-20"></div>
       </div>
 
       {/* Grid Pattern Overlay */}
@@ -45,8 +45,8 @@ export default function GalleryHero() {
           {/* Left Content */}
           <div className={`space-y-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             {/* Badge */}
-            <div className="inline-flex items-center space-x-2 bg-purple-100 border border-purple-300 rounded-full px-4 py-2 text-purple-700">
-              <Camera className="w-4 h-4 fill-purple-600 text-purple-600" />
+            <div className="inline-flex items-center space-x-2 bg-blue-100 border border-blue-300 rounded-full px-4 py-2 text-blue-700">
+              <Camera className="w-4 h-4 fill-blue-600 text-blue-600" />
               <span className="text-sm font-medium">Capturing Moments of Excellence</span>
             </div>
 
@@ -54,7 +54,7 @@ export default function GalleryHero() {
             <div className="space-y-4">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight">
                 Moments That
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-purple-500 animate-gradient">
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-blue-500 animate-gradient">
                   Define Success
                 </span>
               </h1>
@@ -68,10 +68,10 @@ export default function GalleryHero() {
               {features.map((feature, index) => (
                 <div
                   key={index}
-                  className="flex items-center space-x-2 text-gray-700 transition-all duration-300 hover:text-purple-700"
+                  className="flex items-center space-x-2 text-gray-700 transition-all duration-300 hover:text-blue-700"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <CheckCircle className="w-5 h-5 text-purple-600 flex-shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0" />
                   <span className="text-sm font-medium">{feature}</span>
                 </div>
               ))}
@@ -79,11 +79,11 @@ export default function GalleryHero() {
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4">
-              <button className="group relative px-8 py-4 bg-gradient-to-r from-purple-700 to-purple-600 rounded-full text-white font-semibold shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50 transition-all duration-300 hover:scale-105">
+              <button className="group relative px-8 py-4 bg-gradient-to-r from-blue-700 to-blue-600 rounded-full text-white font-semibold shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transition-all duration-300 hover:scale-105">
                 Explore Gallery
                 <ArrowRight className="inline-block ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
-              <button className="px-8 py-4 bg-white border-2 border-purple-600 rounded-full text-purple-700 font-semibold hover:bg-purple-50 transition-all duration-300">
+              <button className="px-8 py-4 bg-white border-2 border-blue-600 rounded-full text-blue-700 font-semibold hover:bg-blue-50 transition-all duration-300">
                 Recent Events
               </button>
             </div>
@@ -99,7 +99,7 @@ export default function GalleryHero() {
                     style={{ animationDelay: `${index * 150}ms` }}
                   >
                     <div className="flex justify-center mb-2">
-                      <Icon className="w-6 h-6 text-purple-600" />
+                      <Icon className="w-6 h-6 text-blue-600" />
                     </div>
                     <div className="text-2xl font-bold text-gray-900">{stat.value}</div>
                     <div className="text-xs text-gray-500">{stat.label}</div>
@@ -113,16 +113,16 @@ export default function GalleryHero() {
           <div className={`relative transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
             <div className="relative h-[500px] lg:h-[600px]">
               {/* Decorative Elements */}
-              <div className="absolute -top-4 -right-4 w-72 h-72 bg-gradient-to-br from-purple-400 to-purple-600 rounded-3xl opacity-20 blur-3xl animate-pulse"></div>
+              <div className="absolute -top-4 -right-4 w-72 h-72 bg-gradient-to-br from-blue-400 to-blue-600 rounded-3xl opacity-20 blur-3xl animate-pulse"></div>
               
               {/* Main Image Container */}
-              <div className="relative h-full bg-gradient-to-br from-purple-100 to-purple-50 rounded-3xl border-2 border-purple-200 overflow-hidden shadow-2xl">
+              <div className="relative h-full bg-gradient-to-br from-blue-100 to-blue-50 rounded-3xl border-2 border-blue-200 overflow-hidden shadow-2xl">
                 {/* Image Slides */}
                 <div className="relative h-full">
                   {[
-                    'https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80',
-                    'https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800&q=80',
-                    'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80'
+                    'public/AboutHero/bg1.jpeg',
+                    'public/AboutHero/bg3.jpeg',
+                    'public/AboutHero/bg2.jpeg'
                   ].map((img, index) => (
                     <div
                       key={index}
@@ -139,15 +139,15 @@ export default function GalleryHero() {
                         quality={90}
                         loading="eager"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-purple-900/60 via-transparent to-transparent"></div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-blue-900/60 via-transparent to-transparent"></div>
                     </div>
                   ))}
                 </div>
 
                 {/* Floating Card */}
-                <div className="absolute bottom-8 left-8 right-8 bg-white/95 backdrop-blur-md rounded-2xl p-6 border border-purple-200 shadow-xl">
+                <div className="absolute bottom-8 left-8 right-8 bg-white/95 backdrop-blur-md rounded-2xl p-6 border border-blue-200 shadow-xl">
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-purple-700 to-purple-600 rounded-full flex items-center justify-center">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-700 to-blue-600 rounded-full flex items-center justify-center">
                       <Sparkles className="w-6 h-6 text-white" />
                     </div>
                     <div>
@@ -164,7 +164,7 @@ export default function GalleryHero() {
                       key={index}
                       onClick={() => setCurrentSlide(index)}
                       className={`h-2 rounded-full transition-all duration-300 ${
-                        currentSlide === index ? 'w-8 bg-purple-700' : 'w-2 bg-purple-300'
+                        currentSlide === index ? 'w-8 bg-blue-700' : 'w-2 bg-blue-300'
                       }`}
                     />
                   ))}
@@ -172,7 +172,7 @@ export default function GalleryHero() {
               </div>
 
               {/* Floating Elements */}
-              <div className="absolute -bottom-6 -left-6 bg-gradient-to-br from-purple-700 to-purple-600 rounded-2xl p-4 shadow-xl animate-float">
+              <div className="absolute -bottom-6 -left-6 bg-gradient-to-br from-blue-700 to-blue-600 rounded-2xl p-4 shadow-xl animate-float">
                 <div className="text-white text-center">
                   <div className="text-3xl font-bold">150+</div>
                   <div className="text-sm opacity-90">Events Captured</div>
@@ -180,22 +180,22 @@ export default function GalleryHero() {
               </div>
 
               {/* Additional Floating Badge */}
-              <div className="absolute -top-4 -left-4 bg-white rounded-xl p-3 shadow-lg border border-purple-200 animate-float" style={{ animationDelay: '1s' }}>
+              <div className="absolute -top-4 -left-4 bg-white rounded-xl p-3 shadow-lg border border-blue-200 animate-float" style={{ animationDelay: '1s' }}>
                 <div className="flex items-center space-x-2">
-                  <Award className="w-5 h-5 text-purple-600" />
+                  <Award className="w-5 h-5 text-blue-600" />
                   <span className="text-sm font-semibold text-gray-900">New: 50+ Photos</span>
                 </div>
               </div>
 
               {/* Photo Frame Decoration */}
-              <div className="absolute top-1/2 -right-8 w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg opacity-40 animate-float" style={{ animationDelay: '2s' }}></div>
+              <div className="absolute top-1/2 -right-8 w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg opacity-40 animate-float" style={{ animationDelay: '2s' }}></div>
             </div>
           </div>
         </div>
       </div>
 
       {/* Bottom Gradient Bar */}
-      <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-r from-purple-700 via-purple-600 to-purple-700"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-r from-blue-700 via-blue-600 to-blue-700"></div>
 
       <style jsx>{`
         @keyframes blob {

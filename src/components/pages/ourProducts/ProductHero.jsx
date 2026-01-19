@@ -36,8 +36,8 @@ const ProductHero = () => {
     <section className="w-full max-w-screen overflow-hidden relative mx-auto">
       {/* Animated background accents */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute w-96 h-96 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob top-10 left-10"></div>
-        <div className="absolute w-96 h-96 bg-indigo-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000 bottom-10 right-10"></div>
+        <div className="absolute w-96 h-96 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob top-10 left-10"></div>
+        <div className="absolute w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000 bottom-10 right-10"></div>
       </div>
 
       {/* Carousel */}

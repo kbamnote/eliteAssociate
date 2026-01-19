@@ -39,7 +39,7 @@ const ContactPage = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       title: 'Email Us',
-      details: 'info@eliteassociates.com'
+      details: 'info@eliteassociates.in'
     },
     {
       icon: <Clock className="w-6 h-6" />,
@@ -63,7 +63,7 @@ const ContactPage = () => {
           >
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Get in{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-indigo-700">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-700">
                 Touch
               </span>
             </h1>
@@ -89,7 +89,7 @@ const ContactPage = () => {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.5, delay: index * 0.1 }}
                     >
-                      <div className="bg-purple-100 p-3 rounded-lg text-purple-600">
+                      <div className="bg-blue-100 p-3 rounded-lg text-blue-600">
                         {info.icon}
                       </div>
                       <div>
@@ -105,11 +105,11 @@ const ContactPage = () => {
                 {/* Map Placeholder */}
                 <div className="mt-12">
                   <h3 className="text-lg font-semibold text-gray-900 mb-4">Our Location</h3>
-                  <div className="bg-gradient-to-br from-purple-500 to-indigo-600 rounded-xl h-64 flex items-center justify-center">
+                  <div className="bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl h-64 flex items-center justify-center">
                     <div className="text-center text-white">
                       <MapPin className="w-12 h-12 mx-auto mb-3" />
                       <p className="text-lg font-medium">Interactive Map</p>
-                      <p className="text-purple-100">Katol Road, Chhaoni Rd, Nagpur</p>
+                      <p className="text-blue-100">Katol Road, Chhaoni Rd, Nagpur</p>
                     </div>
                   </div>
                 </div>
@@ -138,7 +138,7 @@ const ContactPage = () => {
                           name="name"
                           value={formData.name}
                           onChange={handleChange}
-                          className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                          className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
                           placeholder="John Doe"
                           required
                         />
@@ -160,7 +160,7 @@ const ContactPage = () => {
                           name="email"
                           value={formData.email}
                           onChange={handleChange}
-                          className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                          className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
                           placeholder="john@example.com"
                           required
                         />
@@ -183,7 +183,7 @@ const ContactPage = () => {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                        className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
                         placeholder="+1 (555) 123-4567"
                       />
                     </div>
@@ -204,7 +204,7 @@ const ContactPage = () => {
                         name="subject"
                         value={formData.subject}
                         onChange={handleChange}
-                        className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                        className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
                         placeholder="How can we help you?"
                         required
                       />
@@ -224,7 +224,7 @@ const ContactPage = () => {
                       rows={5}
                       value={formData.message}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
                       placeholder="Tell us about your inquiry..."
                       required
                     ></textarea>
@@ -232,7 +232,7 @@ const ContactPage = () => {
 
                   <motion.button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-bold py-4 rounded-lg transition-all flex items-center justify-center gap-2"
+                    className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-4 rounded-lg transition-all flex items-center justify-center gap-2"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >

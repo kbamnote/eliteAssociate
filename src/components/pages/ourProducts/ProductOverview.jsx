@@ -34,7 +34,7 @@ const ProductOverview = () => {
   ];
 
   const stats = [
-    { number: "5000+", label: "Students Trained" },
+    { number: "50000+", label: "Students Trained" },
     { number: "95%", label: "Placement Rate" },
     { number: "500+", label: "Partner Companies" },
     { number: "50+", label: "Expert Trainers" }
@@ -59,7 +59,7 @@ const ProductOverview = () => {
               className="text-center"
             >
               <h1 className="text-4xl md:text-6xl font-heading font-bold text-gray-900 mb-6">
-                Product <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">Overview</span>
+                Product <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-700">Overview</span>
               </h1>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
                 Explore our comprehensive suite of training programs designed to transform your career and unlock your potential in the technology industry.
@@ -80,7 +80,7 @@ const ProductOverview = () => {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="text-center"
                 >
-                  <div className="text-3xl md:text-4xl font-heading font-bold text-purple-600 mb-2">
+                  <div className="text-3xl md:text-4xl font-heading font-bold text-blue-600 mb-2">
                     {stat.number}
                   </div>
                   <div className="text-gray-600 font-medium">{stat.label}</div>
@@ -116,7 +116,7 @@ const ProductOverview = () => {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
                 >
-                  <div className="text-purple-600 mb-4">
+                  <div className="text-blue-600 mb-4">
                     {feature.icon}
                   </div>
                   <h3 className="text-xl font-heading font-semibold text-gray-900 mb-3">
@@ -132,7 +132,7 @@ const ProductOverview = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-purple-600 to-indigo-600">
+        <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-700">
           <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -142,23 +142,17 @@ const ProductOverview = () => {
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-6">
                 Ready to Transform Your Career?
               </h2>
-              <p className="text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
+              <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
                 Join thousands of successful professionals who have accelerated their careers with our training programs.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
+               
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-white text-purple-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-50 transition-colors duration-300"
+                  className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300"
                 >
-                  Explore Courses
-                </motion.button>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-purple-600 transition-all duration-300"
-                >
-                  Book Free Demo
+                  Coming Soon....
                 </motion.button>
               </div>
             </motion.div>

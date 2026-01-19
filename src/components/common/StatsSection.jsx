@@ -8,7 +8,7 @@ const StatsSection = () => {
     {
       id: 1,
       icon: <Users className="w-8 h-8" />,
-      value: 5000,
+      value: 50000,
       suffix: '+',
       label: 'Students Placed',
       description: 'Successfully placed in top companies',
@@ -21,7 +21,7 @@ const StatsSection = () => {
       suffix: '+',
       label: 'Partner Companies',
       description: 'Trusted hiring partners worldwide',
-      color: 'from-purple-500 to-pink-500'
+      color: 'from-blue-500 to-cyan-500'
     },
     {
       id: 3,
@@ -48,7 +48,7 @@ const StatsSection = () => {
       suffix: '%',
       label: 'Placement Assistance',
       description: 'Guaranteed placement support',
-      color: 'from-indigo-500 to-purple-500'
+      color: 'from-blue-500 to-cyan-500'
     },
     {
       id: 6,
@@ -72,7 +72,7 @@ const StatsSection = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">Achievements</span>
+            Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Achievements</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Numbers that speak for our commitment to excellence in training and placement
@@ -84,7 +84,7 @@ const StatsSection = () => {
           {stats.map((stat, index) => (
             <motion.div
               key={stat.id}
-              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group hover:border-purple-200"
+              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group hover:border-blue-200"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -100,7 +100,7 @@ const StatsSection = () => {
                   {stat.icon}
                 </motion.div>
 
-                <div className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600 mb-2">
+                <div className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 mb-2">
                   <AnimatedCounter
                     end={stat.value}
                     suffix={stat.suffix}
@@ -129,7 +129,7 @@ const StatsSection = () => {
           viewport={{ once: true }}
         >
           <motion.button
-            className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+            className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

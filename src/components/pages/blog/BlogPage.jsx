@@ -140,7 +140,7 @@ const BlogPage = () => {
 
       <div className="min-h-screen bg-gray-50">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 text-white py-20">
+        <section className="bg-gradient-to-br from-blue-900 via-cyan-900 to-blue-900 text-white py-20">
           <div className="container mx-auto px-4">
             <motion.div
               className="text-center max-w-4xl mx-auto"
@@ -180,7 +180,7 @@ const BlogPage = () => {
                   onClick={() => setSelectedCategory(category)}
                   className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
                     selectedCategory === category
-                      ? 'bg-purple-600 text-white shadow-lg'
+                      ? 'bg-blue-600 text-white shadow-lg'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
                 >
@@ -205,7 +205,7 @@ const BlogPage = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                   >
-                    <div className="h-64 bg-gradient-to-br from-purple-400 to-blue-500"></div>
+                    <div className="h-64 bg-gradient-to-br from-blue-400 to-cyan-500"></div>
                     <div className="p-8">
                       <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
                         <span className="flex items-center gap-1">
@@ -228,13 +228,13 @@ const BlogPage = () => {
                           {post.tags && post.tags.slice(0, 2).map((tag) => (
                             <span
                               key={tag}
-                              className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm"
+                              className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm"
                             >
                               {tag}
                             </span>
                           ))}
                         </div>
-                        <button className="flex items-center gap-2 text-purple-600 font-medium hover:text-purple-700 transition-colors">
+                        <button className="flex items-center gap-2 text-blue-600 font-medium hover:text-blue-700 transition-colors">
                           Read More <ArrowRight className="w-4 h-4" />
                         </button>
                       </div>
@@ -267,7 +267,7 @@ const BlogPage = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                   >
-                    <div className="h-48 bg-gradient-to-br from-purple-400 to-blue-500 group-hover:scale-105 transition-transform duration-300"></div>
+                    <div className="h-48 bg-gradient-to-br from-blue-400 to-cyan-500 group-hover:scale-105 transition-transform duration-300"></div>
                     <div className="p-6">
                       <div className="flex items-center gap-3 text-sm text-gray-500 mb-3">
                         <span className="flex items-center gap-1">
@@ -279,7 +279,7 @@ const BlogPage = () => {
                           {post.readTime}
                         </span>
                       </div>
-                      <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-purple-600 transition-colors">
+                      <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-blue-600 transition-colors">
                         {post.title}
                       </h3>
                       <p className="text-gray-600 mb-4 text-sm">{post.excerpt}</p>
@@ -287,7 +287,7 @@ const BlogPage = () => {
                         <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs">
                           {post.category}
                         </span>
-                        <button className="flex items-center gap-1 text-purple-600 font-medium hover:text-purple-700 transition-colors text-sm">
+                        <button className="flex items-center gap-1 text-blue-600 font-medium hover:text-blue-700 transition-colors text-sm">
                           Read <ArrowRight className="w-3 h-3" />
                         </button>
                       </div>
@@ -300,7 +300,7 @@ const BlogPage = () => {
         </section>
 
         {/* Newsletter Signup */}
-        <section className="py-16 bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
+        <section className="py-16 bg-gradient-to-r from-blue-600 to-cyan-600 text-white">
           <div className="container mx-auto px-4 text-center">
             <motion.div
               className="max-w-2xl mx-auto"
@@ -309,16 +309,16 @@ const BlogPage = () => {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-3xl font-bold mb-4">Stay Updated</h2>
-              <p className="text-xl mb-8 text-purple-100">
+              <p className="text-xl mb-8 text-blue-100">
                 Get the latest tech insights and career tips delivered to your inbox
               </p>
               <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-4 focus:ring-purple-300"
+                  className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-4 focus:ring-blue-300"
                 />
-                <button className="bg-white text-purple-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors">
+                <button className="bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors">
                   Subscribe
                 </button>
               </div>

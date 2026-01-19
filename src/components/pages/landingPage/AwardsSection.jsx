@@ -9,11 +9,11 @@ export default function AwardsSection() {
         {/* Header */}
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-6">
-            <Trophy className="w-12 h-12 text-purple-600" />
+            <Trophy className="w-12 h-12 text-blue-600" />
           </div>
           <h1 className="text-5xl md:text-6xl font-bold mb-4">
             <span className="text-black">Award Winning </span>
-            <span className="text-purple-600">Directors</span>
+            <span className="text-blue-600">Directors</span>
           </h1>
           <p className="text-gray-600 text-xl max-w-3xl mx-auto">
             Our visionary leaders have been honored with the prestigious Big Impact 2024 Award for their exceptional contributions to education and career development.
@@ -21,12 +21,12 @@ export default function AwardsSection() {
         </div>
 
         {/* Stats Banner */}
-        <div className="bg-purple-600 rounded-3xl p-8 mb-16 text-white">
+        <div className="bg-blue-600 rounded-3xl p-8 mb-16 text-white">
           <div className="flex items-center justify-center gap-3 mb-4">
             <Award className="w-10 h-10 text-white" />
             <h2 className="text-3xl font-bold">Big Impact Award 2024</h2>
           </div>
-          <p className="text-center text-purple-100 text-lg">
+          <p className="text-center text-blue-100 text-lg">
             Recognizing Excellence in Educational Leadership & Social Impact
           </p>
         </div>
@@ -36,7 +36,7 @@ export default function AwardsSection() {
           {/* Image 1 */}
           <div className="group">
             <div className="relative overflow-hidden rounded-3xl bg-gray-100">
-              <div className="absolute top-6 right-6 z-10 bg-purple-600 p-3 rounded-full">
+              <div className="absolute top-6 right-6 z-10 bg-blue-600 p-3 rounded-full">
                 <Star className="w-6 h-6 text-white fill-white" />
               </div>
               <img
@@ -50,7 +50,7 @@ export default function AwardsSection() {
           {/* Image 2 */}
           <div className="group">
             <div className="relative overflow-hidden rounded-3xl bg-gray-100">
-              <div className="absolute top-6 right-6 z-10 bg-purple-600 p-3 rounded-full">
+              <div className="absolute top-6 right-6 z-10 bg-blue-600 p-3 rounded-full">
                 <Star className="w-6 h-6 text-white fill-white" />
               </div>
               <img
@@ -85,10 +85,10 @@ export default function AwardsSection() {
         </div>
 
         {/* Bottom Banner */}
-        <div className="bg-gray-50 rounded-3xl p-8 md:p-12 text-center border-2 border-purple-100">
+        <div className="bg-gray-50 rounded-3xl p-8 md:p-12 text-center border-2 border-blue-100">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <Trophy className="w-8 h-8 text-purple-600" />
-            <Award className="w-8 h-8 text-purple-600" />
+            <Trophy className="w-8 h-8 text-blue-600" />
+            <Award className="w-8 h-8 text-blue-600" />
           </div>
           <h3 className="text-2xl md:text-3xl font-bold text-black mb-4">
             Leading India's Top IT Training Institute

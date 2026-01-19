@@ -100,7 +100,7 @@ const ProductsPage = () => {
           transition={{ duration: 0.6 }}
         >
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-heading">
-            Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-indigo-700">Innovative Products</span>
+            Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-blue-600">Innovative Products</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8 font-body">
             Cutting-edge solutions designed to empower businesses and professionals across various domains
@@ -118,7 +118,7 @@ const ProductsPage = () => {
                 placeholder="Search products..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-12 pr-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-purple-500 font-body"
+                className="w-full pl-12 pr-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 font-body"
               />
             </div>
             
@@ -136,7 +136,7 @@ const ProductsPage = () => {
                 key={category.id}
                 className={`px-5 py-2 rounded-full text-sm font-medium transition-all font-body ${
                   activeCategory === category.id
-                    ? 'bg-purple-600 text-white shadow-md'
+                    ? 'bg-blue-600 text-white shadow-md'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
                 whileHover={{ scale: 1.05 }}
@@ -160,7 +160,7 @@ const ProductsPage = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -10 }}
             >
-              <div className="h-48 bg-gradient-to-r from-purple-500 to-indigo-600 flex items-center justify-center">
+              <div className="h-48 bg-gradient-to-r from-blue-600 to-blue-700 flex items-center justify-center">
                 <div className="text-white text-center p-4">
                   <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4 inline-block mb-3">
                     {product.icon}
@@ -173,7 +173,7 @@ const ProductsPage = () => {
                 <div className="flex justify-between items-start mb-4">
                   <div>
                     <h3 className="text-xl font-bold text-gray-900 font-heading">{product.title}</h3>
-                    <p className="text-purple-600 text-sm font-medium font-body">{product.subtitle}</p>
+                    <p className="text-blue-600 text-sm font-medium font-body">{product.subtitle}</p>
                   </div>
                 </div>
                 
@@ -181,7 +181,7 @@ const ProductsPage = () => {
                 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {product.features.map((feature, idx) => (
-                    <span key={idx} className="bg-purple-100 text-purple-800 text-xs font-medium px-2 py-1 rounded-full font-body">
+                    <span key={idx} className="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded-full font-body">
                       {feature}
                     </span>
                   ))}
@@ -196,7 +196,7 @@ const ProductsPage = () => {
                 </div>
                 
                 <motion.button
-                  className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-semibold py-3 rounded-lg flex items-center justify-center gap-2 transition-all font-body"
+                  className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 rounded-lg flex items-center justify-center gap-2 transition-all font-body"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >

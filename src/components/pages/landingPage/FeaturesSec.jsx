@@ -66,7 +66,7 @@ const FeaturesSec = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Why Choose <span className="text-purple-600">Elite Associates</span>
+            Why Choose <span className="text-blue-600">Elite Associates</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             We provide unparalleled learning experiences that transform careers and empower professionals in fire and safety
@@ -77,14 +77,14 @@ const FeaturesSec = () => {
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              className="bg-gray-50 rounded-2xl p-6 hover:bg-white transition-all duration-300 border border-gray-100 hover:border-purple-200 hover:shadow-lg"
+              className="bg-gray-50 rounded-2xl p-6 hover:bg-white transition-all duration-300 border border-gray-100 hover:border-blue-200 hover:shadow-lg"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -10 }}
             >
-              <div className="bg-purple-100 w-16 h-16 rounded-xl flex items-center justify-center text-purple-600 mb-6">
+              <div className="bg-blue-100 w-16 h-16 rounded-xl flex items-center justify-center text-blue-600 mb-6">
                 {feature.icon}
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
@@ -94,7 +94,7 @@ const FeaturesSec = () => {
         </div>
 
         <motion.div
-          className="mt-20 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-3xl p-8 md:p-12 text-white"
+          className="mt-20 bg-gradient-to-r from-blue-500 to-blue-600 rounded-3xl p-8 md:p-12 text-white"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -104,15 +104,15 @@ const FeaturesSec = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
               <div>
                 <div className="text-4xl font-bold mb-2">95%</div>
-                <div className="text-indigo-100">Job Placement Rate</div>
+                <div className="text-blue-100">Job Placement Rate</div>
               </div>
               <div>
-                <div className="text-4xl font-bold mb-2">15+</div>
-                <div className="text-indigo-100">Years of Excellence</div>
+                <div className="text-4xl font-bold mb-2">25+</div>
+                <div className="text-blue-100">Years of Excellence</div>
               </div>
               <div>
-                <div className="text-4xl font-bold mb-2">5000+</div>
-                <div className="text-indigo-100">Careers Transformed</div>
+                <div className="text-4xl font-bold mb-2">50000+</div>
+                <div className="text-blue-100">Careers Transformed</div>
               </div>
             </div>
           </div>

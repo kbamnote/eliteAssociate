@@ -22,11 +22,11 @@ const HeroSec = () => {
   };
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-purple-50 via-white to-indigo-50 overflow-hidden">
+    <div className="relative min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50 overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div 
-          className="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-500 rounded-full mix-blend-soft-light filter blur-3xl opacity-20"
+          className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500 rounded-full mix-blend-soft-light filter blur-3xl opacity-20"
           animate={{
             x: [0, 100, 0],
             y: [0, -50, 0],
@@ -38,7 +38,7 @@ const HeroSec = () => {
           }}
         ></motion.div>
         <motion.div 
-          className="absolute top-1/3 right-1/4 w-72 h-72 bg-indigo-500 rounded-full mix-blend-soft-light filter blur-3xl opacity-20"
+          className="absolute top-1/3 right-1/4 w-72 h-72 bg-blue-500 rounded-full mix-blend-soft-light filter blur-3xl opacity-20"
           animate={{
             x: [0, -100, 0],
             y: [0, 50, 0],
@@ -67,7 +67,7 @@ const HeroSec = () => {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="mb-4"
               >
-                <span className="inline-flex items-center px-4 py-2 rounded-full bg-purple-100 text-purple-700 text-sm font-semibold mb-4">
+                <span className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold mb-4">
                   <Star className="w-4 h-4 mr-2" />
                   #1 Training & Placement Institute
                 </span>
@@ -78,7 +78,7 @@ const HeroSec = () => {
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-                  Best Training & <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-indigo-700">Placement Institute</span>
+                  Best Training & <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-blue-600">Placement Institute</span>
                 </h1>
               </motion.div>
               <motion.p 
@@ -144,26 +144,34 @@ const HeroSec = () => {
 
             {/* Stats Grid */}
             <motion.div 
-              className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8"
+              className="flex flex-wrap gap-6 pt-8"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.5 }}
             >
               <div className="text-center">
-                <AnimatedCounter end={5000} suffix="+" className="mb-2" />
-                <p className="text-sm text-gray-600 font-medium">Students Placed</p>
+                <div className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">
+                  <AnimatedCounter end={50000} suffix="+" />
+                </div>
+                <p className="text-xs md:text-sm text-gray-600 font-medium whitespace-nowrap">Students Placed</p>
               </div>
               <div className="text-center">
-                <AnimatedCounter end={500} suffix="+" className="mb-2" delay={200} />
-                <p className="text-sm text-gray-600 font-medium">Partner Companies</p>
+                <div className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">
+                  <AnimatedCounter end={500} suffix="+" delay={200} />
+                </div>
+                <p className="text-xs md:text-sm text-gray-600 font-medium whitespace-nowrap">Partner Companies</p>
               </div>
               <div className="text-center">
-                <AnimatedCounter end={98} suffix="%" className="mb-2" delay={400} />
-                <p className="text-sm text-gray-600 font-medium">Success Rate</p>
+                <div className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">
+                  <AnimatedCounter end={98} suffix="%" delay={400} />
+                </div>
+                <p className="text-xs md:text-sm text-gray-600 font-medium whitespace-nowrap">Success Rate</p>
               </div>
               <div className="text-center">
-                <AnimatedCounter end={15} suffix="+" className="mb-2" delay={600} />
-                <p className="text-sm text-gray-600 font-medium">Years Experience</p>
+                <div className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">
+                  <AnimatedCounter end={15} suffix="+" delay={600} />
+                </div>
+                <p className="text-xs md:text-sm text-gray-600 font-medium whitespace-nowrap">Years Experience</p>
               </div>
             </motion.div>
           </motion.div>
@@ -177,18 +185,18 @@ const HeroSec = () => {
           >
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <ResponsiveImage
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
+                src="public/Hero/bg3.jpeg"
                 alt="Training and Placement - Students learning technology skills"
                 className="w-full h-auto aspect-video rounded-3xl object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
                 placeholder={
-                  <div className="bg-gradient-to-br from-purple-500 to-indigo-600 aspect-video rounded-3xl flex items-center justify-center">
+                  <div className="bg-gradient-to-br from-blue-500 to-blue-600 aspect-video rounded-3xl flex items-center justify-center">
                     <div className="text-center p-8">
                       <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 inline-block">
                         <Shield className="w-24 h-24 text-white mx-auto" />
                       </div>
                       <h3 className="text-2xl font-bold text-white mt-6">Training & Placement</h3>
-                      <p className="text-purple-100 mt-2">Professional IT Courses</p>
+                      <p className="text-blue-100 mt-2">Professional IT Courses</p>
                     </div>
                   </div>
                 }

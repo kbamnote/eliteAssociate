@@ -39,13 +39,13 @@ const Features = () => {
       icon: <Users className="w-8 h-8" />,
       title: "Expert Mentorship",
       description: "Get personalized guidance from industry experts with 1-on-1 mentoring sessions and career counseling.",
-      color: "from-blue-400 to-indigo-500"
+      color: "from-blue-400 to-blue-500"
     },
     {
       icon: <Award className="w-8 h-8" />,
       title: "Industry Certification",
       description: "Earn globally recognized certifications that are valued by top companies worldwide.",
-      color: "from-purple-400 to-pink-500"
+      color: "from-blue-400 to-cyan-500"
     },
     {
       icon: <Clock className="w-8 h-8" />,
@@ -63,7 +63,7 @@ const Features = () => {
       icon: <TrendingUp className="w-8 h-8" />,
       title: "Career Support",
       description: "100% placement assistance with resume building, interview preparation, and job referrals.",
-      color: "from-indigo-400 to-purple-500"
+      color: "from-blue-400 to-blue-500"
     }
   ];
 
@@ -162,7 +162,7 @@ const Features = () => {
               className="text-center"
             >
               <h1 className="text-4xl md:text-6xl font-heading font-bold text-gray-900 mb-6">
-                Powerful <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">Features</span>
+                Powerful <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-700">Features</span>
               </h1>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
                 Discover what makes our training programs stand out with cutting-edge features designed to accelerate your learning journey.
@@ -226,7 +226,7 @@ const Features = () => {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="flex items-start space-x-4 p-6 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors duration-300"
                 >
-                  <div className="text-purple-600 mt-1">
+                  <div className="text-blue-600 mt-1">
                     {feature.icon}
                   </div>
                   <div>
@@ -264,7 +264,7 @@ const Features = () => {
             >
               <div className="overflow-x-auto">
                 <table className="w-full">
-                  <thead className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
+                  <thead className="bg-gradient-to-r from-blue-600 to-blue-700 text-white">
                     <tr>
                       <th className="px-6 py-4 text-left font-semibold">Features</th>
                       <th className="px-6 py-4 text-center font-semibold">Elite Associate</th>
@@ -315,7 +315,7 @@ const Features = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-purple-600 to-indigo-600">
+        <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-700">
           <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -325,21 +325,21 @@ const Features = () => {
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-6">
                 Experience These Features Today
               </h2>
-              <p className="text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
+              <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
                 Join thousands of successful learners who have transformed their careers with our comprehensive training programs.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-white text-purple-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-50 transition-colors duration-300"
+                  className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-50 transition-colors duration-300"
                 >
                   Start Free Trial
                 </motion.button>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-purple-600 transition-all duration-300"
+                  className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300"
                 >
                   View All Courses
                 </motion.button>

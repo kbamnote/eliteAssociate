@@ -71,7 +71,7 @@ const AnimatedCounter = ({
       animate={hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.6, delay: delay / 1000 }}
     >
-      <span className="font-bold text-3xl md:text-4xl lg:text-5xl bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
+      <span className="font-bold text-3xl md:text-4xl lg:text-5xl bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
         {prefix}{count.toLocaleString()}{suffix}
       </span>
     </motion.div>

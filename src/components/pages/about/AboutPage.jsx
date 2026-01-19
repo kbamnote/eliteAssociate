@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 
 const AboutPage = () => {
   const stats = [
-    { number: "15+", label: "Years Experience" },
-    { number: "5000+", label: "Students Trained" },
+    { number: "25+", label: "Years Experience" },
+    { number: "50000+", label: "Students Trained" },
     { number: "95%", label: "Placement Rate" },
     { number: "50+", label: "Partner Companies" }
   ];
@@ -36,25 +36,25 @@ const AboutPage = () => {
 
   const team = [
     {
-      name: "Dr. Robert Johnson",
+      name: "Dr. Rajesh Kumar",
       role: "Founder & CEO",
       bio: "20+ years in fire safety management and industrial safety protocols.",
       image: "team-1"
     },
     {
-      name: "Sarah Williams",
+      name: "Priya Sharma",
       role: "Director of Training",
       bio: "Expert in occupational health and safety with 15+ years experience.",
       image: "team-2"
     },
     {
-      name: "Michael Chen",
+      name: "Amit Patel",
       role: "Chief Instructor",
       bio: "Former emergency response coordinator with extensive field experience.",
       image: "team-3"
     },
     {
-      name: "Emma Rodriguez",
+      name: "Sneha Nair",
       role: "Placement Director",
       bio: "Specializes in career development and industry partnerships.",
       image: "team-4"
@@ -93,7 +93,7 @@ const AboutPage = () => {
           transition={{ duration: 0.6 }}
         >
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            About <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-indigo-700">Elite Associates</span>
+            About <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-700">Elite Associates</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Empowering careers in fire and safety through cutting-edge training and industry partnerships since 2008.
@@ -109,13 +109,16 @@ const AboutPage = () => {
             transition={{ duration: 0.6 }}
           >
             <div className="flex items-center gap-4 mb-6">
-              <div className="bg-purple-100 p-3 rounded-lg text-purple-600">
+              <div className="bg-blue-100 p-3 rounded-lg text-blue-600">
                 <Target className="w-6 h-6" />
               </div>
               <h2 className="text-2xl font-bold text-gray-900">Our Mission</h2>
             </div>
             <p className="text-gray-600 text-lg leading-relaxed">
-              To provide world-class fire and safety training that empowers individuals with the knowledge, skills, and certifications needed to excel in their careers while contributing to safer communities and workplaces globally.
+              Equip learners with job-ready skills through high-quality training and practical learning experiences.
+Deliver personalized career support that enhances confidence, competence, and employability.
+Connect motivated professionals with the right opportunities through reliable placement assistance and recruitment services.
+Foster long-term success by cultivating lifelong learners who adapt and thrive in a dynamic work environment
             </p>
           </motion.div>
 
@@ -126,20 +129,23 @@ const AboutPage = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             <div className="flex items-center gap-4 mb-6">
-              <div className="bg-purple-100 p-3 rounded-lg text-purple-600">
+              <div className="bg-blue-100 p-3 rounded-lg text-blue-600">
                 <Lightbulb className="w-6 h-6" />
               </div>
               <h2 className="text-2xl font-bold text-gray-900">Our Vision</h2>
             </div>
             <p className="text-gray-600 text-lg leading-relaxed">
-              To be the leading provider of fire and safety education globally, recognized for our innovative training methods, industry partnerships, and the success of our graduates in making workplaces and communities safer.
+             Our vision is to be recognized as India’s leading career development and placement solutions provider, empowering thousands of individuals to:
+Achieve meaningful careers aligned with their goals and aspirations.
+Become confident professionals ready to excel in a global workforce.
+Be catalysts of innovation and positive change within their industries.
             </p>
           </motion.div>
         </div>
 
         {/* Stats Section */}
         <motion.div
-          className="bg-gradient-to-r from-purple-500 to-indigo-600 rounded-3xl p-8 md:p-12 mb-20"
+          className="bg-gradient-to-r from-blue-500 to-cyan-600 rounded-3xl p-8 md:p-12 mb-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -149,7 +155,7 @@ const AboutPage = () => {
             {stats.map((stat, index) => (
               <div key={index}>
                 <div className="text-4xl font-bold text-white mb-2">{stat.number}</div>
-                <div className="text-purple-100 text-lg">{stat.label}</div>
+                <div className="text-blue-100 text-lg">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -181,7 +187,7 @@ const AboutPage = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -10 }}
               >
-                <div className="bg-purple-100 w-16 h-16 rounded-xl flex items-center justify-center text-purple-600 mb-6">
+                <div className="bg-blue-100 w-16 h-16 rounded-xl flex items-center justify-center text-blue-600 mb-6">
                   {value.icon}
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{value.title}</h3>
@@ -217,65 +223,20 @@ const AboutPage = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -10 }}
               >
-                <div className="bg-purple-100 w-16 h-16 rounded-xl flex items-center justify-center text-purple-600 mb-6">
+                <div className="bg-blue-100 w-16 h-16 rounded-xl flex items-center justify-center text-blue-600 mb-6">
                   {page.icon}
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{page.title}</h3>
                 <p className="text-gray-600 mb-4">{page.description}</p>
                 <Link 
                   to={page.link}
-                  className="text-purple-700 font-semibold flex items-center gap-2 hover:text-purple-800 transition-colors"
+                  className="text-blue-700 font-semibold flex items-center gap-2 hover:text-blue-800 transition-colors"
                 >
                   Learn more
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </Link>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
-        {/* Team Section */}
-        <div>
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Leadership Team</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Experienced professionals dedicated to your success
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {team.map((member, index) => (
-              <motion.div
-                key={index}
-                className="bg-white rounded-2xl overflow-hidden shadow-lg"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ y: -10 }}
-              >
-                <div className="h-48 bg-gradient-to-r from-purple-500 to-indigo-600 flex items-center justify-center">
-                  <div className="text-white text-center">
-                    <div className="bg-white/20 backdrop-blur-sm rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
-                      <Users className="w-10 h-10" />
-                    </div>
-                    <h3 className="text-lg font-bold">{member.image.replace('-', ' ')}</h3>
-                  </div>
-                </div>
-                
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
-                  <p className="text-purple-600 font-medium mb-3">{member.role}</p>
-                  <p className="text-gray-600 text-sm">{member.bio}</p>
-                </div>
               </motion.div>
             ))}
           </div>

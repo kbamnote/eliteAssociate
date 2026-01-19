@@ -4,7 +4,7 @@ import { ArrowRight, Eye, FileText, Zap, HelpCircle } from 'lucide-react';
 import ProductHero from './ProductHero';
 import ProductShowcase from './ProductShowcase';
 import ProductOverview from './ProductOverview';
-import ProductDetails from './ProductDetails';
+// import ProductDetails from './ProductDetails';
 import Features from './Features';
 import FAQs from './FAQs';
 import SEOHead from '../../common/SEOHead';
@@ -45,14 +45,14 @@ const OurProducts = () => {
       description: "Get a comprehensive overview of all our training programs and services.",
       icon: <Eye className="w-8 h-8" />,
       sectionId: "overview",
-      color: "from-blue-500 to-indigo-500"
+      color: "from-blue-500 to-blue-600"
     },
     {
       title: "Product Details",
       description: "Detailed information about courses, curriculum, and certification programs.",
       icon: <FileText className="w-8 h-8" />,
       sectionId: "details",
-      color: "from-purple-500 to-pink-500"
+      color: "from-blue-500 to-cyan-500"
     },
     {
       title: "Features",
@@ -92,7 +92,7 @@ const OurProducts = () => {
               className="text-center mb-16"
             >
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4">
-                Explore Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">Product Sections</span>
+                Explore Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-700">Product Sections</span>
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                 Navigate through our comprehensive product information organized in easy-to-browse sections.
@@ -116,13 +116,13 @@ const OurProducts = () => {
                       <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${section.color} flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300`}>
                         {section.icon}
                       </div>
-                      <h3 className="text-xl font-heading font-bold text-gray-900 mb-4 group-hover:text-purple-600 transition-colors duration-300">
+                      <h3 className="text-xl font-heading font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">
                         {section.title}
                       </h3>
                       <p className="text-gray-600 leading-relaxed mb-6">
                         {section.description}
                       </p>
-                      <div className="flex items-center text-purple-600 font-semibold group-hover:text-purple-700 transition-colors duration-300">
+                      <div className="flex items-center text-blue-600 font-semibold group-hover:text-blue-700 transition-colors duration-300">
                         <span className="mr-2">View Section</span>
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                       </div>
@@ -139,9 +139,9 @@ const OurProducts = () => {
           <ProductOverview />
         </div>
         
-        <div id="details">
+        {/* <div id="details">
           <ProductDetails />
-        </div>
+        </div> */}
         
         <div id="features">
           <Features />
