@@ -4,9 +4,9 @@ import { useInView } from 'react-intersection-observer';
 import { ArrowRight, Users, Building, Zap, Code, TrendingUp, ChevronLeft, ChevronRight, Star, ExternalLink, Briefcase } from 'lucide-react';
 
 // Import testimonial avatar images
-import mahimaPatel from '../../assets/images/mahima_patel.jpg';
-import image1 from '../../assets/images/4a5c2f2a828314d79432bb91afeb3ef3.jpg';
-import image2 from '../../assets/images/4da5901373d491ba9f5d0ed8106f88c0.jpg';
+// import mahimaPatel from '../../assets/images/mahima_patel.jpg';
+import image1 from '../../../assets/images/4a5c2f2a828314d79432bb91afeb3ef3.jpg';
+import image2 from '../../../assets/images/4da5901373d491ba9f5d0ed8106f88c0.jpg';
 
 const ResponsiveImage = ({ src, alt, className, width, height }) => (
   <img src={src} alt={alt} className={className} width={width} height={height} loading="lazy" />
@@ -205,14 +205,14 @@ const ProductShowcase = () => {
   ];
 
   const testimonials = [
-    {
-      name: "Priya Sharma",
-      role: "Safety Manager",
-      company: "Industrial Safety Corp",
-      content: "JIFSA (ST. JOSEPH'S INTERNATIONAL FIRE AND SAFETY ACADEMY) transformed our team's capabilities. The practical approach to fire safety education has directly contributed to a 35% improvement in our safety compliance.",
-      avatar: mahimaPatel,
-      rating: 5
-    },
+    // {
+    //   name: "Priya Sharma",
+    //   role: "Safety Manager",
+    //   company: "Industrial Safety Corp",
+    //   content: "JIFSA (ST. JOSEPH'S INTERNATIONAL FIRE AND SAFETY ACADEMY) transformed our team's capabilities. The practical approach to fire safety education has directly contributed to a 35% improvement in our safety compliance.",
+    //   avatar: mahimaPatel,
+    //   rating: 5
+    // },
     {
       name: "Rahul Mehta",
       role: "Construction Manager",
