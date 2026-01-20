@@ -1,11 +1,31 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Briefcase, Users, Calendar, MapPin, Award, Star, Filter, Search, ChevronDown, ExternalLink } from 'lucide-react';
+import { Briefcase, Users, Calendar, MapPin, Award, Star, Filter, Search, ChevronDown, ExternalLink, X, Upload } from 'lucide-react';
+import { addInternDetail } from '../../../utils/Api';
 
 const HiringInternships = () => {
   const [activeTab, setActiveTab] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
 
+  // State for the application modal
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedOpportunity, setSelectedOpportunity] = useState(null);
+  
+  // State for form data
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    phoneNo1: '',
+    postAppliedFor: '',
+    productCompany: '',
+    resume: null,
+    photo: null
+  });
+  
+  // State for form submission
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState('');
+  
   const opportunities = [
     {
       id: 1,
@@ -243,6 +263,126 @@ const HiringInternships = () => {
     return matchesCategory && matchesSearch;
   });
 
+  // Handle form input changes
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+  
+  // Handle file input changes
+  const handleFileChange = (e) => {
+    const { name, files } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: files[0]
+    }));
+  };
+  
+  // Open modal for applying to an opportunity
+  const openApplicationModal = (opportunity) => {
+    setSelectedOpportunity(opportunity);
+    setFormData(prev => ({
+      ...prev,
+      postAppliedFor: opportunity.title,
+      productCompany: opportunity.company
+    }));
+    setIsModalOpen(true);
+  };
+  
+  // Close modal
+  const closeApplicationModal = () => {
+    setIsModalOpen(false);
+    setSelectedOpportunity(null);
+    setFormData({
+      fullName: '',
+      email: '',
+      phoneNo1: '',
+      postAppliedFor: '',
+      productCompany: '',
+      resume: null,
+      photo: null
+    });
+    setSubmitMessage('');
+  };
+  
+  // Submit application
+  const handleSubmitApplication = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitMessage('');
+      
+    try {
+      // Validate required fields
+      if (!formData.fullName || !formData.email || !formData.phoneNo1 || !formData.resume) {
+        throw new Error('Please fill in all required fields (Full Name, Email, Phone, and Resume)');
+      }
+        
+      // Create FormData object to send files and data
+      const applicationData = new FormData();
+      applicationData.append('fullName', formData.fullName);
+      applicationData.append('email', formData.email);
+      applicationData.append('phoneNo1', formData.phoneNo1);
+      applicationData.append('postAppliedFor', formData.postAppliedFor);
+      applicationData.append('productCompany', formData.productCompany);
+        
+      if (formData.resume) {
+        applicationData.append('resume', formData.resume);
+      }
+        
+      if (formData.photo) {
+        applicationData.append('photo', formData.photo);
+      }
+        
+      // Log the data being sent for debugging
+      console.log('Sending application data:', {
+        fullName: formData.fullName,
+        email: formData.email,
+        phoneNo1: formData.phoneNo1,
+        postAppliedFor: formData.postAppliedFor,
+        productCompany: formData.productCompany,
+        hasResume: !!formData.resume,
+        hasPhoto: !!formData.photo
+      });
+        
+      // Submit the application using the API
+      const response = await addInternDetail(applicationData);
+        
+      console.log('API Response:', response);
+        
+      setSubmitMessage('Application submitted successfully! We will contact you soon.');
+        
+      // Reset form after successful submission
+      setTimeout(() => {
+        closeApplicationModal();
+      }, 2000);
+    } catch (error) {
+      console.error('Error submitting application:', error);
+        
+      let errorMessage = 'Error submitting application. Please try again.';
+        
+      // More specific error handling
+      if (error.response) {
+        // Server responded with error status
+        console.error('Server Error:', error.response.status, error.response.data);
+        errorMessage = `Server error (${error.response.status}): ${error.response.data?.message || 'Unknown server error'}`;
+      } else if (error.request) {
+        // Request was made but no response received
+        console.error('Network Error:', error.request);
+        errorMessage = 'Network error. Please check your internet connection and try again.';
+      } else if (error.message) {
+        // Something else happened
+        errorMessage = error.message;
+      }
+        
+      setSubmitMessage(errorMessage);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
       {/* Hero Banner Section */}
@@ -418,7 +558,10 @@ const HiringInternships = () => {
                     <div className="text-sm text-gray-600">Experience: {opportunity.experience}</div>
                   </div>
                   
-                  <button className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-semibold py-3 px-6 rounded-xl hover:from-blue-700 hover:to-cyan-700 transition-all duration-300 flex items-center justify-center gap-2">
+                  <button 
+                    onClick={() => openApplicationModal(opportunity)}
+                    className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-semibold py-3 px-6 rounded-xl hover:from-blue-700 hover:to-cyan-700 transition-all duration-300 flex items-center justify-center gap-2"
+                  >
                     Apply Now
                     <ExternalLink className="w-4 h-4" />
                   </button>
@@ -441,6 +584,165 @@ const HiringInternships = () => {
           </motion.div>
         )}
       </div>
+      
+      {/* Application Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 backdrop-blur-sm bg-opacity-50 flex items-center justify-center p-4 z-50">
+          <motion.div
+            className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto"
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ type: 'spring', damping: 20 }}
+          >
+            <div className="p-6">
+              <div className="flex justify-between items-center mb-6">
+                <h2 className="text-2xl font-bold text-gray-900">
+                  Apply for {formData.postAppliedFor || 'Opportunity'}
+                </h2>
+                <button 
+                  onClick={closeApplicationModal}
+                  className="text-gray-500 hover:text-gray-700 transition-colors"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
+              
+              <form onSubmit={handleSubmitApplication}>
+                <div className="space-y-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
+                    <input
+                      type="text"
+                      name="fullName"
+                      value={formData.fullName}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      placeholder="Enter your full name"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      placeholder="Enter your email address"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
+                    <input
+                      type="tel"
+                      name="phoneNo1"
+                      value={formData.phoneNo1}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      placeholder="Enter your phone number"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Position Applied For</label>
+                    <input
+                      type="text"
+                      name="postAppliedFor"
+                      value={formData.postAppliedFor}
+                      onChange={handleInputChange}
+                      readOnly
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl bg-gray-100"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Company</label>
+                    <input
+                      type="text"
+                      name="productCompany"
+                      value={formData.productCompany}
+                      onChange={handleInputChange}
+                      readOnly
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl bg-gray-100"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Resume *</label>
+                    <div className="flex items-center gap-3">
+                      <label className="flex-1 cursor-pointer">
+                        <div className="flex items-center justify-center w-full px-4 py-3 border border-dashed border-gray-300 rounded-xl hover:border-blue-500 transition-colors">
+                          <Upload className="w-5 h-5 text-gray-400 mr-2" />
+                          <span className="text-gray-600">
+                            {formData.resume ? formData.resume.name : 'Choose Resume File (PDF)'}
+                          </span>
+                        </div>
+                        <input
+                          type="file"
+                          name="resume"
+                          accept=".pdf,.doc,.docx"
+                          onChange={handleFileChange}
+                          required
+                          className="hidden"
+                        />
+                      </label>
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Photo</label>
+                    <div className="flex items-center gap-3">
+                      <label className="flex-1 cursor-pointer">
+                        <div className="flex items-center justify-center w-full px-4 py-3 border border-dashed border-gray-300 rounded-xl hover:border-blue-500 transition-colors">
+                          <Upload className="w-5 h-5 text-gray-400 mr-2" />
+                          <span className="text-gray-600">
+                            {formData.photo ? formData.photo.name : 'Choose Photo File (JPG/PNG)'}
+                          </span>
+                        </div>
+                        <input
+                          type="file"
+                          name="photo"
+                          accept=".jpg,.jpeg,.png"
+                          onChange={handleFileChange}
+                          className="hidden"
+                        />
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                
+                {submitMessage && (
+                  <div className={`mt-4 p-3 rounded-lg ${submitMessage.includes('successfully') ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
+                    {submitMessage}
+                  </div>
+                )}
+                
+                <div className="flex gap-4 mt-6">
+                  <button
+                    type="button"
+                    onClick={closeApplicationModal}
+                    className="flex-1 px-6 py-3 border border-gray-300 text-gray-700 font-semibold rounded-xl hover:bg-gray-50 transition-colors"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="flex-1 px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-cyan-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {isSubmitting ? 'Submitting...' : 'Submit Application'}
+                  </button>
+                </div>
+              </form>
+            </div>
+          </motion.div>
+        </div>
+      )}
     </div>
   );
 };

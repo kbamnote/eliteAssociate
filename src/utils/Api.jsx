@@ -10,3 +10,10 @@ export const addDetail = (detail) => {
 }
 
 
+const ApiIntern =axios.create({
+   baseURL: 'https://elite-backend-production.up.railway.app/'
+})
+
+export const addInternDetail = (detail) => {
+    return ApiIntern.post("intern-applied-data/", detail);
+}
