@@ -11,7 +11,8 @@ export const addDetail = (detail) => {
 
 
 const ApiIntern =axios.create({
-   baseURL: 'https://elite-backend-production.up.railway.app/'
+   baseURL: 'https://elite-backend-production.up.railway.app/',
+   timeout: 30000 // 30 seconds timeout
 })
 
 export const addInternDetail = (detail) => {

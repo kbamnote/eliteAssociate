@@ -102,22 +102,22 @@ const Careers = () => {
 
   const benefits = [
     {
-      icon: <Briefcase className="w-8 h-8" />,
+      icon: <img src="/growth.svg" alt="Career Growth" className="w-8 h-8" />,
       title: "Career Growth",
       description: "Opportunities for professional development and advancement"
     },
     {
-      icon: <Award className="w-8 h-8" />,
+      icon: <img src="/training.svg" alt="Training" className="w-8 h-8" />,
       title: "Training",
       description: "Continuous learning and skill development programs"
     },
     {
-      icon: <Users className="w-8 h-8" />,
+      icon: <img src="/team.svg" alt="Team Culture" className="w-8 h-8" />,
       title: "Team Culture",
       description: "Collaborative and inclusive work environment"
     },
     {
-      icon: <Clock className="w-8 h-8" />,
+      icon: <img src="/performance.svg" alt="Work-Life Balance" className="w-8 h-8" />,
       title: "Work-Life Balance",
       description: "Flexible schedules and remote work options"
     }

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="growth">
+  <g>
+    <path fill="#1879cd" d="M5 23h4v5H5zM11 20h4v8h-4zM17 17h4v11h-4zM23 14h4v14h-4z"></path>
+    <path fill="#082641" d="m27.067 4.887-5.114.958 2.992.556A58.868 58.868 0 0 1 4.829 20.53l.342.94A59.866 59.866 0 0 0 25.632 7.13l.623 2.898Z"></path>
+  </g>
+</svg>

@@ -55,6 +55,7 @@ import teamNine from '../../../assets/teamNine.jpg';
 import teamTen from '../../../assets/teamTen (1).jpg';
 import teamEleven from '../../../assets/teamEleven.jpg';
 import teamTwelve from '../../../assets/teamTwelve.jpg';
+import teamThirteen from '../../../assets/images/Gallery/IMG-20251226-WA0045.jpg';  
 
 // Celebrations images
 import celebrationOne from '../../../assets/celebrationOne.jpeg';
@@ -65,6 +66,10 @@ import celebrationFive from '../../../assets/celebrationFive.jpeg';
 import celebrationSix from '../../../assets/celebrationSix.jpeg';
 import celebrationSeven from '../../../assets/celebrationSeven.jpeg';
 import celebrationEight from '../../../assets/celebrationEight.jpeg';
+import celebrationNine from '../../../assets/images/Gallery/bday.jpg';
+import celebrationTen from '../../../assets/images/Gallery/bday1.jpg';
+import celebrationEleven from '../../../assets/images/Gallery/bday2.jpg';
+
 const GalleryPage = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -101,6 +106,7 @@ const GalleryPage = () => {
     { id: 46, title: 'Team - Group Photo 10', category: 'Team', image: teamTen, description: 'Team building and corporate activities.' },
     { id: 47, title: 'Team - Group Photo 11', category: 'Team', image: teamEleven, description: 'Professional team meetings and discussions.' },
     { id: 48, title: 'Team - Group Photo 12', category: 'Team', image: teamTwelve, description: 'Team achievements and milestone celebrations.' },
+    { id: 50, title: 'Team - Group Photo 13', category: 'Team', image: teamThirteen, description: 'Team collaboration and professional development.' },
 
     // Office
    
@@ -146,6 +152,9 @@ const GalleryPage = () => {
     { id: 54, title: 'Celebration - 6', category: 'Celebrations', image: celebrationSix, description: 'Memorable team celebrations and events.' },
     { id: 55, title: 'Celebration - 7', category: 'Celebrations', image: celebrationSeven, description: 'Memorable team celebrations and events.' },
     { id: 56, title: 'Celebration - 8', category: 'Celebrations', image: celebrationEight, description: 'Memorable team celebrations and events.' },
+    { id: 70, title: 'Celebration - 9', category: 'Celebrations', image: celebrationNine, description: 'Birthday celebrations and events.' },
+    { id: 71, title: 'Celebration - 10', category: 'Celebrations', image: celebrationTen, description: 'Birthday celebrations and events.' },
+    { id: 72, title: 'Celebration - 11', category: 'Celebrations', image: celebrationEleven, description: 'Birthday celebrations and events.' },
 
     // Team (Celebrations)
     { id: 57, title: 'Team - Celebrations 1', category: 'Team', image: celebrationOne, description: 'Team celebrating achievements and events.' },

@@ -24,10 +24,10 @@ const TestimonialsSec = () => {
   const testimonials = [
     {
       id: 1,
-      name: "Rajesh Kumar",
-      role: "Fire Safety Officer",
-      company: "Global Manufacturing Inc.",
-      content: "The Fire Safety Management course completely transformed my career. I went from an entry-level position to leading safety protocols for a Fortune 500 company within just 18 months.",
+      name: "Pran Wasnik",
+      role: "Data Analyst",
+      company: "Elite Jobs",
+      content: "The Data Analyst course completely transformed my career. I went from an entry-level position to leading analytics for a Fortune 500 company within just 18 months.",
       rating: 5,
       image: photo5
     },
@@ -42,18 +42,18 @@ const TestimonialsSec = () => {
     },
     {
       id: 3,
-      name: "Vikash Sharma",
-      role: "Emergency Response Coordinator",
-      company: "City Emergency Services",
+      name: "Samad Khan",
+      role: "Frontend Developer",
+      company: "Elite Jobs",
       content: "Elite Associates provided me with the credentials and confidence to advance in emergency response. The placement support team helped me secure my dream job within weeks of graduation.",
       rating: 5,
       image: photo9
     },
     {
       id: 4,
-      name: "Arjun Nair",
-      role: "Occupational Health Manager",
-      company: "HealthFirst Corporation",
+      name: "Amrut",
+      role: "Backend Developer",
+      company: "Elite Jobs",
       content: "The comprehensive curriculum and expert instruction gave me a deep understanding of workplace safety. I've been promoted twice since completing the program!",
       rating: 5,
       image: photo7

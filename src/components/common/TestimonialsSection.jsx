@@ -15,53 +15,53 @@ const TestimonialsSection = () => {
   const testimonials = [
     {
       id: 1,
-      name: "Rahul Sharma",
-      role: "Software Engineer",
-      company: "TCS",
+      name: "Shobhit Gajbe",
+      role: "Data Analyst",
+      company: "Elite Jobs",
       image: photo6,
       rating: 5,
       text: "Elite Associate transformed my career completely. The training was industry-focused and the placement assistance was exceptional. I got placed in TCS with a great package!",
-      course: "Full Stack Development"
+      course: "Data Analyst"
     },
     {
       id: 2,
       name: "Priya Patel",
-      role: "Data Analyst",
-      company: "Infosys",
+      role: "Frontend Developer",
+      company: "Elite Jobs",
       image: photo4,
       rating: 5,
       text: "The best decision I made was joining Elite Associate. The trainers are industry experts and the curriculum is updated with latest technologies. Highly recommended!",
-      course: "Data Science"
+      course: "Frontend Developer"
     },
     {
       id: 3,
-      name: "Amit Kumar",
-      role: "DevOps Engineer",
-      company: "Wipro",
+      name: "Purvanshu khapra",
+      role: "Frontend Developer",
+      company: "Elite Jobs",
       image: photo10,
       rating: 5,
       text: "100% placement assistance is not just a promise here, it's a reality. The support team helped me throughout the placement process. Thank you Elite Associate!",
-      course: "DevOps & Cloud"
+      course: "Frontend Developer"
     },
     {
       id: 4,
-      name: "Sneha Reddy",
-      role: "UI/UX Designer",
-      company: "Accenture",
+      name: "",
+      role: "Data Analyst",
+      company: "Elite Jobs",
       image: photo3,
       rating: 5,
       text: "The practical approach to learning and live project experience gave me the confidence to crack interviews. Elite Associate is truly the best training institute!",
-      course: "UI/UX Design"
+      course: "Data Analyst"
     },
     {
       id: 5,
-      name: "Vikash Singh",
-      role: "Cybersecurity Analyst",
-      company: "IBM",
+      name: "Vishal",
+      role: "Content Creator",
+      company: "Elite Jobs",
       image: photo11,
       rating: 5,
-      text: "From zero knowledge to getting placed in IBM, Elite Associate made it possible. The mentorship and guidance throughout the journey was outstanding.",
-      course: "Cybersecurity"
+      text: "From zero knowledge to getting placed in Elite Associate, Elite Associate made it possible. The mentorship and guidance throughout the journey was outstanding.",
+      course: "Content Creator"
     }
   ];
 

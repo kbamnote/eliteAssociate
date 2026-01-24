@@ -3,7 +3,7 @@ import { ArrowRight, Camera, Image, Award, CheckCircle, Star, Sparkles, Users, C
 import ResponsiveImage from '../../common/ResponsiveImage';
 
 // Import gallery hero images
-import bg1 from '../../../assets/images/AboutHero/bg1.jpeg';
+import bg1 from '../../../assets/images/Gallery/IMG-20251226-WA0045.jpg';
 import bg3 from '../../../assets/images/AboutHero/bg3.jpeg';
 import bg2 from '../../../assets/images/AboutHero/bg2.jpeg';
 

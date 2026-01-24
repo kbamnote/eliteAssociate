@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Shield, Users, Award, TrendingUp, Target, Lightbulb, Clock, Briefcase, Mail } from 'lucide-react';
+import { Shield, Users, Award, Target, Lightbulb, Clock, Briefcase, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const AboutPage = () => {
@@ -13,22 +13,22 @@ const AboutPage = () => {
 
   const values = [
     {
-      icon: <Shield className="w-8 h-8" />,
+      icon: <img src="/icon.svg" alt="Safety Shield" className="w-12 h-12" />,
       title: "Safety First",
       description: "We prioritize the safety and well-being of our students and communities above all else."
     },
     {
-      icon: <Users className="w-8 h-8" />,
+      icon: <img src="/education.svg" alt="Education" className="w-8 h-8" />,
       title: "Excellence in Education",
       description: "We deliver world-class training programs that exceed industry standards."
     },
     {
-      icon: <Award className="w-8 h-8" />,
+      icon: <img src="/honesty.svg" alt="Integrity" className="w-8 h-8" />,
       title: "Integrity",
       description: "We maintain the highest ethical standards in all our operations and interactions."
     },
     {
-      icon: <TrendingUp className="w-8 h-8" />,
+      icon: <img src="/growth.svg" alt="Growth" className="w-8 h-8" />,
       title: "Continuous Improvement",
       description: "We constantly evolve our programs to meet changing industry demands."
     }
@@ -63,19 +63,19 @@ const AboutPage = () => {
 
   const subPages = [
     {
-      icon: <Clock className="w-8 h-8" />,
+      icon: <img src="/history.svg" alt="Our History" className="w-8 h-8" />,
       title: "Our History",
       description: "Explore our journey and milestones over the years.",
       link: "/about/history"
     },
     {
-      icon: <Users className="w-8 h-8" />,
+      icon: <img src="/businessman-doing-data-analysis.svg" alt="Leadership" className="w-10 h-10" />,
       title: "Leadership",
       description: "Meet our executive team and advisory board members.",
       link: "/about/leadership"
     },
     {
-      icon: <Briefcase className="w-8 h-8" />,
+      icon: <img src="/career-roadmap.svg" alt="Careers" className="w-8 h-8" />,
       title: "Careers",
       description: "Join our mission to make the world safer through education.",
       link: "/about/careers"

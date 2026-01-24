@@ -98,7 +98,7 @@ const ProductShowcase = () => {
       color: "from-blue-600 to-indigo-600",
       bgColor: "bg-blue-100",
       textColor: "text-blue-800",
-      link: "#",
+      link: "https://www.elitemanagements.com/",
       stats: { users: "5K+", rating: "4.8/5" },
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80&auto=format&fit=crop"
     },
