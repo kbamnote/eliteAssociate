@@ -44,7 +44,7 @@ const AboutPage = () => {
     {
       name: "Priya Sharma",
       role: "Director of Training",
-      bio: "Expert in occupational health and safety with 15+ years experience.",
+      bio: "Expert in occupational health and safety with 5+ years experience.",
       image: "team-2"
     },
     {

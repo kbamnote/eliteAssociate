@@ -26,7 +26,7 @@ const StatsSection = () => {
     {
       id: 3,
       icon: <Award className="w-8 h-8" />,
-      value: 15,
+      value: 25,
       suffix: '+',
       label: 'Years Experience',
       description: 'Industry expertise and training',
