@@ -13,7 +13,7 @@ const commitments = [
   },
   {
     title: "Real-world learning from 650+ industry experts",
-    desc: "Get real-world learning by professionals with 15+ years of experience at top global firms.",
+    desc: "Get real-world learning by professionals with 25+ years of experience at top global firms.",
     img: "https://webcdn.imarticus.org/iimu/careertransitions2.webp",
   },
   {

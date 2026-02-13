@@ -7,6 +7,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import Header from './components/common/Header';
 import Footer from './components/common/Footer';
 import ScrollToTop from './components/common/ScrollToTop';
+import ChatBot from './components/common/ChatBot';
 
 // Lazy load pages for better performance
 const Home = lazy(() => import('./components/pages/landingPage/LandingPage'));
@@ -132,6 +133,9 @@ function App() {
 
           {/* Footer */}
           <Footer />
+
+          {/* ChatBot */}
+          <ChatBot />
         </div>
       </ErrorBoundary>
     </HelmetProvider>

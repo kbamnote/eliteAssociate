@@ -172,7 +172,7 @@ const HeroSec = () => {
               </div>
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">
-                  <AnimatedCounter end={15} suffix="+" delay={600} />
+                  <AnimatedCounter end={25} suffix="+" delay={600} />
                 </div>
                 <p className="text-xs md:text-sm text-gray-600 font-medium whitespace-nowrap">Years Experience</p>
               </div>
