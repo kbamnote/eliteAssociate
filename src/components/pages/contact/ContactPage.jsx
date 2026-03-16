@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin, Send, Clock, User, Building } from 'lucide-react';
 import ContactHero from './ContactHero';
+import SEOHead from '../../common/SEOHead';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -50,6 +51,11 @@ const ContactPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEOHead
+        title="Contact Elite Associate – Training & Placement Services in Nagpur"
+        description="Get in touch with Elite Associate in Nagpur for career training, placement support, internship opportunities, and recruitment assistance. Contact us for expert guidance and personalised services today."
+        keywords="contact Elite Associate, training and placement enquiry, placement support, contact Nagpur, internship assistance contact, career guidance contact details, recruitment services enquiry, contact number and address Nagpur, email and phone for placement services, get in touch training institute, contact form placement support"
+      />
       {/* Hero Section */}
       <ContactHero />
 

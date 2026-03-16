@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Briefcase, Users, Calendar, MapPin, Award, Star, Filter, Search, ChevronDown, ExternalLink, X, Upload } from 'lucide-react';
 import { addInternDetail } from '../../../utils/Api';
+import SEOHead from '../../common/SEOHead';
 
 const HiringInternships = () => {
   const [activeTab, setActiveTab] = useState('all');
@@ -395,6 +396,11 @@ const HiringInternships = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
+      <SEOHead
+        title="Internship & Hiring Opportunities – Elite Associate Nagpur"
+        description="Explore internship and hiring opportunities at Elite Associate, Nagpur. Gain real-world experience, skill development, and professional exposure with industry internships and career launching placements."
+        keywords="internships in Nagpur, hiring internships and job opportunities in Nagpur, student internships programs, professional internship opportunities, career development internships, work experience programs, internship support services, job internships recruitment, Elite Associate internships"
+      />
       {/* Hero Banner Section */}
       <div 
         className="relative min-h-screen bg-cover bg-center"
@@ -411,16 +417,25 @@ const HiringInternships = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="mt-40 text-5xl md:text-6xl font-bold mb-6">
-              Find Your Dream <span className="text-cyan-300">Opportunity</span>
+              Internship & Hiring <span className="text-cyan-300">Opportunities</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-200 mb-8">
-              Discover exciting career opportunities and internships across IT services, digital marketing, AI/ML, content creation, and MBA roles.
+              Discover exciting career opportunities and student internships in Nagpur and Maharashtra. Gain real work experience, skill building, and mentorship with top employer partners.
             </p>
             <div className="flex flex-wrap gap-4">
-              <button className="bg-white text-blue-900 font-semibold px-8 py-4 rounded-xl hover:bg-gray-100 transition-all duration-300 shadow-lg">
-                Browse Opportunities
+              <button className="bg-white text-blue-900 font-semibold px-8 py-4 rounded-xl hover:bg-gray-100 transition-all duration-300 shadow-lg" onClick={() => {
+                document.querySelector('.container.mx-auto.px-4.py-12.mt-14').scrollIntoView({ behavior: 'smooth' });
+              }}>
+                Apply Now
               </button>
-              
+              <button className="bg-transparent border-2 border-white text-white font-semibold px-8 py-4 rounded-xl hover:bg-white hover:text-blue-900 transition-all duration-300 shadow-lg" onClick={() => {
+                document.querySelector('.container.mx-auto.px-4.py-12.mt-14').scrollIntoView({ behavior: 'smooth' });
+              }}>
+                View Internship Details
+              </button>
+              <button onClick={() => window.location.href='/contact'} className="bg-cyan-500 text-white font-semibold px-8 py-4 rounded-xl hover:bg-cyan-600 transition-all duration-300 shadow-lg">
+                Contact for Hiring
+              </button>
             </div>
           </motion.div>
         </div>

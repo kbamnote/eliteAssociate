@@ -79,10 +79,10 @@ const PlacementPage = () => {
           transition={{ duration: 0.6 }}
         >
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Career <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-blue-600">Placement</span>
+            Placement <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-blue-600">Services & Career Support</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We don't just train you - we help you launch and advance your career in fire and safety
+            Comprehensive career guidance, placement support, interview preparation, and employer partnerships in Nagpur, Maharashtra.
           </p>
         </motion.div>
 
@@ -218,6 +218,27 @@ const PlacementPage = () => {
               </motion.div>
             ))}
           </div>
+        </div>
+
+        {/* Internal Links Navigation */}
+        <div className="mt-20 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-wrap justify-center gap-6"
+          >
+            <a href="/our-products" className="px-8 py-4 bg-white border border-blue-200 shadow-sm text-blue-700 rounded-lg hover:shadow-md hover:border-blue-300 transition-all font-semibold">
+              Explore Our Products
+            </a>
+            <a href="/about" className="px-8 py-4 bg-white border border-blue-200 shadow-sm text-blue-700 rounded-lg hover:shadow-md hover:border-blue-300 transition-all font-semibold">
+              Read About Us
+            </a>
+            <a href="/contact" className="px-8 py-4 bg-white border border-blue-200 shadow-sm text-blue-700 rounded-lg hover:shadow-md hover:border-blue-300 transition-all font-semibold">
+              Contact Us
+            </a>
+          </motion.div>
         </div>
       </div>
     </div>

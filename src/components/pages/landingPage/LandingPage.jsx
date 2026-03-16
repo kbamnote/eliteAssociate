@@ -22,6 +22,7 @@ import StatsSection from "../../common/StatsSection";
 import TestimonialsSection from "../../common/TestimonialsSection";
 import AwardsSection from "./AwardsSection";
 import ContactFormPopup from "../../common/ContactFormPopup";
+import SEOHead from "../../common/SEOHead";
 
 const LandingPage = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -55,6 +56,11 @@ const LandingPage = () => {
 
   return (
     <div>
+      <SEOHead
+        title="Best Training & Placement Institute in Nagpur | Elite Associate"
+        description="Elite Associate is a leading training and placement institute offering job-oriented courses, internships, and career opportunities in Digital Marketing, IT, HR, and more. Apply now to kickstart your successful career with expert guidance and 100% placement support."
+        keywords="Best Training and Placement Institute in Nagpur, IT Training Institute in Nagpur, top placement-oriented training Nagpur, best career training institute Nagpur, top placement training institute, Elite Placement in Nagpur, Top Training and Placement Institute, best Career Counselling in Nagpur, Elite best training Placement in Nagpur, IT Training & institute in Maharashtra"
+      />
       <div ref={heroVideoRef}>
         <HeroVideo />
       </div>

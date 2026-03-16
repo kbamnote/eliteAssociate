@@ -150,9 +150,23 @@ const ProductOverview = () => {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg"
+                >
+                  Apply Now
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                   className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300"
                 >
-                  Coming Soon....
+                  Get Career Counseling
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="border-2 border-transparent bg-blue-800 text-white px-8 py-4 rounded-full font-semibold hover:bg-blue-900 transition-all duration-300"
+                >
+                  View Course Details
                 </motion.button>
               </div>
             </motion.div>

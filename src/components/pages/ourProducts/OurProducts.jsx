@@ -41,22 +41,22 @@ const OurProducts = () => {
 
   const productSections = [
     {
-      title: "Product Overview",
-      description: "Get a comprehensive overview of all our training programs and services.",
+      title: "Training Programs",
+      description: "Explore our job oriented training courses and professional skill programs.",
       icon: <Eye className="w-8 h-8" />,
       sectionId: "overview",
       color: "from-blue-500 to-blue-600"
     },
     {
-      title: "Product Details",
-      description: "Detailed information about courses, curriculum, and certification programs.",
+      title: "Placement Services",
+      description: "Job placement assistance and career development programs for freshers.",
       icon: <FileText className="w-8 h-8" />,
       sectionId: "details",
       color: "from-blue-500 to-cyan-500"
     },
     {
-      title: "Features",
-      description: "Discover the powerful features that make our training programs unique.",
+      title: "Career Support Features",
+      description: "Workplace readiness programs and features supporting your career growth.",
       icon: <Zap className="w-8 h-8" />,
       sectionId: "features",
       color: "from-green-500 to-teal-500"
@@ -73,9 +73,26 @@ const OurProducts = () => {
   return (
     <>
       <SEOHead 
-        title="Our Products - Elite Associate"
-        description="Explore our comprehensive range of training programs and professional development services designed to accelerate your career growth."
-        keywords="training programs, professional development, courses, certification, career growth"
+        title="Training & Placement Services | Our Products – Elite Associate, Nagpur"
+        description="Explore job-oriented training programs, professional skill courses and placement services offered by Elite Associate – empowering freshers and experienced candidates with career growth and 100% job support."
+        keywords="Training and placement services, Job oriented training courses, Career development programs, Skill development training India, Placement support for freshers, Professional training in Nagpur, Elite Associate training products, Job placement assistance, Career guidance and training, Workplace readiness programs."
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": ["LocalBusiness", "Organization"],
+          "name": "Elite Associate",
+          "description": "Job-oriented training programs, professional skill courses and placement services.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Nagpur",
+            "addressRegion": "Maharashtra",
+            "addressCountry": "IN"
+          },
+          "offers": {
+            "@type": "Course",
+            "name": "Training and Placement Services",
+            "description": "Job oriented training courses and career development programs."
+          }
+        }}
       />
       
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 font-body">
@@ -91,11 +108,11 @@ const OurProducts = () => {
               transition={{ duration: 0.6 }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4">
-                Explore Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-700">Product Sections</span>
-              </h2>
+              <h1 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4">
+                Our Training & <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-700">Placement Products</span>
+              </h1>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Navigate through our comprehensive product information organized in easy-to-browse sections.
+                Explore job-oriented training programs, professional skill courses and placement services offered by Elite Associate. Empowering freshers and experienced candidates with career growth and 100% placement support.
               </p>
             </motion.div>
 
