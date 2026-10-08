@@ -35,7 +35,7 @@ const ContactPage = () => {
     {
       icon: <Phone className="w-6 h-6" />,
       title: 'Call Us',
-      details: '+91 8855885807'
+      details: '+91 9730893320'
     },
     {
       icon: <Mail className="w-6 h-6" />,
